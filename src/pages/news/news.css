@@ -1,0 +1,17 @@
+.header {
+  text-align: center;
+}
+
+.article-card:hover {
+  box-shadow: 0 0 5px 3px red; /* Red glow effect on hover */
+}
+
+.d-flex.flex-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem; /* Add spacing between cards */
+}
+
+.wrapper {
+  height: 100vh; /* Set viewport height */
+}

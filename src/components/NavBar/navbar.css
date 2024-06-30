@@ -1,0 +1,11 @@
+.navbar .nav-link {
+  color: rgb(190, 190, 190); /* Example: Set a contrasting color */
+  font-weight: bold;
+}
+.navbar-light .navbar-nav .nav-link.active {
+  color: rgb(255, 255, 255);
+}
+
+.navbar .nav-link:hover {
+  color: #1a0b0b; /* Change to your desired hover color */
+}

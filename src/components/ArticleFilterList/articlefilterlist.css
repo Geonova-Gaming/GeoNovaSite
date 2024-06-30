@@ -1,0 +1,48 @@
+.active {
+  /* Style for selected category */
+  font-weight: bold;
+  color: #007bff; /* Bootstrap's primary color */
+}
+
+.border-bottom {
+  /* Remove bottom border for active state */
+  border-bottom-color: transparent !important;
+}
+
+.text-left {
+  /* Ensure text is left-aligned */
+  text-align: left;
+}
+
+.d-flex.flex-column a {
+  /* Style links as hoverable elements */
+  text-decoration: none; /* Remove underline */
+  color: #d8d7d7; /* Text color */
+  transition: color 0.2s ease-in-out; /* Smooth hover transition */
+}
+
+.d-flex.flex-column a:hover {
+  /* Hover effect */
+  color: #ffffff; /* Change color on hover */
+}
+
+.d-flex.flex-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem; /* Add spacing between cards */
+}
+
+.wrapper {
+  height: 100vh; /* Set viewport height */
+}
+
+.article-image {
+  width: 150px; /* Adjust width as needed */
+  height: 150px; /* Adjust height as needed */
+  object-fit: cover;
+}
+
+.book-item {
+  /* Existing styles */
+  margin-bottom: 30px; /* Add vertical space between cards */
+}

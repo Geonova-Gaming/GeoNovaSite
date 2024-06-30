@@ -1,0 +1,34 @@
+{
+  "key": "This is a wonderful day!",
+  "nested": {
+    "key": "How are you?"
+  },
+  "interpolated": "Have a nice day, {{name}}!",
+  "pluralKey_one": "This is a nice example.",
+  "pluralKey_other": "This are nice examples.",
+  "donate": {
+    "title": "Help Change the World",
+    "bodyP1": "Changing the world is a huge goal, so we must start off the best we can. Though we currently have no live Kickstarter projects, please be on the lookout for any of our upcoming fundraising campaigns.",
+    "bodyP2": " By donating, you'll be able to help us support our employees, cover publishing costs, pay fees for resources like this website, trademarks, and copyright, and meet other financial necessities. We're immensely grateful of your generosity!"
+  },
+  "subBar": {
+    "copyright": "Copyright © 2021 GeoNova Gaming - All Rights Reserved.",
+    "tagline": "Venture into new worlds with us!"
+  },
+  "about": {
+    "title": "Who We Are",
+    "subtitle": "We are GeoNova.",
+    "bodyP1": "Founded in January of 2020, GeoNova Gaming has one goal which sets us apart from any other video game company out there. Our mission is simple: to change the world for the better. The world is constantly changing, adapting; even the way it changes, well,  changes.",
+    "bodyP2": " ",
+    "artistSection1": "Gerardo de Leon (top): Hello, my name is Gerardo De Leon. I‘ve loved video games all my life, and I'd like to create new experiences for others to enjoy in the future.",
+    "artistSection2": "Luke Pedder (left): Hello, my name is Luke Pedder. I am a Technical Artist, but I create 3D art as well. I like to create games that are fun for everyone to enjoy. ",
+    "artistSection3": "Ryan Pedder (right): Hello, my name is Ryan Pedder. I am a 3D artist at heart; I enjoy all aspects of 3D art. However, my favourite part is character creation. In my own time, I enjoy reading, which gives me my influences for personal projects.",
+    "bardSection": "Steven Giraldo: I’m Steven, a 16 year old music producer from New Jersey. I enjoy sampling vintage records and crafting hip hop beats as a hobby. I also play video games and make music for this amazing company! I hope to go to Full Sail University someday.",
+    "coderSection1": "Carl Antoine (left): Hi my name is Carl, born in Florida. Currently majoring in computer science at UCF. I got into game development in high school and liked it ever since. My hobbies are video games, anime, watching TV, and coding.",
+    "coderSection2": "Tam Nguyen (right): Video games shaped my childhood and now I wish to do the same for the next generation of gamers. Developing games is a passion of mine and I can’t see myself doing anything else! I want the games that I’m a part of to be a fond memory for others to enjoy! On my down time, you can see me cooking food and trying out new recipes I’ve developed! There’s nothing better than cooking and code!",
+    "coderSection3": "Simon Fontanilla (Bottom): Hello, my name is Simon, and I am a Computer Engineering student at NJIT. I have been playing video games (more specifically, racing games), every day since I was a little kid. Being able to develop games that others can enjoy is definitely a rewarding experience. Other than gaming, I enjoy working out and watching motorsport."
+  },
+  "games": {
+    "title": "See Our New Releases!"
+  }
+}

@@ -1,0 +1,54 @@
+[
+  {
+    "Date": "2024-06-18",
+    "Title": "Article Title 1",
+    "link": "/news/lovebugs",
+    "isGameComplete": true,
+    "tag": "Game",
+    "imageUrl": "https://via.placeholder.com/600x400",
+    "ArticleContent": {
+      "paragraph1": "If you've ever been to Florida, you may have seen those pesky lovebugs everywhere. Wherever you go, there they are; conjoined at the booty, floating around in your face, as if to say, \"Look! I got a boo! Where's yours? Let me just float onto your sandwich real quick...\" Of course, these unwelcomed greetings are usually met with a swift, swinging swat to the face (sometimes your own, if you have poor hand-eye coordination).",
+      "paragraph2": "Have you ever stopped to think what it may feel like to BE those lovebugs? Well now, in our very first published game, you will! Grow your bug family as large as you can in this action-packed, intensely riveting, hilarious game of horrors! You'll be able to do things such as dodge obstacles, collect pollen, and... well, actually, that's pretty much it. But hey, if you're aiming on changing the world, you gotta start somewhere, right? Even if it is with a hyper-casual, cutesy mobile (maybe even PC) game about lovebugs.",
+      "paragraph3": "Look for The Lovebug Game on the App Store, Play Store, and Steam this September, and join GeoNova as we embark on our exciting, arduous adventure into the future of gaming. We actually do have action-packed, intensely riveting, hilarious, horrifying, (and many other adjectives) games planned for the future. Stick with us, run with us, and journey with us into new worlds."
+    }
+  },
+  {
+    "Date": "2024-06-19",
+    "Title": "Article Title 2",
+    "link": "/news/article-2",
+    "isGameComplete": false,
+    "tag": "Game",
+    "imageUrl": "https://via.placeholder.com/600x400",
+    "ArticleContent": {
+      "paragraph1": "This is another article's first paragraph.",
+      "paragraph2": "This is the second paragraph for the second article.",
+      "paragraph3": "This is the concluding paragraph for the second article."
+    }
+  },
+  {
+    "Date": "2024-06-20",
+    "Title": "Article Title 3",
+    "link": "/news/article-3",
+    "isGameComplete": true,
+    "tag": "Game",
+    "imageUrl": "https://via.placeholder.com/600x400",
+    "ArticleContent": {
+      "paragraph1": "This is the first paragraph of the third article.",
+      "paragraph2": "This is the second paragraph of the third article.",
+      "paragraph3": "This is the third paragraph of the third article."
+    }
+  },
+  {
+    "Date": "2024-06-21",
+    "Title": "Article Title 4",
+    "link": "/news/article-4",
+    "isGameComplete": false,
+    "tag": "General",
+    "imageUrl": "https://via.placeholder.com/600x400",
+    "ArticleContent": {
+      "paragraph1": "This is the first paragraph of the third article.",
+      "paragraph2": "This is the second paragraph of the third article.",
+      "paragraph3": "This is the third paragraph of the third article."
+    }
+  }
+]

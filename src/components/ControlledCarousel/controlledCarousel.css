@@ -1,0 +1,3 @@
+.no-transition .carousel-item {
+  transition: none !important;
+}

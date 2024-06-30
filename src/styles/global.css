@@ -1,0 +1,59 @@
+body {
+  color: white;
+  font-family: Arial, sans-serif; /* Set a default font family */
+  margin: 0; /* Remove default margin from body */
+}
+
+a {
+  color: inherit; /* Inherit text color for links */
+}
+
+p {
+  color: white; /* Target p tags specifically (redundant with *) */
+}
+.container {
+  background-color: black;
+}
+
+h1 {
+  color: inherit;
+}
+
+h2 {
+  color: inherit; /* Inherit from parent (which is likely white) */
+}
+
+.card-text {
+  color: black;
+}
+
+.header {
+  color: rgb(45, 97, 186); /* Set your desired color for h2 elements */
+  font-weight: bold;
+}
+
+.my-h2 {
+  color: rgb(211, 211, 211); /* Set your desired color for h2 elements */
+}
+
+.my-hr {
+  border: 1px solid #f5f5f5; /* Example off-white color */
+  margin: 1rem 0; /* Optional: Add some margin for spacing */
+  width: 10%;
+  /* Centering styles */
+  display: block; /* Ensure the element is displayed as a block */
+  margin-left: auto;
+  margin-right: auto;
+}
+/* In your home.css or global.css file */
+.text-center {
+  text-align: center;
+}
+
+.custom-text {
+  color: rgb(155, 155, 155);
+}
+
+.MiscNav {
+  background-color: black;
+}

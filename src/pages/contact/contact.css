@@ -1,0 +1,11 @@
+.header {
+  text-align: center;
+}
+
+.main-content {
+  background-color: black; /* Inherit background color from parent */
+}
+
+.wrapper {
+  height: 100vh; /* Set viewport height */
+}

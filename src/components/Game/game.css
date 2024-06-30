@@ -1,0 +1,6 @@
+.game-card {
+  width: 300px; /* Adjust width as needed */
+  max-width: 300px; /* Ensure width doesn't exceed specified value */
+  height: 400px; /* Adjust height as needed */
+  margin: 10px; /* Optional: Add margin for spacing between cards */
+}

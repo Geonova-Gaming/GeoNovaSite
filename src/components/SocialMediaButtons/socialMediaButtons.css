@@ -1,0 +1,46 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+.my-social-button {
+  margin: 0 auto 1rem auto;
+}
+
+.social-media-icon {
+  position: relative; /* Needed for pseudo-element positioning */
+  /* display: block; */
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: calc(60px + 4px);
+  border-radius: 50%;
+  font-size: 30px;
+  color: #754242; /* Default icon color */
+  transition: 0.5s;
+  display: flex; /* Use flexbox */
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  background-color: #9b9494;
+}
+
+.social-media-icon::before {
+  content: ""; /* Pseudo-element for glow effect */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: transparent; /* Remove black background */
+  transition: 0.5s; /* Animate glow effect */
+  transform: scale(1); /* No initial scale */
+  z-index: -1; /* Place behind icon content */
+}
+
+.social-media-icon:hover::before {
+  transform: scale(1.1);
+  box-shadow: inset 0 0 5px #ffee10;
+}
+
+.social-media-icon:hover {
+  color: #ffee10; /* Change hover color */
+  text-shadow: 0 0 5px #ffee10; /* Optional text shadow */
+}

@@ -1,0 +1,6 @@
+.paragraph-indent::before {
+  content: " "; /* Add a space to prevent empty content warning */
+  display: inline-block;
+  width: 1rem; /* Adjust width for desired indent */
+  margin-left: -1rem; /* Offset indent within paragraph */
+}

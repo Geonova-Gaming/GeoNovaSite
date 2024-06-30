@@ -1,0 +1,6 @@
+.divider {
+  width: 1px;
+  height: 100%;
+  background-color: #ddd; /* Adjust color as needed */
+  margin: 0 1rem; /* Adjust margin as needed */
+}

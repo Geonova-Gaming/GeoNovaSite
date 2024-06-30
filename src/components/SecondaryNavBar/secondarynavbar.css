@@ -1,0 +1,21 @@
+.custom-container {
+  background-color: black;
+}
+
+.d-flex {
+  display: flex; /* Enable Flexbox layout */
+}
+
+.nav-wrapper {
+  display: flex; /* Enable Flexbox layout */
+  justify-content: center;
+}
+
+.navbar {
+  padding: 0; /* Remove default navbar padding */
+}
+
+.navbar-expand {
+  flex-wrap: nowrap;
+  justify-content: center;
+}
