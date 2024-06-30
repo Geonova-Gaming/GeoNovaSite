@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/GeoNovaSite/static/css/main.57d924c2.css",
+    "main.js": "/GeoNovaSite/static/js/main.aa48de85.js",
+    "index.html": "/GeoNovaSite/index.html",
+    "main.57d924c2.css.map": "/GeoNovaSite/static/css/main.57d924c2.css.map",
+    "main.aa48de85.js.map": "/GeoNovaSite/static/js/main.aa48de85.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.57d924c2.css",
+    "static/js/main.aa48de85.js"
+  ]
+}
