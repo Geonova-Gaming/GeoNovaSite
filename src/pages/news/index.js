@@ -7,19 +7,18 @@ import articles from "./articles.json"; // Import the JSON file
 
 import "./news.css";
 import { Nav } from "react-bootstrap";
+import { Link } from 'react-router-dom'
 
 function ArticleCard({ article }) {
   return (
     <Card style={{ width: "18rem" }} className="article-card">
       <Card.Img variant="top" src="https://via.placeholder.com/800x400" />
       <Card.Body className="d-flex flex-column align-items-center">
-        {" "}
-        {/* Centered content */}
         <Card.Text>{article.Date}</Card.Text>
         <Card.Title>{article.Title}</Card.Title>
-        <Button variant="success" href={article.link}>
-          Continue Reading
-        </Button>
+        <Link to={article.link}>
+          <Button variant="success">Continue Reading</Button>
+        </Link>
       </Card.Body>
     </Card>
   );

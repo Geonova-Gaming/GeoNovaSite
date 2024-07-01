@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import MiscNav from "../components/SecondaryNavBar";
 import NavBar from "../components/NavBar";
 import AboutPage from "./about";
@@ -16,7 +16,7 @@ import LovebugArticlePage from "./news/ArticlePages/lovebugArticle";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <NavBar /> {/* Render NavBar inside BrowserRouter */}
       <Routes>
         <Route path="/" element={<MainPage />} />
@@ -33,7 +33,7 @@ function App() {
       </Routes>
       <SubBar />
       <MiscNav />
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
