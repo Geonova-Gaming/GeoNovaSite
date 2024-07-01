@@ -5,8 +5,15 @@ import Image from "react-bootstrap/Image";
 import "./about.css";
 import { Col, Form, Row } from "react-bootstrap";
 import { t } from "i18next";
+import { useLocation } from "react-router-dom";
 
 function PageSection({ sectionName, srcURL, translatedArray }) {
+  const location = useLocation();
+
+  // Scroll to top on route change (except initial render)
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.hash]);
   return (
     <div>
       <Row>

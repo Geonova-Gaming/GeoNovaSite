@@ -7,48 +7,10 @@ import {
   Container,
   Pagination,
 } from "react-bootstrap"; // Import NavLink and Card
+import { Link, useLocation } from 'react-router-dom'
 
 import "./articlefilterlist.css";
 import articles from "../../pages/news/articles.json"; // Import the JSON file
-
-// const books = [
-//   {
-//     id: 1,
-//     title: "Article 1",
-//     category: "Fantasy",
-//     description: "This is a summary of Book 1. It's a fantasy novel...",
-//     sourceImage: "https://via.placeholder.com/150", // Placeholder image
-//   },
-//   {
-//     id: 2,
-//     title: "Article 2",
-//     category: "Science Fiction",
-//     description: "This is a summary of Book 2. It's a science fiction novel...",
-//     sourceImage: "https://via.placeholder.com/150", // Placeholder image
-//   },
-//   {
-//     id: 3,
-//     title: "Article 3",
-//     category: "Mystery",
-//     description: "This is a summary of Book 3. It's a mystery novel...",
-//     sourceImage: "https://via.placeholder.com/150", // Placeholder image
-//   },
-//   {
-//     id: 4,
-//     title: "Article 4",
-//     category: "Fantasy",
-//     description: "This is a summary of Book 4. It's another fantasy novel...",
-//     sourceImage: "https://via.placeholder.com/150", // Placeholder image
-//   },
-//   {
-//     id: 5,
-//     title: "Article 5",
-//     category: "Science Fiction",
-//     description:
-//       "This is a summary of Book 5. Yet another science fiction novel...",
-//     sourceImage: "https://via.placeholder.com/150", // Placeholder image
-//   },
-// ];
 
 {
   /* <Card.Text>{book.description.slice(0, 50) + "..."} </Card.Text> */
@@ -150,7 +112,7 @@ function ArticleList({ filteredArticles }) {
 }
 
 function ArticleFilterList() {
-  // const [selectedCategory, setSelectedCategory] = useState("");
+  const location = useLocation(); // Get current location for active link
   const [showAllArticles, setShowAllArticles] = useState(true);
   const [currentPage, setCurrentPage] = useState(1); // Track current page
   const [filter, setFilter] = useState("all"); // Initial filter state
@@ -175,7 +137,6 @@ function ArticleFilterList() {
         ) // Filter completed "Game" articles
       : []; // Empty array for invalid filters
 
-  console.log(filteredArticles);
   return (
     <div className="d-flex">
       <Container>
@@ -186,42 +147,36 @@ function ArticleFilterList() {
             {" "}
             {/* Content column */}
             <Container>
-              <ArticleList
-                filteredArticles={filteredArticles}
-                currentPageReset={currentPage}
-              />
+              <ArticleList filteredArticles={filteredArticles} currentPageReset={currentPage} />
             </Container>
           </Col>
           <Col xs={4} className="d-flex flex-column">
             {" "}
             {/* Filter column */}
-            <NavLink
+            <Link
+              to="/all" // Replace with appropriate route for "All"
               className={`py-2 px-3 text-left border-bottom ${
-                filter === "" || showAllArticles ? "active" : ""
+                location.pathname === "/" || showAllArticles ? "active" : ""
               }`} // Style based on selection
-              href="#"
-              onClick={() => handleSelect("all")}
             >
               All
-            </NavLink>
-            <NavLink
+            </Link>
+            <Link
+              to="/inProgress" // Replace with appropriate route for "Games In Progress"
               className={`py-2 px-3 text-left border-bottom ${
-                filter === "inProgress" ? "active" : ""
+                location.pathname.includes("inProgress") ? "active" : ""
               }`} // Style based on selection
-              href="#"
-              onClick={() => handleSelect("inProgress")}
             >
               Games In Progress
-            </NavLink>
-            <NavLink
+            </Link>
+            <Link
+              to="/completed" // Replace with appropriate route for "Games"
               className={`py-2 px-3 text-left border-bottom ${
-                filter === "completed" ? "active" : ""
+                location.pathname.includes("completed") ? "active" : ""
               }`} // Style based on selection
-              href="#"
-              onClick={() => handleSelect("completed")}
             >
               Games
-            </NavLink>
+            </Link>
           </Col>
         </Row>
       </Container>

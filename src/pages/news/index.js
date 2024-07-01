@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
@@ -7,9 +7,16 @@ import articles from "./articles.json"; // Import the JSON file
 
 import "./news.css";
 import { Nav } from "react-bootstrap";
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 function ArticleCard({ article }) {
+  const location = useLocation();
+
+  // Scroll to top on route change (except initial render)
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.hash]);
+
   return (
     <Card style={{ width: "18rem" }} className="article-card">
       <Card.Img variant="top" src="https://via.placeholder.com/800x400" />

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, FloatingLabel } from "react-bootstrap";
 import {
   Form,
@@ -8,6 +8,7 @@ import {
   FormControl,
   FormLabel,
 } from "react-bootstrap";
+import { useLocation } from "react-router-dom";
 
 const ContactPage = () => {
   const [name, setName] = useState("");
@@ -43,6 +44,13 @@ const ContactPage = () => {
     setMessage("");
     setSelectedFile(null);
   };
+
+  const location = useLocation();
+
+  // Scroll to top on route change (except initial render)
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.hash]);
 
   return (
     <div className="p-5 main-content wrapper">

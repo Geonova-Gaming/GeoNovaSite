@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Carousel, Container, Row, Col, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 // import "./controlledCarousel.css";
 
 const slides = [
@@ -45,9 +46,11 @@ function CustomCarousel() {
                 <Col>
                   <h2>{slide.header}</h2>
                   <p>{slide.subtext}</p>
+                  <Link to={slide.link}>
                   <Button variant="primary" href={slide.link}>
                     {slide.buttonText}
                   </Button>
+                  </Link>
                 </Col>
               </Row>
             </Carousel.Caption>

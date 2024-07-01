@@ -1,5 +1,6 @@
 import React from "react";
 import { Carousel, Container, Row, Col, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const slides = [
   {
@@ -33,9 +34,12 @@ function GameCarousel() {
                 <Col>
                   <h2>{slide.header}</h2>
                   <p>{slide.subtext}</p>
-                  <Button variant="primary" href={slide.link}>
+                  <Link to={slide.link}>
+                  
+                  <Button variant="primary">
                     {slide.buttonText}
                   </Button>
+                  </Link>
                 </Col>
               </Row>
             </Carousel.Caption>

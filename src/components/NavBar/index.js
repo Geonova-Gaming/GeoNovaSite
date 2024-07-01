@@ -13,7 +13,7 @@ function NavBar() {
       <Navbar.Brand as={Link} to="/">
         <img
           alt=""
-          src="https://cdn.discordapp.com/attachments/778680833153564693/1252456138486579303/rsh175m.png?ex=6681716c&is=66801fec&hm=909214a321f58f12213d8ed2d6800bff3b1fa7aa1665edd0199f0455d53d621b&"
+          src="../../media/images/GeoNovaLogo.png"
           width="200"
           height="100"
           className="d-inline-block "
