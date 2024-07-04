@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/GeoNovaSite/static/css/main.57d924c2.css",
-    "main.js": "/GeoNovaSite/static/js/main.c8df88a3.js",
-    "index.html": "/GeoNovaSite/index.html",
-    "main.57d924c2.css.map": "/GeoNovaSite/static/css/main.57d924c2.css.map",
-    "main.c8df88a3.js.map": "/GeoNovaSite/static/js/main.c8df88a3.js.map"
+    "main.css": "/static/css/main.57d924c2.css",
+    "main.js": "/static/js/main.32ebd486.js",
+    "index.html": "/index.html",
+    "main.57d924c2.css.map": "/static/css/main.57d924c2.css.map",
+    "main.32ebd486.js.map": "/static/js/main.32ebd486.js.map"
   },
   "entrypoints": [
     "static/css/main.57d924c2.css",
-    "static/js/main.c8df88a3.js"
+    "static/js/main.32ebd486.js"
   ]
 }
