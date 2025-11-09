@@ -16,17 +16,171 @@
     "tagline": "Venture into new worlds with us!"
   },
   "about": {
-    "title": "Who We Are",
-    "subtitle": "We are GeoNova.",
+    "title": "WE ARE GEONOVA",
     "bodyP1": "Founded in January of 2020, GeoNova Gaming has one goal which sets us apart from any other video game company out there. Our mission is simple: to change the world for the better. The world is constantly changing, adapting; even the way it changes, well,  changes.",
     "bodyP2": " ",
-    "artistSection1": "Gerardo de Leon (top): Hello, my name is Gerardo De Leon. I‘ve loved video games all my life, and I'd like to create new experiences for others to enjoy in the future.",
-    "artistSection2": "Luke Pedder (left): Hello, my name is Luke Pedder. I am a Technical Artist, but I create 3D art as well. I like to create games that are fun for everyone to enjoy. ",
-    "artistSection3": "Ryan Pedder (right): Hello, my name is Ryan Pedder. I am a 3D artist at heart; I enjoy all aspects of 3D art. However, my favourite part is character creation. In my own time, I enjoy reading, which gives me my influences for personal projects.",
-    "bardSection": "Steven Giraldo: I’m Steven, a 16 year old music producer from New Jersey. I enjoy sampling vintage records and crafting hip hop beats as a hobby. I also play video games and make music for this amazing company! I hope to go to Full Sail University someday.",
-    "coderSection1": "Carl Antoine (left): Hi my name is Carl, born in Florida. Currently majoring in computer science at UCF. I got into game development in high school and liked it ever since. My hobbies are video games, anime, watching TV, and coding.",
-    "coderSection2": "Tam Nguyen (right): Video games shaped my childhood and now I wish to do the same for the next generation of gamers. Developing games is a passion of mine and I can’t see myself doing anything else! I want the games that I’m a part of to be a fond memory for others to enjoy! On my down time, you can see me cooking food and trying out new recipes I’ve developed! There’s nothing better than cooking and code!",
-    "coderSection3": "Simon Fontanilla (Bottom): Hello, my name is Simon, and I am a Computer Engineering student at NJIT. I have been playing video games (more specifically, racing games), every day since I was a little kid. Being able to develop games that others can enjoy is definitely a rewarding experience. Other than gaming, I enjoy working out and watching motorsport."
+    "artistSection1": {
+      "name": "Naomi Hopton",
+      "role": "Art Lead",
+      "description": "I'm a 3D modeller and digital artist. My dream is to be a tiny woodland creature in a fantasy land, but since that wish hasn't been granted yet, drawing them will do for now.",
+      "favoritegame": "ABZÛ."
+    },
+    "artistSection2": {
+      "name": "Guilherme 'Badger' Inácio",
+      "role": "Artist",
+      "description": "Olá, I'm a human that’s been passionate about arts & crafts since I was around 5 years old, always inspired by any soothing fantasy music. I've always loved drawing and modeling living beings, from real animals to mythical creatures.",
+      "favoritegame": "TESV: Skyrim, Fable 2 and The Witcher 3."
+    },
+    "artistSection3": {
+      "name": "Ryan Pedder",
+      "role": "Artist",
+      "description": "I am an artist that is enthusiastic about telling a story through the art of the game. I’ve enjoyed playing games since I was young, but never thought about how they were made until much later. Once I learnt about the process of creating games, I fell down the rabbit hole and I am still falling.",
+      "favoritegame": "Stellaris, Rome Total War."
+    },
+    "artistSection4": {
+      "name": "Elysia 'Ellie' Howard",
+      "role": "Texture artist, 3D modeler, digital artist",
+      "description": "Texture artist, 3D modeler, digital artist, and an avid traveler! I’ve been to Scotland, Turkey, Argentina, and even Antartica. I also have two Australian Shepherds that I love to bits!",
+      "favoritegame": "Fortnite."
+    },
+    "artistSection5": {
+      "name": "Bao (Zumi) Cu",
+      "role": "Artist",
+      "description": "My passion for Pokemon since childhood prompted me to become a 3D modeler. Being able to create many different characters and their environments makes me feel like I can live in that fantasy world.",
+      "favoritegame": "Pokemon, Genshin Impact, Honkai Star Rail."
+    },
+    "artistSection6": {
+      "name": "Marlie Kohles",
+      "role": "Artist",
+      "description": "I've always been a crafty, artsy person that recently got into gaming in my 20s. I also love watching movies and shows with my best friend and lover.",
+      "favoritegame": "Skyrim"
+    },
+    "coderSection1": {
+      "name": "Tam Nguyen",
+      "role": "Coding Lead",
+      "description": "I’m an enthusiastic game developer/programmer who’s love for how games are made led to leading a department of like-minded individuals. I’m also a culinary master, so lemme cook… In the kitchen and in code 🔥.",
+      "favoritegame": "Like A Dragon: Infinite Wealth."
+    },
+    "coderSection2": {
+      "name": "Nico Gutiérrez",
+      "role": " Mechatronic Engineer / Fullstack Web Developer / Software Developer / Computer technician",
+      "description": "🤣",
+      "favoritegame": "The Legend of Zelda, Metroid 3."
+    },
+    "coderSection3": {
+      "name": "Carl Antoine",
+      "role": "Software Developer",
+      "description": "I am family-orientated and love helping out when I can. I'm a software developer and like to make games.",
+      "favoritegame": "Minecraft."
+    },
+    "coderSection4": {
+      "name": "Nick Knight",
+      "role": "Software Engineer",
+      "description": "Software engineer by day, gamer by night. If I'm not building or playing games, you can find me cheffing it up in the kitchen.",
+      "favoritegame": "Smite, Smite 2."
+    },
+    "coderSection5": {
+      "name": "Daniel Rodriguez",
+      "role": "Coder",
+      "description": "Been in love with video games since the age of 3. I play fighting games competitively, mostly Ultimate Marvel vs. Capcom 3! Best Magneto player in FL and 5th place at CEOtaku!.",
+      "favoritegame": "Metal Gear Solid 2."
+    },
+    "coderSection6": {
+      "name": "India “Indō” Franklin",
+      "role": "Coder",
+      "description": "I'm a creative and driven person who loves building strong connections and coming up with innovative ideas to create great results for our clients and team. 'Dreams didn't make us kings. Dragons did' - Daemon Targaryen.",
+      "favoritegame": "REV, Dead By Daylight, Animal Crossing."
+    },
+    "coderSection7": {
+      "name": "Paul Howard",
+      "role": "Coder",
+      "description": "I started my gaming adventure on old DOS games, and never lost my love for the craft. Now, I work on coding them myself!.",
+      "favoritegame": "Dragon’s Dogma: Dark Arisen."
+    },
+    "coderSection8": {
+      "name": "Steffan Watts",
+      "role": "Coder",
+      "description": "My passion for games and the creative nature involved in making them began at an early age. So now being able to use my skills and take my own creative ideas and turn them into a reality so that I can share with people is really an amazing experience.",
+      "favoritegame": "Assassin's Creed Ezio Series, Uncharted Series, Witcher 3."
+    },
+    "coderSection9": {
+      "name": "Brandon Johnston",
+      "role": "Game Developer",
+      "description": "I’m an aspiring game developer from Middle Tennessee. I’m also a two time published creative fiction author.",
+      "favoritegame": "Need For Speed: Most Wanted (2005)."
+    },
+    "coderSection10": {
+      "name": "Anthony Ferdin",
+      "role": "Game Designer",
+      "description": "I’m an aspiring game developer from Middle Tennessee. I’m also a two time published creative fiction author.",
+      "favoritegame": " Elden Ring."
+    },
+    "coderSection11": {
+      "name": "Mehki “Squint” Cannon",
+      "role": "Coder",
+      "description": "I’m just some dude that likes video games enough to want to make a career out of it. Don’t look too much into it.",
+      "favoritegame": " Infamous Second Son."
+    },
+    "coderSection12": {
+      "name": "Cameron Ghaemmaghami",
+      "role": "Software Engineering",
+      "description": "Graduate from California that can solve FizzBuzz like no one else. Video games bring me great joy and anger. I program things that produce the former, but doing so produces the latter.",
+      "favoritegame": "  The Witcher 3: Wild Hunt, Fire Emblem."
+    },
+    "writersSection1": {
+      "name": "Alunaria Verano",
+      "role": "Lead Write",
+      "description": "Hello my name is Alunaría, I am GeoNova’s Lead Writer.",
+      "favoritegame": "Saints Row the 3rd."
+    },
+    "writersSection2": {
+      "name": "Michael “Zaku” Nutt",
+      "role": "Writer",
+      "description": "Influenced by games at a young age, I strive to create stories that envelope the audience and leave them desolate when it's over.",
+      "favoritegame": "Cyberpunk: 2077."
+    },
+    "writersSection3": {
+      "name": "Gracie “Pantaloons” Todd",
+      "role": "Writer",
+      "description": "I’m a director and writer specializing in all things silly and sometimes spooky. With a diverse portfolio in both live-action and animation, including a popular children’s series, a co-written horror feature currently in post-production, and ongoing work as a comedy writer for a video game. I excel in all things delightfully dumb that shows my out-of-the-box thinking and surreal style.",
+      "favoritegame": "Luigi’s Mansion"
+    },
+    "bardSection1": {
+      "name": "Michelle Lugo",
+      "role": "Music composer / Sound Designer / Audio Implementer",
+      "description": "I'm a music composer, sound designer, and audio implementer from Puerto Rico. I'm passionate about games and how they sound. I love creating sound for fantasy and sci-fi worlds, from feeling like you're flying to giving motivation during a battle; sound is my weapon to evoke these feelings.",
+      "favoritegame": "Super Mario 3D World, Animal Crossing."
+    },
+    "bardSection2": {
+      "name": "David Rubenstein",
+      "role": "Musician",
+      "description": "I’m a retired ocean physicist, who spent a lot of time on board ships deploying instruments, and hoping to get them back. Nowadays I spend my time composing memorable music for video games, films and TV.",
+      "favoritegame": "Outer Wilds"
+    },
+    "bardSection3": {
+      "name": "Rachel Williams",
+      "role": "Film and video game composer",
+      "description": "I'm a film and video game composer passionate about bringing stories to life through music. Outside of the studio, you can find me immersed in the world of video games!.",
+      "favoritegame": "Uncharted"
+    },
+    "bardSection4": {
+      "name": "Joshua Brazil",
+      "role": "Composer / Musician",
+      "description": "Hello there! My name is Josh and I'm a composer. I started with playing guitar and piano as a kid. My passion for music, video games and film led me to pursue a career creating immersive soundtracks for interactive experiences.",
+      "favoritegame": "Mass Effect Trilogy"
+    },
+    "marketersSection1": {
+      "name": "Chris Hamilton",
+      "role": "Marketing Campaign Manager / Lead",
+      "description": "Hello everyone I’m Chris and I'm located in Virginia Beach, VA and have a background in social media, marketing, and brand development and awareness. I'm currently finishing up grad school and looking to get my foot in the door as a full fledged marketer!.",
+      "favoritegame": "Pokemon Emerald"
+    },
+    "marketersSection2": {
+      "name": "Sara Gennevee Alvarez",
+      "role": "Community Manager",
+      "description": "Hi everyone! My name is Sara and I am determined to be that one women strutting in the city with a suit and tie, high heels on, briefcase on the side, going up the mountains to my cabin next to a mini farm!.",
+      "favoritegame": "Jazzpun: Directors Cut"
+    }
   },
   "games": {
     "title": "See Our New Releases!"

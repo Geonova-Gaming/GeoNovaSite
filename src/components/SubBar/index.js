@@ -13,20 +13,21 @@ const SubBar = () => {
       <br />
       <br />
       <Container>
-        <Row className="justify-content-between">
-          <Col xs={4} className="pl-0">
+        <Row className="justify-content-between d-flex align-items-center">
+          <Col xs={3} className="pl-0">
             {" "}
             {/*  */}
             <p> {t("subBar.copyright")} </p>
           </Col>
-          <Col xs={4}>
+          <Col xs={6}>
             <SocialButtonGroup />
           </Col>
-          <Col xs={4} className="pr-0 d-flex justify-content-end">
+          <Col xs={3} className="pr-0 d-flex justify-content-end align-items-center">
             <p className="ms-2"> {t("subBar.tagline")} </p>
           </Col>
         </Row>
       </Container>
+   
     </div>
   );
 };

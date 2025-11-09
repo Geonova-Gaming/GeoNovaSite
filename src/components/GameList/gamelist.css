@@ -1,6 +1,8 @@
-.game-list {
+/* .game-list {
   display: grid;
   place-items: center;
-  min-height: 60vh;
-  grid-gap: 10px; /* Add spacing between cards (optional) */
-}
+  min-height: 100vh;
+  grid-gap: 10px;
+  overflow: hidden;
+  position: relative;
+} */

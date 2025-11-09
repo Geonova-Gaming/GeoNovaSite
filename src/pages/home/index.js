@@ -1,39 +1,89 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Container from "react-bootstrap/Container";
 
 import HeroSection from "../../components/HeroSection";
 import GameList from "../../components/GameList";
 import AboutUs from "../../components/AboutUs";
 import ContactSupport from "../../components/ContactSupport";
+import ArticleFilterList from "../../components/ArticleFilterList";
 
 import "./home.css";
-import "../../styles/global.css";
-import ArticleFilterList from "../../components/ArticleFilterList";
 import { useLocation } from "react-router-dom";
+
 const MainPage = () => {
   const location = useLocation();
+  const starsRef = useRef(null); // para referenciar el contenedor de estrellas
 
-  // Scroll to top on route change (except initial render)
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.hash]);
-  return(
- <>
-    <div className="main-content">
-      {" "}
-      <HeroSection />
-      <div className="d-flex justify-content-center flex-column">
-        <h2 className="my-h2 text-center">Our Games</h2> <hr className="my-hr" />
-        <GameList />
-        <h2 className="my-h2 text-center">News</h2> <hr className="my-hr" />
-        <ArticleFilterList />
-        <h2 className="my-h2 text-center">About Us</h2> <hr className="my-hr" />
-        <AboutUs />
-        <ContactSupport />
+
+  // Crear estrellas una sola vez al montar
+  // useEffect(() => {
+  //   const container = starsRef.current;
+  //   if (!container) return;
+
+  //   for (let i = 0; i < 100; i++) {
+  //     const star = document.createElement("div");
+  //     star.className = "star";
+  //     star.style.left = `${Math.random() * 100}vw`;
+  //     star.style.top = `${Math.random() * 100}vh`;
+  //     star.style.animationDuration = `${5 + Math.random() * 10}s`;
+  //     container.appendChild(star);
+  //   }
+  // }, []);
+
+  useEffect(() => {
+    const container = starsRef.current;
+    if (!container) return;
+
+    for (let i = 0; i < 300; i++) {
+      const staticStar = document.createElement("div");
+      staticStar.className = "star-static";
+      staticStar.style.left = `${Math.random() * 100}vw`;
+      staticStar.style.top = `${Math.random() * 100}vh`;
+      staticStar.style.animationDuration = `0s`;
+      staticStar.style.opacity = Math.random(1);
+      container.appendChild(staticStar);
+    }
+
+    for (let i = 0; i < 200; i++) {
+      const opaStar = document.createElement("div");
+      opaStar.className = "star-static";
+      opaStar.style.left = `${Math.random() * 100}vw`;
+      opaStar.style.top = `${Math.random() * 100}vh`;
+      opaStar.style.animationDuration = `5s`;
+      opaStar.style.opacity = Math.random();
+      container.appendChild(opaStar);
+    }
+
+    for (let i = 0; i < 10; i++) {
+      const starMov = document.createElement("div");
+      starMov.className = "star-movement";
+      starMov.style.left = `${Math.random() * 100}vw`;
+      starMov.style.top = `${Math.random() * 100}vh`;
+      starMov.style.animationDuration = `6s`;
+      starMov.style.opacity = Math.random();
+      container.appendChild(starMov);
+    }
+  }, []);
+
+  return (
+    <>
+      <div className="main-content">
+      <div className="main-stars">
+        <div className="stars-container" ref={starsRef}></div>
       </div>
-    </div>
-  </>
-  )
-}
+        <HeroSection />
+        <div className="d-flex justify-content-center flex-column">
+          <GameList />
+          <ArticleFilterList />
+          <AboutUs />
+          <ContactSupport />
+        </div>
+      </div>
+    </>
+  );
+};
 
 export default MainPage;

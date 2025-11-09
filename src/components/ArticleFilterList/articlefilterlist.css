@@ -44,5 +44,48 @@
 
 .book-item {
   /* Existing styles */
-  margin-bottom: 30px; /* Add vertical space between cards */
+  margin-bottom: 20px;
+}
+
+.style-item {
+  /* Existing styles */
+  /* border: 1px solid white; */
+  background-color: black;
+  border-image: linear-gradient(to bottom, white, #ff00ffb8) 1;
+  box-shadow: 0px 0px 10px 5px #ff00ffb8;
+  padding: 20px;
+  height: 100%;
+  box-shadow:
+  0 -4px 8px rgba(255, 255, 255, 0.3),       /* parte superior blanca */
+  0 4px 8px rgba(255, 0, 255, 0.3),          /* parte inferior magenta */
+  2px 0 6px rgba(255, 0, 255, 0.2),          /* lateral derecho */
+  -2px 0 6px rgba(255, 0, 255, 0.2);         /* lateral izquierdo */
+}
+
+.pagination-style {
+  margin-top: 20px;
+}
+
+.pagination-style .page-item {
+  margin: 0 4px;
+}
+
+.pagination-style .page-item .page-link {
+  color: #ff00ffb8; /* texto púrpura */
+  border: 1px solid #ff00ffb8;
+  border-radius: 0px;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+  background: transparent;
+}
+
+.pagination-style .page-item.active .page-link {
+  background-color: #ff00ffb8;
+  border-color: #ff00ffb8;
+  color: white;
+}
+
+.pagination-style .page-item .page-link:hover {
+  background-color: #ffe6ff;
+  color: #660066;
 }

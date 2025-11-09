@@ -1,54 +1,92 @@
-import React from "react";
-import { Col, Row } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import { Col, Row, Container } from "react-bootstrap";
 import Game from "../Game";
 
 import "./gamelist.css";
-const games = [
-  {
-    id: 1,
-    title: "LoveBug Adventures",
-    imageUrl: "https://via.placeholder.com/300x200", // Replace with actual image URL
-    description:
-      "Help the lovebugs reunite in this charming puzzle platformer! Explore vibrant landscapes, solve tricky puzzles, and overcome adorable obstacles in your quest for love.",
-  },
-  {
-    id: 2,
-    title: "Space Colony X",
-    imageUrl: "https://via.placeholder.com/300x200", // Replace with actual image URL
-    description:
-      "Build a thriving colony on a distant planet in this exciting strategy game! Gather resources, manage your population, and defend your base from alien threats.",
-  },
-  {
-    id: 3,
-    title: "LoveBug Adventures",
-    imageUrl: "https://via.placeholder.com/300x200", // Replace with actual image URL
-    description:
-      "Help the lovebugs reunite in this charming puzzle platformer! Explore vibrant landscapes, solve tricky puzzles, and overcome adorable obstacles in your quest for love.",
-  },
-  {
-    id: 4,
-    title: "Space Colony X",
-    imageUrl: "https://via.placeholder.com/300x200", // Replace with actual image URL
-    description:
-      "Build a thriving colony on a distant planet in this exciting strategy game! Gather resources, manage your population, and defend your base from alien threats.",
-  },
-  // Add more game objects here following the same structure
-];
+
+import unnamedImage from "../../assets/images/unnamed.png";
+import unnamedImage1 from "../../assets/images/CXCX.png";
+import city from "../../assets/images/city.png";
+import ImageWithTransition from "../../components/ImageBackground/ImageBackground";
 
 const GameList = () => {
+  const [glitchText, setGlitchText] = useState("");
+
+  const games = [
+    {
+      id: 2,
+      title: "INCOMING",
+      imageUrl: city, // Replace with actual image URL
+      description: glitchText,
+    },
+    {
+      id: 1,
+      title: "LoveBug Adventures",
+      imageUrl: city, // Replace with actual image URL
+      description:
+        "Help the lovebugs reunite in this charming puzzle platformer! Explore vibrant landscapes, solve tricky puzzles, and overcome adorable obstacles in your quest for love.",
+    },
+    // Add more game objects here following the same structure
+  ];
+
+  function generateRandomText(length) {
+    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
+    let result = "";
+
+    for (let i = 0; i < length; i++) {
+      result += characters.charAt(
+        Math.floor(Math.random() * characters.length)
+      );
+    }
+
+    return result;
+  }
+
+  useEffect(() => {
+    const glitchText = generateRandomText(50);
+
+    if (!glitchText) return; // Evita el error si no se encuentra el elemento
+
+    const interval = setInterval(() => {
+      setTimeout(() => {
+        const glitchText = generateRandomText(50);
+        setGlitchText(glitchText);
+      }, 350); // Duración de la animación glitch (0.3s)
+    }, 4000); // Se repite cada 3 segundos
+
+    return () => clearInterval(interval); // Limpia el intervalo al desmontar
+  }, []);
+
   return (
-    <div className="game-list justify-content-center">
-      <Row>
-        {games.map((game) => (
-          <Col key={game.id} xs={12} md={6} lg={4}>
-            <div className="game-item d-flex justify-content-center">
-              {" "}
-              {/* New wrapper */}
-              <Game game={game} />
-            </div>
-          </Col>
-        ))}
-      </Row>
+    <div className="d-flex" style={{ height: "100vh" }}>
+      <ImageWithTransition image={unnamedImage} section={"games"} />
+      <Container fluid className="w-100 z-1">
+        <div xs={12} className="my-5">
+          <h2 className="text-center z-3" style={{ color: "white" }}>
+            Ou<span className="glitch-text">r</span> Ga
+            <span className="glitch-text">mes</span>
+          </h2>{" "}
+          <hr className="my-hr" />
+        </div>
+      <Container className="w-100 z-1 bg-transparent">
+        <Row className="mx-0 justify-content-center">
+          {games.map((game) => (
+            <Col
+              key={game.id}
+              xs={12}
+              md={6}
+              lg={games?.length > 2 ? 3 : 4}
+              className="mx-0 z-1"
+            >
+              <div className="game-item d-flex justify-content-center h-100">
+                {/* New wrapper */}
+                <Game game={game} />
+              </div>
+            </Col>
+          ))}
+        </Row>
+      </Container>
+      </Container>
     </div>
   );
 };

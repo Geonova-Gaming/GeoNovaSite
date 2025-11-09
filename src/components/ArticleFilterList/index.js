@@ -7,11 +7,15 @@ import {
   Container,
   Pagination,
 } from "react-bootstrap"; // Import NavLink and Card
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation } from "react-router-dom";
 
 import "./articlefilterlist.css";
 import articles from "../../pages/news/articles.json"; // Import the JSON file
+import imagen from "../../assets/images/CXCX.png"; // Import the JSON file
+import news from "../../assets/images/news2.png"; // Import the JSON file
+import nicoMonkey from "../../assets/images/nicoMonkey2.jpg"; // Import the JSON file
 
+import ImageWithTransition from "../../components/ImageBackground/ImageBackground";
 {
   /* <Card.Text>{book.description.slice(0, 50) + "..."} </Card.Text> */
 }
@@ -22,16 +26,17 @@ function ArticleCard({ article }) {
     <div className="book-item">
       <Row>
         <Col
-          xs={4}
+          xs={3}
           className="d-flex justify-content-center align-items-center"
         >
-          <img src={article.imageUrl} alt={article.Title} />
+          <img src={imagen} alt={article.title} width={"200px"} />
+          {/* <img src={article.imageUrl} alt={article.title} /> */}
         </Col>
-        <Col xs={8}>
-          <div className="book-details">
-            <h3>{article.Title}</h3>
+        <Col xs={9}>
+          <div className="book-details style-item">
+            <h3 className="gradient-color">{article.title}</h3>
             <p className="tagline">{article.category}</p>
-            <p>{article.ArticleContent.paragraph1.slice(0, 70) + "..."}</p>
+            <p>{article.articleContent.paragraph1.slice(0, 70) + "..."}</p>
           </div>
         </Col>
         <br />
@@ -46,8 +51,8 @@ function ArticlePagination({ totalPages, currentPage, handlePageChange }) {
   // handlePageChange(1);
   //TODO: Add a state here which checks what the previous page value was. If it was found, then intialize it to 1 if it was a different category
   return (
-    <div className="mt-3 pagination-wrapper" style={{ marginLeft: "150px" }}>
-      <Pagination>
+    <div className="mt-3 pagination-wrapper">
+      <Pagination className="text-center justify-content-center pagination-style">
         <Pagination.Prev
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
@@ -87,27 +92,27 @@ function ArticleList({ filteredArticles }) {
   );
 
   console.log("This is paginatedBooks", paginatedBooks);
+
   return (
-    <Container>
-      <Row style={{ paddingBottom: "20px" }}>
+    <>
+      <Row>
         {/* Grid with responsive breakpoints */}
         {paginatedBooks.map((article) => (
           <ArticleCard
             key={article.id}
             article={article}
-            className="m-2"
             style={{ textAlign: "left" }}
           />
         ))}
       </Row>
-      <Row xs={5}>
+      <Row xs={12}>
         <ArticlePagination
           totalPages={totalPages}
           currentPage={currentPage} // Pass current page as a prop
           handlePageChange={handlePageChange} // Pass handlePageChange function
         />
       </Row>
-    </Container>
+    </>
   );
 }
 
@@ -138,45 +143,58 @@ function ArticleFilterList() {
       : []; // Empty array for invalid filters
 
   return (
-    <div className="d-flex">
-      <Container>
-        <Row xs={6} className="justify-content-center">
+    <div className="d-flex py-5">
+      <ImageWithTransition image={news} section={"news"} />
+      <Container fluid className="w-100 z-1 full-box-shadow">
+        <div xs={12} className="my-5">
+          <h2 className="my-h2 text-center my-3 py-2 z-2">News</h2>
+          <hr className="my-hr" />
+        </div>
+        <Row xs={12} className="justify-content-center m-auto mb-4">
           {" "}
           {/* Outer Row */}
-          <Col xs={6}>
+          <Col xs={8}>
             {" "}
             {/* Content column */}
-            <Container>
-              <ArticleList filteredArticles={filteredArticles} currentPageReset={currentPage} />
-            </Container>
+            <ArticleList
+              filteredArticles={filteredArticles}
+              currentPageReset={currentPage}
+            />
           </Col>
-          <Col xs={4} className="d-flex flex-column">
-            {" "}
-            {/* Filter column */}
-            <Link
-              to="/all" // Replace with appropriate route for "All"
-              className={`py-2 px-3 text-left border-bottom ${
-                location.pathname === "/" || showAllArticles ? "active" : ""
-              }`} // Style based on selection
-            >
-              All
-            </Link>
-            <Link
-              to="/inProgress" // Replace with appropriate route for "Games In Progress"
-              className={`py-2 px-3 text-left border-bottom ${
-                location.pathname.includes("inProgress") ? "active" : ""
-              }`} // Style based on selection
-            >
-              Games In Progress
-            </Link>
-            <Link
-              to="/completed" // Replace with appropriate route for "Games"
-              className={`py-2 px-3 text-left border-bottom ${
-                location.pathname.includes("completed") ? "active" : ""
-              }`} // Style based on selection
-            >
-              Games
-            </Link>
+          <Col xs={4}>
+            <Container className="d-flex flex-column border-gradient">
+              {" "}
+              {/* Filter column */}
+              <Link
+                to="/all" // Replace with appropriate route for "All"
+                className={`py-2 px-3 text-left border-bottom ${
+                  location.pathname === "/" || showAllArticles ? "active" : ""
+                }`} // Style based on selection
+              >
+                All
+              </Link>
+              <Link
+                to="/inProgress" // Replace with appropriate route for "Games In Progress"
+                className={`py-2 px-3 text-left border-bottom ${
+                  location.pathname.includes("inProgress") ? "active" : ""
+                }`} // Style based on selection
+              >
+                Games In Progress
+              </Link>
+              <Link
+                to="/completed" // Replace with appropriate route for "Games"
+                className={`py-2 px-3 text-left border-bottom ${
+                  location.pathname.includes("completed") ? "active" : ""
+                }`} // Style based on selection
+              >
+                Games
+              </Link>
+              <div className="h-100">
+                <div className="position-relative image-container-little">
+                  <img width={ "100%" } src={nicoMonkey} />
+                </div>
+              </div>
+            </Container>
           </Col>
         </Row>
       </Container>

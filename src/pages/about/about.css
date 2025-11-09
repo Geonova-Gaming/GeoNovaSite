@@ -1,3 +1,92 @@
 .main-content {
   background-color: black; /* Inherit background color from parent */
+  padding-top: 100px;
+}
+
+.images-about-us{
+  border-radius: 100%;
+}
+
+.page-section-style {
+  padding: 50px;
+}
+
+.list-guys-content {
+  border: 1px solid white;
+  width: fit-content;
+  position: fixed;
+  top: 50%; 
+  right: 3px; 
+  font-size: 15px; 
+}
+
+.list-guys-content ul {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  color: white;
+}
+
+.list-guys-content ul li {
+  cursor: pointer;
+}
+
+.card-body{
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.card-image-style{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border: 4px solid;
+  margin-bottom: 20px;
+}
+
+.cards-style {
+  position: relative;
+  width: 23rem !important;
+  margin: 20px 20px !important;
+  /* border-radius: 0px !important; */
+  background: transparent !important;
+  color: white !important; 
+  opacity: 0.6;
+  transition: 0.5s;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.cards-style:hover{
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.cards-style:hover .photo-button-about{
+  animation: glitch 0.3s infinite alternate;
+}
+
+.cards-style p {
+  color: white;
+}
+
+.image-container-about{
+  position: relative;
+}
+
+.photo-button-about{
+  position: absolute;
+  bottom: 40px;
+  right: 0px;
+  left: 0px;
+  width: 90%;
+  padding: 10px;
+  background: transparent;
+  color: white;
+  border: 5px solid white;
+  margin: auto;
+  font-weight: 700;
+}
+
+.photo-button-about:hover{
 }

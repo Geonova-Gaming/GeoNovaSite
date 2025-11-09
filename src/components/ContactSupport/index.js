@@ -12,27 +12,50 @@ const ContactSupport = () => {
   return (
     <div className="contact-support">
       <Container>
-        <Row>
-          <Col xs={6} className="text-center">
-            {/* Center text in left column */}
-            <h2 className="my-h2 text-primary font-weight-bold">Contact Us</h2> {/* Blue, bold h2 */}
-            <p>Let's chat! Drop us a line or visit our social media pages.</p>
-            <Link to="/contact">
-              <Button>Contact Us</Button>
-            </Link> {/* Replace with actual link */}
+        <Row style={{ height: "100%" }}>
+          <Col
+            xs={6}
+            className="d-flex flex-column justify-content-between text-center"
+          >
+            <Row>
+              <h2 className="gradient-color">
+                Contact Us
+              </h2>
+            </Row>
+            <Row>
+              <p>Let's chat! Drop us a line or visit our social media pages.</p>
+            </Row>
+            <Row>
+              <Link to="/contact">
+                {/* <button className="custom-button">Contact Us</button> */}
+                <button className="first-button">CONTACT US!</button>
+              </Link>
+            </Row>
           </Col>
-          <Col xs={2}>
-            <Divider />
-          </Col>
-          <Col xs={4} className="text-center">
-            {/* Center text in right column */}
-            <h2 className="my-h2 text-primary font-weight-bold">Show Your Support</h2> {/* Blue, bold h2 */}
-            <p>
-              Help us make more awesome games! Donate to our cause on Kickstarter.
-            </p>
-            <a href="https://www.kickstarter.com/" target="_blank" rel="noopener noreferrer">
-              <Button>Donate</Button>
-            </a>
+          <Col
+            xs={6}
+            className="d-flex flex-column justify-content-between text-center"
+          >
+            <Row>
+              <h2 className="gradient-color">
+                Show Your Support
+              </h2>
+            </Row>
+            <Row>
+              <p>
+                Help us make more awesome games! Donate to our cause on
+                Kickstarter.
+              </p>
+            </Row>
+            <Row>
+              <a
+                href="https://www.kickstarter.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="second-button">Donate</button>
+              </a>
+            </Row>
           </Col>
         </Row>
       </Container>

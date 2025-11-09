@@ -1,4 +1,5 @@
-import React from "react";
+import { useEffect, useState } from "react";
+
 import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import MiscNav from "../components/SecondaryNavBar";
 import NavBar from "../components/NavBar";
@@ -15,6 +16,7 @@ import LovebugArticlePage from "./news/ArticlePages/lovebugArticle";
 // import "/src/styles/global.scss";
 
 function App() {
+
   return (
     <HashRouter>
       <NavBar /> {/* Render NavBar inside BrowserRouter */}

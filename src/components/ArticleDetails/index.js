@@ -31,7 +31,7 @@ const ArticleDetails = ({ article }) => {
     article.isGameComplete === true ? "Game" : "Game In Progress";
 
   return (
-    <div className="d-flex flex-column mb-4">
+    <div className="d-flex flex-column mb-4 h-100">
       <h3 className="mb-2">{article.Title}</h3>
       <p className="text-muted mb-2">
         {article.Date} - {articleCategory}

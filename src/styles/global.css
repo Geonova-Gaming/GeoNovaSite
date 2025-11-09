@@ -1,7 +1,15 @@
+/* src/styles/global.css */
+@font-face {
+  font-family: 'Centauri';
+  src: url('/public/fonts/Centauri.ttf') format('opentype');
+}
+
 body {
+  font-family: 'Orbitron', sans-serif !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   color: white;
-  font-family: Arial, sans-serif; /* Set a default font family */
-  margin: 0; /* Remove default margin from body */
 }
 
 a {
@@ -17,10 +25,12 @@ p {
 
 h1 {
   color: inherit;
+  font-family: 'Centauri', sans-serif !important;
 }
 
 h2 {
   color: inherit; /* Inherit from parent (which is likely white) */
+  font-family: 'Centauri', sans-serif !important;
 }
 
 .card-text {
@@ -28,7 +38,7 @@ h2 {
 }
 
 .header {
-  color: rgb(45, 97, 186); /* Set your desired color for h2 elements */
+  color: rgb(255, 255, 255); /* Set your desired color for h2 elements */
   font-weight: bold;
 }
 
@@ -56,4 +66,258 @@ h2 {
 
 .MiscNav {
   background-color: black;
+}
+
+@keyframes glitch {
+  0% { transform: translateY(0); text-shadow:cyan 2px 0px;}
+  20% { transform: translateY(-2px); text-shadow: purple -2px 0px; }
+  40% { transform: translateY(2px); text-shadow:cyan 2px 0px; }
+  60% { transform: translateY(-2px); text-shadow: purple -2px 0px; }
+  80% { transform: translateY(2px); text-shadow:cyan 2px 0px; }
+  100% { transform: translateY(0); text-shadow: purple -2px 0px; }
+}
+
+@keyframes superglitch {
+  0% { transform: translateY(0); text-shadow:cyan 2px 0px;}
+  30% { transform: translateY(2px); text-shadow:purple -2px 0px; }
+  60% { transform: translateY(0px); text-shadow:cyan 2px 0px; }
+  100% { transform: translateY(-2); text-shadow: purple -2px 0px; }
+}
+
+.glitch-text {
+  display: inline-block;
+  position: relative;
+}
+
+.glitch-text-infinite {
+  display: inline-block;
+  position: relative;
+  animation: glitch 0.3s infinite alternate;
+}
+
+.nav-link:focus, .nav-link:hover {
+  animation: superglitch 0.1s infinite alternate;
+}
+
+.image-container {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  overflow: hidden; /* Evita desbordes */
+  /* transition: opacity 1s ease-in-out;  */
+}
+
+.image-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.50);
+  box-shadow: inset 120px 100px 250px #000000, inset -120px -100px 250px #000000;
+}
+
+.image-container-little {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  overflow: hidden; /* Evita desbordes */
+  /* transition: opacity 1s ease-in-out;  */
+}
+
+.image-container-little::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.50);
+  box-shadow: inset 120px 100px 250px #000000, inset -120px -100px 250px #000000;
+}
+
+.scrolling-image {
+  opacity: 0; /* Comienza con opacidad 0 */
+  width: 100%;
+  height: 100vh;
+  object-fit: cover; /* Asegura que la imagen cubra todo el contenedor sin deformarse */
+  /* transition: opacity 1s ease-in-out;  */
+}
+
+.scrolling-image.faded {
+   opacity: 0.3;
+}
+
+.gradient-color {
+  background: linear-gradient(to bottom, white, #ff00ffb8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.custom-button {
+  border: 4px solid; /* grosor del borde */
+  border-image: linear-gradient(to bottom, white, #ff00ffb8) 1;
+  background-color: transparent; /* o el color que quieras */
+  padding:15px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.5s;
+
+}
+
+.custom-button:hover {
+  background-color: transparent; /* o el color que quieras */
+  background: linear-gradient(to bottom, #ffffff00, rgba(255, 255, 255, 0.65));
+  color: white;
+}
+
+.first-button, .second-button {
+  font-size: 1.3rem;
+  padding: 0.75rem 1.5rem;
+  color: #fff;
+  border: 4px solid;
+  background-color: transparent; /* o el color que quieras */
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border-image: linear-gradient(to bottom, white, #ff00ffb8) 1;
+  text-shadow: 2px -1px 0 #000, -3px 3px 2px #ff00ffb8;
+  transition: all 0.2s ease-in-out;
+}
+
+.first-button:hover {
+  transform: rotate(-1.5deg) scale(1.06);
+  filter: brightness(1.1);
+}
+
+.second-button:hover {
+  transform: rotate(1.5deg) scale(1.06);
+  filter: brightness(1.1);
+}
+
+a {
+  text-decoration: none !important;
+}
+/* 
+.full-box-shadow{
+  box-shadow: 0px 0px 100px 0px #ff00ffb8;
+  height: 100vh !important;
+} */
+
+.border-gradient {
+  box-shadow: 0 -4px 8px rgba(255, 255, 255, 0.3), 0 4px 8px rgba(255, 0, 255, 0.3), 2px 0 6px rgba(255, 0, 255, 0.2), -2px 0 6px rgba(255, 0, 255, 0.2);
+}
+
+.subtitle-styles {
+  width: max-content;;
+}
+
+.paragraph-styles {
+  text-align: justify;
+}
+
+/* .main-stars{
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  height: 100vh;
+}
+
+.stars-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: transparent;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  top: 0;
+  left: calc(100% * var(--x));
+  animation: fall 10s linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+} */
+
+.main-stars{
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100vh;
+}
+
+.stars-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: transparent;
+  overflow: hidden;
+}
+
+.star-static {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle ease-in-out infinite;
+  animation-duration: 8s, 2s;
+  animation-delay:0s, calc(var(--twinkle-delay, 0s));
+}
+
+.star-movement {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: travel linear infinite;
+  animation-duration: 8s, 2s;
+  animation-delay:0s, calc(var(--twinkle-delay, 0s));
+}
+
+/* Movimiento horizontal (viaje espacial) */
+@keyframes travel {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100vw);
+  }
+}
+
+/* Parpadeo (titilar) */
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }

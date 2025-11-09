@@ -4,28 +4,30 @@ import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import articles from "./articles.json"; // Import the JSON file
+import Logo from "../../assets/images/Geonova2.jpg";
 
 import "./news.css";
 import { Nav } from "react-bootstrap";
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation } from "react-router-dom";
 
-function ArticleCard({ article }) {
+function ArticleCard({ article, key }) {
   const location = useLocation();
 
   // Scroll to top on route change (except initial render)
   useEffect(() => {
+    console.log(article);
     window.scrollTo(0, 0);
   }, [location.hash]);
 
   return (
-    <Card style={{ width: "18rem" }} className="article-card">
-      <Card.Img variant="top" src="https://via.placeholder.com/800x400" />
+    <Card style={{ width: "18rem" }} className="cards-style-news">
+      <Card.Img variant="top" src={Logo} />
       <Card.Body className="d-flex flex-column align-items-center">
-        <Card.Text>{article.Date}</Card.Text>
-        <Card.Title>{article.Title}</Card.Title>
-        <Link to={article.link}>
-          <Button variant="success">Continue Reading</Button>
-        </Link>
+        <Card.Text>{article.date}</Card.Text>
+        <Card.Title>{article.title}</Card.Title>
+        <Button as={Link} to={article.link} variant="secondary" className="custom-button-news border-1 rounded-0">
+          Continue Reading
+        </Button>
       </Card.Body>
     </Card>
   );
@@ -36,8 +38,8 @@ function ArticleList({ articlesData }) {
     <div className="d-flex flex-wrap justify-content-center">
       {" "}
       {/* Center articles */}
-      {articlesData.map((article) => (
-        <ArticleCard key={article.Title} article={article} className="m-2" />
+      {articlesData.map((article, index) => (
+        <ArticleCard key={index} article={article} className="m-2" />
       ))}
     </div>
   );
@@ -47,15 +49,28 @@ function ArticleNav({ setFilter }) {
   return (
     <Nav defaultActiveKey="/home" as="ul">
       <Nav.Item as="li">
-        <Nav.Link onClick={() => setFilter("all")}>All Posts</Nav.Link>
+        <Nav.Link
+          className={"custom-button-news"}
+          onClick={() => setFilter("all")}
+        >
+          All Posts
+        </Nav.Link>
       </Nav.Item>
       <Nav.Item as="li">
-        <Nav.Link onClick={() => setFilter("inProgress")}>
+        <Nav.Link
+          className={"custom-button-news"}
+          onClick={() => setFilter("inProgress")}
+        >
           Games In Progress
         </Nav.Link>
       </Nav.Item>
       <Nav.Item as="li">
-        <Nav.Link onClick={() => setFilter("completed")}>Games</Nav.Link>
+        <Nav.Link
+          className={"custom-button-news"}
+          onClick={() => setFilter("completed")}
+        >
+          Games
+        </Nav.Link>
       </Nav.Item>
     </Nav>
   );
@@ -63,6 +78,8 @@ function ArticleNav({ setFilter }) {
 
 const NewsPage = () => {
   const [filter, setFilter] = useState("all"); // Initial filter state
+
+  console.log(articles);
 
   const filteredArticles =
     filter === "all"
@@ -78,19 +95,20 @@ const NewsPage = () => {
       : []; // Empty array for invalid filters
 
   return (
-    <div className="main-content wrapper p-5">
-      <Container fluid className="p-5">
-        <Container className="p-5">
-          <h1 className="header">News Page</h1>
+    <div className="main-content">
+      <Container fluid className="mt-5">
+        <Container>
+          <h1 className="header">News</h1>
           <hr />
         </Container>
-        <div className="d-flex justify-content-center pt-5">
+        <Container className="d-flex justify-content-center mt-5 p-2">
           {" "}
           {/* Center content */}
           <ArticleNav setFilter={setFilter} />
-        </div>
-        <br />
-        <ArticleList articlesData={filteredArticles} />
+        </Container>
+        <Container className="d-flex justify-content-center mt-5 p-2">
+          <ArticleList articlesData={filteredArticles} />
+        </Container>
       </Container>
     </div>
   );
