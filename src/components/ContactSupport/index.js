@@ -14,7 +14,7 @@ const ContactSupport = () => {
       <Container>
         <Row style={{ height: "100%" }}>
           <Col
-            xs={6}
+            xs={4}
             className="d-flex flex-column justify-content-between text-center"
           >
             <Row>
@@ -28,12 +28,30 @@ const ContactSupport = () => {
             <Row>
               <Link to="/contact">
                 {/* <button className="custom-button">Contact Us</button> */}
-                <button className="first-button">CONTACT US!</button>
+                <button className="first-button">CONTACT US</button>
               </Link>
             </Row>
           </Col>
           <Col
-            xs={6}
+            xs={4}
+            className="d-flex flex-column justify-content-between text-center"
+          >
+            <Row>
+              <h2 className="gradient-color">
+                Join Our Newsletter
+              </h2>
+            </Row>
+            <Row>
+              <p>Stay in the loop with our latest projects! Members get access to exclusive content.</p>
+            </Row>
+            <Row>
+              <Link to="/contact">
+                <button className="first-button">SIGN UP</button>
+              </Link>
+            </Row>
+          </Col>
+          <Col
+            xs={4}
             className="d-flex flex-column justify-content-between text-center"
           >
             <Row>
@@ -53,7 +71,7 @@ const ContactSupport = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <button className="second-button">Donate</button>
+                <button className="first-button">DONATE</button>
               </a>
             </Row>
           </Col>

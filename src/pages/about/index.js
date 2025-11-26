@@ -147,7 +147,10 @@ function Cards({ key, buddy, cardColor }) {
       <Card.Body className="card-body" style={{ border: `1px solid ${cardColor}`}}>
         <Card.Text><strong>Abilities:</strong> {buddy?.role}</Card.Text>
         <Card.Text><strong>Favorite Game:</strong> {buddy?.favoritegame}</Card.Text>
-        <Card.Text><strong>Descriptión:</strong> {buddy?.description?.slice(0, 20) + (buddy?.description?.length > 20 ? "..." : "")}</Card.Text>
+        {/* <Card.Text><strong>Descriptión:</strong> {buddy?.description?.slice(0, 20) + (buddy?.description?.length > 20 ? "..." : "")}</Card.Text> */}
+      <Card.Text className="description-text">
+        <strong>Descriptión:</strong> {buddy?.description}
+      </Card.Text>
       </Card.Body>
     </Card>
   );

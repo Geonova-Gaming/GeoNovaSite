@@ -5,9 +5,8 @@
   width: 100%;
   height: 100vh;
   position: relative;
-  /* background: url("https://github.com/sjvarnum/acme-media-showcase/blob/master/img/showcase.jpg?raw=true") */
-  background: url("../../assets/images/CXC.png")
-    no-repeat center center/cover;
+  /* TODO: Replace background with an image unless we want to keep it this way */
+  /* background: url("../../assets/images/CXC.png") no-repeat center center/cover; */
 }
 
 /* Showcase Overlay */
@@ -31,6 +30,8 @@
   justify-content: center;
   z-index: 3;
   position: relative;
+  width: 100%;
+  max-width: none;
 }
 
 .showcase-content h1 {

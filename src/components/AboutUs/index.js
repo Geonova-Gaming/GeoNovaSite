@@ -14,25 +14,25 @@ const aboutUsData = [
     id: 1,
     image: Geonova, // Replace with actual image URL
     heading: "Who We Are",
-    subheading: "A passionate group of developers and artists.",
+    subheading: "A passionate group of writers, musicians, developers and artists",
   },
   {
     id: 2,
     image: Artists, // Replace with actual image URL
     heading: "Artists",
-    subheading: "To create fun and engaging games for everyone.",
+    subheading: "Aiming to create art that captures our vision",
   },
   {
     id: 3,
     image: Coders, // Replace with actual image URL
     heading: "Coders",
-    subheading: "We love connecting with our players!",
+    subheading: "Create fun and engaging games for everyone",
   },
   {
     id: 4,
     image: Bard, // Replace with actual image URL
     heading: "Bard",
-    subheading: "We're always working on new and exciting projects.",
+    subheading: "Composing memorable music on our new and exciting projects",
   },
 ];
 

@@ -7,16 +7,28 @@ import "./gamelist.css";
 import unnamedImage from "../../assets/images/unnamed.png";
 import unnamedImage1 from "../../assets/images/CXCX.png";
 import city from "../../assets/images/city.png";
+import questionMark from "../../assets/images/QuestionMark.png";
 import ImageWithTransition from "../../components/ImageBackground/ImageBackground";
 
 const GameList = () => {
-  const [glitchText, setGlitchText] = useState("");
+  const teaserMessage =
+    "Wait until our title reveal event to get the full scoop of our latest project!";
+  const [glitchText, setGlitchText] = useState(teaserMessage);
+
+   function generateRandomText(length) {
+    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
+    let result = "";
+    for (let i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return result;
+  }
 
   const games = [
     {
       id: 2,
-      title: "INCOMING",
-      imageUrl: city, // Replace with actual image URL
+      title: "Upcoming Game (TBA)",
+      imageUrl: questionMark, // Replace with actual image URL
       description: glitchText,
     },
     {
@@ -29,33 +41,23 @@ const GameList = () => {
     // Add more game objects here following the same structure
   ];
 
-  function generateRandomText(length) {
-    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
-    let result = "";
 
-    for (let i = 0; i < length; i++) {
-      result += characters.charAt(
-        Math.floor(Math.random() * characters.length)
-      );
-    }
+useEffect(() => {
+  const teaserMessage =
+    "Wait until our title reveal event to get the full scoop of our latest project!";
 
-    return result;
-  }
+  const interval = setInterval(() => {
+    // show glitch
+    setGlitchText(generateRandomText(50));
 
-  useEffect(() => {
-    const glitchText = generateRandomText(50);
+    // after short delay, revert back to teaser
+    setTimeout(() => {
+      setGlitchText(teaserMessage);
+    }, 350); // glitch duration
+  }, 4000); // repeat every 4s
 
-    if (!glitchText) return; // Evita el error si no se encuentra el elemento
-
-    const interval = setInterval(() => {
-      setTimeout(() => {
-        const glitchText = generateRandomText(50);
-        setGlitchText(glitchText);
-      }, 350); // Duración de la animación glitch (0.3s)
-    }, 4000); // Se repite cada 3 segundos
-
-    return () => clearInterval(interval); // Limpia el intervalo al desmontar
-  }, []);
+  return () => clearInterval(interval);
+}, []);
 
   return (
     <div className="d-flex" style={{ height: "100vh" }}>

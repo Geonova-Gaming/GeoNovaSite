@@ -1,0 +1,39 @@
+.countdown-container {
+  display: flex;
+  flex-direction: column; /* stack title above countdown */
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  padding: 2rem 0;
+}
+
+.countdown-title {
+  color: #fff;
+  font-size: clamp(18px, 2.5vw, 40px);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+svg {
+  width: 90%;
+  max-width: 1000px;
+  height: auto;
+}
+
+.time-value {
+  fill: #f6ff00;
+  font-size: clamp(60px, 12vw, 180px);
+  font-family: "Creepster", cursive;
+  text-anchor: middle;
+  filter: url(#glow);
+}
+
+.time-label {
+  fill: #fca5a5;
+  font-size: clamp(20px, 3vw, 36px);
+  font-family: monospace;
+  text-anchor: middle;
+  letter-spacing: 3px;
+}

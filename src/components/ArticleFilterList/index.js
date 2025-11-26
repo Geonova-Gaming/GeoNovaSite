@@ -13,7 +13,7 @@ import "./articlefilterlist.css";
 import articles from "../../pages/news/articles.json"; // Import the JSON file
 import imagen from "../../assets/images/CXCX.png"; // Import the JSON file
 import news from "../../assets/images/news2.png"; // Import the JSON file
-import nicoMonkey from "../../assets/images/nicoMonkey2.jpg"; // Import the JSON file
+import GeoNovaIcon from "../../assets/images/Geonova1.png"; // Import the JSON file
 
 import ImageWithTransition from "../../components/ImageBackground/ImageBackground";
 {
@@ -191,7 +191,7 @@ function ArticleFilterList() {
               </Link>
               <div className="h-100">
                 <div className="position-relative image-container-little">
-                  <img width={ "100%" } src={nicoMonkey} />
+                  <img width={ "100%" } src={GeoNovaIcon} />
                 </div>
               </div>
             </Container>

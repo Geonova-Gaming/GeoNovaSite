@@ -5,6 +5,7 @@ import GamingButtonComponent from "../GamingButton/GamingButton"
 import GamingButtonCircle from "../GamingButton/GamingButtonCircle"
 
 import "./herosection.css";
+import CountdownTimer from "../CountdownTimer";
 
 const HeroSection = () => {
   const handleButtonClick = () => {
@@ -13,11 +14,10 @@ const HeroSection = () => {
 
   return (
     <header className="showcase">
-      {/* Background image goes here (use CSS) */}
       <div className="showcase-content">
-        {/* <p>Short description of your service/product.</p> */}
         {/* <GamingButtonComponent>READ ABOUT OUR LATEST GAME</GamingButtonComponent> */}
-        <GamingButtonCircle>READ A<span className="glitch-text">B</span>OUT OUR LATEST <span className="glitch-text">GAME</span></GamingButtonCircle>
+        {/* <GamingButtonCircle>READ A<span className="glitch-text">B</span>OUT OUR LATEST <span className="glitch-text">GAME</span></GamingButtonCircle> */}
+      <CountdownTimer targetDate="2025-12-21T00:00:00"  title="Days Until Title Reveal Event: " />
       </div>
     </header>
   );
