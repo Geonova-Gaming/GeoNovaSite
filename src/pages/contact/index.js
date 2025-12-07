@@ -21,10 +21,8 @@ const ContactPage = () => {
   const formData = { name, email, message, selectedFile };
 
   // Log the form data
-  console.log("Form Submitted:", formData);
 
   // Extra confirmation message
-  console.info("✅ Submission successful! Your form was processed.");
 
   // Optional: browser popup alert
   alert("Form submission works! ✅");
