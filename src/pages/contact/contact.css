@@ -9,3 +9,59 @@
 .wrapper {
   height: 100vh; /* Set viewport height */
 }
+
+.main-stars {
+  position: fixed;       /* stays behind everything */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;           /* push behind content */
+  pointer-events: none;  /* allow clicks to pass through */
+}
+
+.stars-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+
+.star-static,
+.star-movement {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+}
+
+.star-static {
+  animation: twinkle 5s infinite alternate;
+}
+
+.star-movement {
+  width: 3px;
+  height: 3px;
+  background: #fff;
+  animation: moveStar linear infinite;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.2; }
+  to { opacity: 1; }
+}
+
+@keyframes moveStar {
+  from { transform: translateY(0); }
+  to { transform: translateY(100vh); }
+}
+
+/* Inverted form controls */
+.form-control {
+  background-color: #212529; /* dark */
+  color: #f8f9fa;            /* light */
+  border: 1px solid #f8f9fa;
+}
+

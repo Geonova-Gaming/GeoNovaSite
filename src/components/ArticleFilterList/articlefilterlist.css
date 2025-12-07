@@ -89,3 +89,14 @@
   background-color: #ffe6ff;
   color: #660066;
 }
+
+.news-empty-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh; /* centers vertically */
+  background-color: rgba(255, 255, 255, 0.02); /* less opaque */
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+}

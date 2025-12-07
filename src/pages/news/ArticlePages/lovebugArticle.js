@@ -9,9 +9,6 @@ const LovebugArticlePage = () => {
     (article) => article.Title === "Article Title 1"
   );
   if (targetArticle) {
-    console.log(targetArticle);
-    // console.log(targetArticle.Date); // Access article date
-    // console.log(targetArticle.ArticleContent.paragraph1); // Access first paragraph
   }
 
   return (

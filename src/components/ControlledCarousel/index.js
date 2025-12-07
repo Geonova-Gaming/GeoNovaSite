@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import { Carousel, Container, Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-// Import images for each slide
 import LovebugAppIcon from "../../assets/images/LovebugAppIcon.png";
 import questionMark from "../../assets/images/QuestionMark.png";
 
@@ -11,18 +12,16 @@ import "./controlledCarousel.css";
 const slides = [
   {
     header: "The Lovebug Game",
-    subtext: "This is the subtext for the first slide.",
+    subtext: "Help the lovebugs grow their swarm by collecting pollen in this mobile game! Explore vibrant landscapes and overcome adorable obstacles.",
     link: "/games/releases/LoveBugGame",
-    buttonText: "Learn More",
-    image: LovebugAppIcon, // unique image
+    image: LovebugAppIcon,
   },
   {
     header: "Upcoming Game (TBA)",
-    subtext: "This is the subtext for the second slide.",
+    subtext: "Title Reveal Event will be on our Discord on Dec. 21st @ 5:00 PM! Stay tuned for more details about our exciting new project.",
     link: "/page2",
-    buttonText: "Explore Now",
-    image: questionMark, // unique image
-  }
+    image: questionMark,
+  },
 ];
 
 function CustomCarousel() {
@@ -37,27 +36,28 @@ function CustomCarousel() {
       <Carousel
         activeIndex={activeIndex}
         onSelect={handleSelect}
-        className="no-transition"
         interval={null}
+        indicators={true}
+        controls={true}   // ensure arrows are rendered
       >
         {slides.map((slide, index) => (
           <Carousel.Item key={index}>
+            {/* Image only */}
             <img
               className="carousel-image"
-              src={slide.image}   // use slide-specific image
+              src={slide.image}
               alt={slide.header}
             />
-            <Carousel.Caption className="d-flex align-items-center justify-content-center">
+
+            {/* Caption BELOW image */}
+            <div className="carousel-caption-below text-center">
               <Row>
                 <Col>
                   <h2>{slide.header}</h2>
                   <p>{slide.subtext}</p>
-                  <Link to={slide.link}>
-                    <Button variant="primary">{slide.buttonText}</Button>
-                  </Link>
                 </Col>
               </Row>
-            </Carousel.Caption>
+            </div>
           </Carousel.Item>
         ))}
       </Carousel>

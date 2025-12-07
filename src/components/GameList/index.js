@@ -35,7 +35,7 @@ const GameList = () => {
       title: "LoveBug Adventures",
       imageUrl: LovebugAppIcon, // Replace with actual image URL
       description:
-        "Help the lovebugs reunite in this charming puzzle platformer! Explore vibrant landscapes, solve tricky puzzles, and overcome adorable obstacles in your quest for love.",
+        "Help the lovebugs grow their swarm by collecting pollen in this mobile game! Explore vibrant landscapes and overcome adorable obstacles.",
     },
     // Add more game objects here following the same structure
   ];

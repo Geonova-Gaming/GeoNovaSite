@@ -1,19 +1,67 @@
-.no-transition .carousel-item {
-  transition: none !important;
-}
-
 .carousel-image {
-  max-width: 100%;
-  max-height: 50vh;        /* half viewport height */
-  object-fit: contain;     /* preserve aspect ratio */
-  display: block;
+  max-height: 50vh;
+  object-fit: contain;
   margin: 0 auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-/* Hover effect */
+/* Glow effect on image hover */
 .carousel-image:hover {
-  transform: scale(1.05); /* subtle zoom */
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6); /* glowing edge */
+  box-shadow: 0 0 20px 6px rgba(128, 86, 244, 0.8);
+  transform: scale(1.05);
 }
 
+/* Caption below image */
+.carousel-caption-below {
+  margin-top: 1rem;
+  color: #fff;
+  text-align: center;
+  z-index: 0; /* ensure it doesn't block arrows/indicators */
+}
+
+/* Indicators beneath everything */
+.carousel-indicators {
+  position: static !important;
+  margin-top: 1rem;
+  justify-content: center;
+  z-index: 2; /* keep them clickable */
+}
+
+/* Indicator dots */
+.carousel-indicators [data-bs-target] {
+  background-color: #888;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-indicators .active {
+  background-color: #8056f4;
+  box-shadow: 0 0 8px 3px rgba(128, 86, 244, 0.8);
+}
+
+/* Glow effect on hover */
+.carousel-indicators [data-bs-target]:hover {
+  box-shadow: 0 0 10px 4px rgba(128, 86, 244, 0.8);
+  transform: scale(1.2);
+}
+
+/* Arrow controls */
+.carousel-control-prev,
+.carousel-control-next {
+  z-index: 2; /* ensure arrows are above captions */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: drop-shadow(0 0 6px rgba(128, 86, 244, 0.8));
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  filter: drop-shadow(0 0 12px rgba(128, 86, 244, 1));
+  transform: scale(1.2);
+}
