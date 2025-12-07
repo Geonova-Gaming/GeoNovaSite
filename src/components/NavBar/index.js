@@ -82,11 +82,13 @@ function NavBar() {
         <img alt="" src={GeoNova} className="d-inline-block navbarImage" />{" "}
         <div className="degrade geonovaText">
           <div className="navText">
-            G<span className="glitch-text">E</span>
+            {/* TODO: Remove Glitching texts */}
+            {/* G<span className="glitch-text">E</span>
             ONO
             <span className="glitch-text">V</span>
             <span>A GAMI</span>
-            <span className="glitch-text">NG</span>
+            <span className="glitch-text">NG</span> */}
+            GEONOVA GAMING
           </div>
         </div>
       </Navbar.Brand>
@@ -104,7 +106,8 @@ function NavBar() {
           </Nav.Item>
           <Nav.Item as="li">
             <Nav.Link as={Link} to="/games">
-              <span className="glitch-text">Games</span>
+              {/* <span className="glitch-text">Games</span> */}
+              <span>Games</span>
             </Nav.Link>
           </Nav.Item>
           <Nav.Item as="li">
@@ -119,7 +122,8 @@ function NavBar() {
           </Nav.Item>
           <Nav.Item as="li">
             <Nav.Link as={Link} to="/contact">
-              <span className="glitch-text">Contact</span>
+              {/* <span className="glitch-text">Contact</span> */}
+              <span>Contact</span>
             </Nav.Link>
           </Nav.Item>
         </Nav>

@@ -50,8 +50,8 @@ const CountdownTimer = ({ targetDate, title }) => {
       <svg viewBox="0 0 1400 700" opacity="1">
         {/* Glow filter only */}
         <filter id="glow" width="300%" height="300%" x="-100%" y="-100%">
-          <feGaussianBlur in="SourceAlpha" stdDeviation="13" result="blur" />
-          <feFlood floodColor="rgba(239, 68, 68, 0.75)" result="flood" />
+          <feGaussianBlur in="SourceAlpha" stdDeviation="20" result="blur" />
+          <feFlood floodColor="rgba(128, 86, 244, 0.75)" result="flood" />
           <feComposite in="flood" in2="blur" operator="in" result="glowColor" />
           <feMerge>
             <feMergeNode in="glowColor" />

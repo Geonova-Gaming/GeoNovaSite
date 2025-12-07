@@ -12,7 +12,6 @@
 }
 
 .list-guys-content {
-  border: 1px solid white;
   width: fit-content;
   position: fixed;
   top: 50%; 
@@ -103,4 +102,20 @@
   -webkit-box-orient: vertical;
   transition: max-height 0.3s ease;
   max-height: 3em; /* enough for 2 lines */
+}
+
+.main-stars {
+  position: fixed;       /* stays behind everything */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;         /* full viewport height */
+  overflow: hidden;
+  z-index: -1;           /* behind content */
+}
+
+.stars-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }

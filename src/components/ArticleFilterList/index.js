@@ -11,7 +11,7 @@ import { Link, useLocation } from "react-router-dom";
 
 import "./articlefilterlist.css";
 import articles from "../../pages/news/articles.json"; // Import the JSON file
-import imagen from "../../assets/images/CXCX.png"; // Import the JSON file
+import imagen from "../../assets/images/Genova-Icon.png"; // Import the JSON file
 import news from "../../assets/images/news2.png"; // Import the JSON file
 import GeoNovaIcon from "../../assets/images/Geonova1.png"; // Import the JSON file
 

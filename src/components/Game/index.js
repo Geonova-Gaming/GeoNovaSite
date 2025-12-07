@@ -13,8 +13,9 @@ const Game = ({ game }) => {
       <Card className="game-card custom-background smaller-card">
         <Image variant="top" src={game.imageUrl} alt={game.title} />
         <Card.Body>
-          <Card.Title>{game.title}</Card.Title>
-          <Card.Text>{game.id == 2 ? <span className="glitch-text d-block">{game.description}</span> : game.description}</Card.Text>
+          <Card.Title className="fw-bold">{game.title}</Card.Title>
+          {/* <Card.Text>{game.id == 2 ? <span className="glitch-text d-block">{game.description}</span> : game.description}</Card.Text> */}
+            <Card.Text>{game.description}</Card.Text>
         </Card.Body>
       </Card>
     // </OverlayTrigger>

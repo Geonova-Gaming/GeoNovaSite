@@ -12,11 +12,8 @@ import Logo from "../../assets/images/Geonova2.jpg";
 
 // ARTIST
 import Naomi from "../../assets/team_images/artists/Naomi.png";
-import Guilherme from "../../assets/team_images/artists/Guilherme.png";
 import Ryan from "../../assets/team_images/artists/Ryan.png";
-import Elysia from "../../assets/team_images/artists/Elysia1.png";
-import Bao from "../../assets/team_images/artists/Bao.png";
-import Marlie from "../../assets/team_images/artists/Marlie.png";
+import Nimi from "../../assets/team_images/artists/Nimi.png";
 
 // ARTIST
 
@@ -49,8 +46,9 @@ import Joshua from "../../assets/team_images/bards/Joshua.png";
 // BARDS
 
 // MARKETERS
-import Hamilton from "../../assets/team_images/marketers/Hamilton.png";
+import Rosy from "../../assets/team_images/marketers/rosy.png";
 import Sara from "../../assets/team_images/marketers/Sara.png";
+import Carolina from "../../assets/team_images/marketers/Sara.png";
 // MARKETERS
 
 function PageSection({
@@ -141,7 +139,7 @@ function Cards({ key, buddy, cardColor }) {
         className="card-image-style"
       />
       <button className="photo-button-about">
-        ¡Click Me!
+        Learn More
       </button>
       </div>
       <Card.Body className="card-body" style={{ border: `1px solid ${cardColor}`}}>
@@ -195,24 +193,19 @@ const AboutPage = () => {
     { key: "about.coderSection1", image: Tam },
     { key: "about.coderSection2", image: Nico },
     { key: "about.coderSection3", image: Carl },
-    { key: "about.coderSection4", image: Nick },
-    { key: "about.coderSection5", image: Daniel },
-    { key: "about.coderSection6", image: India },
-    { key: "about.coderSection7", image: Paul },
-    { key: "about.coderSection8", image: Steffan },
-    { key: "about.coderSection9", image: Brandon },
-    { key: "about.coderSection10", image: Anthony },
-    { key: "about.coderSection11", image: Mehki },
-    { key: "about.coderSection12", image: Cameron },
+    { key: "about.coderSection4", image: Daniel },
+    { key: "about.coderSection5", image: India },
+    { key: "about.coderSection6", image: Paul },
+    { key: "about.coderSection7", image: Steffan },
+    { key: "about.coderSection8", image: Brandon },
+    { key: "about.coderSection9", image: Anthony },
+    { key: "about.coderSection10", image: Cameron },
   ];
 
   const artistTranslationArray = [
     { key: "about.artistSection1", image: Naomi },
-    { key: "about.artistSection2", image: Guilherme },
-    { key: "about.artistSection3", image: Ryan },
-    { key: "about.artistSection4", image: Elysia },
-    { key: "about.artistSection5", image: Bao },
-    { key: "about.artistSection6", image: Marlie },
+    { key: "about.artistSection2", image: Ryan },
+    { key: "about.artistSection3", image: Nimi },
   ];
 
   const bardTranslationArray = [
@@ -223,8 +216,9 @@ const AboutPage = () => {
   ];
   
   const marketersTranslationsArray = [
-    { key: "about.marketersSection1", image: Hamilton },
+    { key: "about.marketersSection1", image: Rosy },
     { key: "about.marketersSection2", image: Sara },
+    { key: "about.marketersSection3", image: Carolina },
   ];
 
   const writersTranslationArrays = [

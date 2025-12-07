@@ -14,7 +14,7 @@ const ContactSupport = () => {
       <Container>
         <Row style={{ height: "100%" }}>
           <Col
-            xs={4}
+            xs={6}
             className="d-flex flex-column justify-content-between text-center"
           >
             <Row>
@@ -33,25 +33,7 @@ const ContactSupport = () => {
             </Row>
           </Col>
           <Col
-            xs={4}
-            className="d-flex flex-column justify-content-between text-center"
-          >
-            <Row>
-              <h2 className="gradient-color">
-                Join Our Newsletter
-              </h2>
-            </Row>
-            <Row>
-              <p>Stay in the loop with our latest projects! Members get access to exclusive content.</p>
-            </Row>
-            <Row>
-              <Link to="/contact">
-                <button className="first-button">SIGN UP</button>
-              </Link>
-            </Row>
-          </Col>
-          <Col
-            xs={4}
+            xs={6}
             className="d-flex flex-column justify-content-between text-center"
           >
             <Row>

@@ -1,3 +1,19 @@
 .no-transition .carousel-item {
   transition: none !important;
 }
+
+.carousel-image {
+  max-width: 100%;
+  max-height: 50vh;        /* half viewport height */
+  object-fit: contain;     /* preserve aspect ratio */
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.carousel-image:hover {
+  transform: scale(1.05); /* subtle zoom */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6); /* glowing edge */
+}
+

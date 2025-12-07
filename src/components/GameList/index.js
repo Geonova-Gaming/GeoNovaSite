@@ -4,9 +4,8 @@ import Game from "../Game";
 
 import "./gamelist.css";
 
-import unnamedImage from "../../assets/images/unnamed.png";
-import unnamedImage1 from "../../assets/images/CXCX.png";
-import city from "../../assets/images/city.png";
+import unnamedImage from "../../assets/images/city.png";
+import LovebugAppIcon from "../../assets/images/LovebugAppIcon.png";
 import questionMark from "../../assets/images/QuestionMark.png";
 import ImageWithTransition from "../../components/ImageBackground/ImageBackground";
 
@@ -34,7 +33,7 @@ const GameList = () => {
     {
       id: 1,
       title: "LoveBug Adventures",
-      imageUrl: city, // Replace with actual image URL
+      imageUrl: LovebugAppIcon, // Replace with actual image URL
       description:
         "Help the lovebugs reunite in this charming puzzle platformer! Explore vibrant landscapes, solve tricky puzzles, and overcome adorable obstacles in your quest for love.",
     },
@@ -65,8 +64,10 @@ useEffect(() => {
       <Container fluid className="w-100 z-1">
         <div xs={12} className="my-5">
           <h2 className="text-center z-3" style={{ color: "white" }}>
-            Ou<span className="glitch-text">r</span> Ga
-            <span className="glitch-text">mes</span>
+            {/* TODO: Remove glitch text */}
+            {/* Ou<span className="glitch-text">r</span> Ga
+            <span className="glitch-text">mes</span> */}
+            Our Games
           </h2>{" "}
           <hr className="my-hr" />
         </div>

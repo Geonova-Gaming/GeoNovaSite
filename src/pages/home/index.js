@@ -9,6 +9,7 @@ import ArticleFilterList from "../../components/ArticleFilterList";
 
 import "./home.css";
 import { useLocation } from "react-router-dom";
+import NewsletterSection from "../../components/NewsletterSection";
 
 const MainPage = () => {
   const location = useLocation();
@@ -79,6 +80,7 @@ const MainPage = () => {
           <GameList />
           <ArticleFilterList />
           <AboutUs />
+          <NewsletterSection />
           <ContactSupport />
         </div>
       </div>

@@ -19,15 +19,7 @@ const socialMediaLinks = [
   {
     icon: "bi-facebook",
     url: "https://www.facebook.com/114079207065524",
-  },
-  {
-    icon: "bi-twitter-x",
-    url: "https://www.twitter.com/GeonovaGaming",
-  },
-  {
-    icon: "bi-reddit",
-    url: "https://www.twitter.com/GeonovaGaming",
-  },
+  }
 ];
 
 function SocialButtonGroup() {

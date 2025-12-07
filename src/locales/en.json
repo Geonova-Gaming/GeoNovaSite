@@ -26,34 +26,16 @@
       "favoritegame": "ABZÛ."
     },
     "artistSection2": {
-      "name": "Guilherme 'Badger' Inácio",
-      "role": "Artist",
-      "description": "Olá, I'm a human that’s been passionate about arts & crafts since I was around 5 years old, always inspired by any soothing fantasy music. I've always loved drawing and modeling living beings, from real animals to mythical creatures.",
-      "favoritegame": "TESV: Skyrim, Fable 2 and The Witcher 3."
-    },
-    "artistSection3": {
       "name": "Ryan Pedder",
       "role": "Artist",
       "description": "I am an artist that is enthusiastic about telling a story through the art of the game. I’ve enjoyed playing games since I was young, but never thought about how they were made until much later. Once I learnt about the process of creating games, I fell down the rabbit hole and I am still falling.",
       "favoritegame": "Stellaris, Rome Total War."
     },
-    "artistSection4": {
-      "name": "Elysia 'Ellie' Howard",
-      "role": "Texture artist, 3D modeler, digital artist",
-      "description": "Texture artist, 3D modeler, digital artist, and an avid traveler! I’ve been to Scotland, Turkey, Argentina, and even Antartica. I also have two Australian Shepherds that I love to bits!",
-      "favoritegame": "Fortnite."
-    },
-    "artistSection5": {
-      "name": "Bao (Zumi) Cu",
+    "artistSection3": {
+      "name": "Naimishaba “Nimi” Parmar",
       "role": "Artist",
-      "description": "My passion for Pokemon since childhood prompted me to become a 3D modeler. Being able to create many different characters and their environments makes me feel like I can live in that fantasy world.",
-      "favoritegame": "Pokemon, Genshin Impact, Honkai Star Rail."
-    },
-    "artistSection6": {
-      "name": "Marlie Kohles",
-      "role": "Artist",
-      "description": "I've always been a crafty, artsy person that recently got into gaming in my 20s. I also love watching movies and shows with my best friend and lover.",
-      "favoritegame": "Skyrim"
+      "description": "Howdy! I’m a 3D modeling artist and a proud graduate from Texas A&M. I love to visualize unique characters and interesting environments.",
+      "favoritegame": "Hogwarts Legacy"
     },
     "coderSection1": {
       "name": "Tam Nguyen",
@@ -74,54 +56,42 @@
       "favoritegame": "Minecraft."
     },
     "coderSection4": {
-      "name": "Nick Knight",
-      "role": "Software Engineer",
-      "description": "Software engineer by day, gamer by night. If I'm not building or playing games, you can find me cheffing it up in the kitchen.",
-      "favoritegame": "Smite, Smite 2."
-    },
-    "coderSection5": {
       "name": "Daniel Rodriguez",
       "role": "Coder",
       "description": "Been in love with video games since the age of 3. I play fighting games competitively, mostly Ultimate Marvel vs. Capcom 3! Best Magneto player in FL and 5th place at CEOtaku!.",
       "favoritegame": "Metal Gear Solid 2."
     },
-    "coderSection6": {
+    "coderSection5": {
       "name": "India “Indō” Franklin",
       "role": "Coder",
       "description": "I'm a creative and driven person who loves building strong connections and coming up with innovative ideas to create great results for our clients and team. 'Dreams didn't make us kings. Dragons did' - Daemon Targaryen.",
       "favoritegame": "REV, Dead By Daylight, Animal Crossing."
     },
-    "coderSection7": {
+    "coderSection6": {
       "name": "Paul Howard",
       "role": "Coder",
       "description": "I started my gaming adventure on old DOS games, and never lost my love for the craft. Now, I work on coding them myself!.",
       "favoritegame": "Dragon’s Dogma: Dark Arisen."
     },
-    "coderSection8": {
+    "coderSection7": {
       "name": "Steffan Watts",
       "role": "Coder",
       "description": "My passion for games and the creative nature involved in making them began at an early age. So now being able to use my skills and take my own creative ideas and turn them into a reality so that I can share with people is really an amazing experience.",
       "favoritegame": "Assassin's Creed Ezio Series, Uncharted Series, Witcher 3."
     },
-    "coderSection9": {
+    "coderSection8": {
       "name": "Brandon Johnston",
       "role": "Game Developer",
       "description": "I’m an aspiring game developer from Middle Tennessee. I’m also a two time published creative fiction author.",
       "favoritegame": "Need For Speed: Most Wanted (2005)."
     },
-    "coderSection10": {
+    "coderSection9": {
       "name": "Anthony Ferdin",
       "role": "Game Designer",
       "description": "I’m an aspiring game developer from Middle Tennessee. I’m also a two time published creative fiction author.",
       "favoritegame": " Elden Ring."
     },
-    "coderSection11": {
-      "name": "Mehki “Squint” Cannon",
-      "role": "Coder",
-      "description": "I’m just some dude that likes video games enough to want to make a career out of it. Don’t look too much into it.",
-      "favoritegame": " Infamous Second Son."
-    },
-    "coderSection12": {
+    "coderSection10": {
       "name": "Cameron Ghaemmaghami",
       "role": "Software Engineering",
       "description": "Graduate from California that can solve FizzBuzz like no one else. Video games bring me great joy and anger. I program things that produce the former, but doing so produces the latter.",
@@ -170,16 +140,22 @@
       "favoritegame": "Mass Effect Trilogy"
     },
     "marketersSection1": {
-      "name": "Chris Hamilton",
+      "name": "Rosy Travis",
       "role": "Marketing Campaign Manager / Lead",
-      "description": "Hello everyone I’m Chris and I'm located in Virginia Beach, VA and have a background in social media, marketing, and brand development and awareness. I'm currently finishing up grad school and looking to get my foot in the door as a full fledged marketer!.",
-      "favoritegame": "Pokemon Emerald"
+      "description": " I’m a digital artist from Southern California who loves film, music, games, and art. I personally believe there’s nothing a bluetooth speaker and a good playlist can’t fix. ",
+      "favoritegame": "INSIDE"
     },
     "marketersSection2": {
       "name": "Sara Gennevee Alvarez",
       "role": "Community Manager",
       "description": "Hi everyone! My name is Sara and I am determined to be that one women strutting in the city with a suit and tie, high heels on, briefcase on the side, going up the mountains to my cabin next to a mini farm!.",
       "favoritegame": "Jazzpun: Directors Cut"
+    },
+    "marketersSection3": {
+      "name": "Carolina Carralero",
+      "role": "Video Editing Marketer",
+      "description": "Hi! I'm Carolina! I am GeoNova Gaming's Video Editing Marketer! I enjoy editing, singing, dancing and learning languages! I'm currently learning Korean and relearning Spanish!",
+      "favoritegame": "Hitman Series"
     }
   },
   "games": {
