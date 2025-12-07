@@ -33,7 +33,7 @@ const HeroSection = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <button className="first-button">JOIN OUR DISCORD</button>
+                <button className="treEvent-button">JOIN OUR DISCORD</button>
               </a>
             </Col>
           </Row>

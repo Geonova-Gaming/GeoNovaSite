@@ -47,17 +47,13 @@ import Joshua from "../../assets/team_images/bards/Joshua.png";
 
 // MARKETERS
 import Rosy from "../../assets/team_images/marketers/rosy.png";
+import Carolina from "../../assets/team_images/marketers/Carolina.png";
 import Sara from "../../assets/team_images/marketers/Sara.png";
-import Carolina from "../../assets/team_images/marketers/Sara.png";
-// MARKETERS
 
-function PageSection({
-  sectionName,
-  srcURL,
-  translatedArray,
-  cardColor,
-  dataTarget,
-}) {
+//EXTRA HELPERS
+import Guilherme from "../../assets/team_images/external/Guilherme.png";
+
+function PageSection({ sectionName, translatedArray, cardColor, dataTarget }) {
   const location = useLocation();
 
   // Scroll to top on route change (except initial render)
@@ -66,7 +62,7 @@ function PageSection({
   }, [location.hash]);
 
   return (
-    <div className="page-section-style">
+    <div className="page-section-style" id={dataTarget}>
       <Row>
         <Col>
           <h1
@@ -76,7 +72,6 @@ function PageSection({
               width: "fit-content",
               margin: "auto",
             }}
-            id={dataTarget}
           >
             {sectionName}
             <hr
@@ -101,22 +96,9 @@ function PageSection({
           {/* Title using sectionName prop */}
         </Col>
       </Row>
-      {/* <Row className="mt-5">
-        <Col sm={4}>
-          <Image src={srcURL} roundedCircle className="mb-3" fluid />{" "}
-        </Col>
-        <Col sm={8}>
-          {translatedArray.map((paragraph, index) => (
-            <p key={index}>
-              <strong>{paragraph.split(": ")[0]}</strong>:{" "}
-              {paragraph.split(": ")[1]}
-            </p>
-          ))}
-        </Col>
-      </Row> */}
       <Row className="m-5 justify-content-center">
         {translatedArray.map((paragraph, index) => (
-            <Cards key={index} buddy={paragraph} cardColor={cardColor} />
+          <Cards key={index} buddy={paragraph} cardColor={cardColor} />
         ))}
       </Row>
     </div>
@@ -133,22 +115,27 @@ function Cards({ key, buddy, cardColor }) {
         <strong>{buddy?.name}</strong>
       </Card.Title>
       <div className="image-container-about">
-      <Card.Img
-        variant="top"
-        src={buddy?.image}
-        className="card-image-style"
-      />
-      <button className="photo-button-about">
-        Learn More
-      </button>
+        <Card.Img
+          variant="top"
+          src={buddy?.image}
+          className="card-image-style"
+        />
+        <button className="photo-button-about">Learn More</button>
       </div>
-      <Card.Body className="card-body" style={{ border: `1px solid ${cardColor}`}}>
-        <Card.Text><strong>Abilities:</strong> {buddy?.role}</Card.Text>
-        <Card.Text><strong>Favorite Game:</strong> {buddy?.favoritegame}</Card.Text>
+      <Card.Body
+        className="card-body"
+        style={{ border: `1px solid ${cardColor}` }}
+      >
+        <Card.Text>
+          <strong>Abilities:</strong> {buddy?.role}
+        </Card.Text>
+        <Card.Text>
+          <strong>Favorite Game:</strong> {buddy?.favoritegame}
+        </Card.Text>
         {/* <Card.Text><strong>Descriptión:</strong> {buddy?.description?.slice(0, 20) + (buddy?.description?.length > 20 ? "..." : "")}</Card.Text> */}
-      <Card.Text className="description-text">
-        <strong>Descriptión:</strong> {buddy?.description}
-      </Card.Text>
+        <Card.Text className="description-text">
+          <strong>Descriptión:</strong> {buddy?.description}
+        </Card.Text>
       </Card.Body>
     </Card>
   );
@@ -188,10 +175,9 @@ function ImageTextSection({ imageUrl, subHeading, bodyText1, bodyText2 }) {
 }
 
 const AboutPage = () => {
-
   const coderTranslationArray = [
     { key: "about.coderSection1", image: Tam },
-    { key: "about.coderSection2", image: Nico },
+    // { key: "about.coderSection2", image: Nico },
     { key: "about.coderSection3", image: Carl },
     { key: "about.coderSection4", image: Daniel },
     { key: "about.coderSection5", image: India },
@@ -214,11 +200,11 @@ const AboutPage = () => {
     { key: "about.bardSection3", image: Rachel },
     { key: "about.bardSection4", image: Joshua },
   ];
-  
+
   const marketersTranslationsArray = [
     { key: "about.marketersSection1", image: Rosy },
-    { key: "about.marketersSection2", image: Sara },
-    { key: "about.marketersSection3", image: Carolina },
+    { key: "about.marketersSection2", image: Carolina },
+    { key: "about.marketersSection3", image: Sara },
   ];
 
   const writersTranslationArrays = [
@@ -227,6 +213,10 @@ const AboutPage = () => {
     { key: "about.writersSection3", image: Gracie },
   ];
 
+  const externalsTranslationArrays = [
+    { key: "about.externalsSection1", image: Nico },
+    { key: "about.externalsSection2", image: Guilherme },
+  ];
 
   const artistTranslations = artistTranslationArray.map(({ key, image }) => ({
     name: t(`${key}.name`),
@@ -242,13 +232,15 @@ const AboutPage = () => {
     favoritegame: t(`${key}.favoritegame`),
     image, // se agrega aquí la foto
   }));
-  const marketersTranslations = marketersTranslationsArray.map(({ key, image }) => ({
-    name: t(`${key}.name`),
-    role: t(`${key}.role`),
-    description: t(`${key}.description`),
-    favoritegame: t(`${key}.favoritegame`),
-    image, // se agrega aquí la foto
-  }));
+  const marketersTranslations = marketersTranslationsArray.map(
+    ({ key, image }) => ({
+      name: t(`${key}.name`),
+      role: t(`${key}.role`),
+      description: t(`${key}.description`),
+      favoritegame: t(`${key}.favoritegame`),
+      image, // se agrega aquí la foto
+    })
+  );
   const bardTranslations = bardTranslationArray.map(({ key, image }) => ({
     name: t(`${key}.name`),
     role: t(`${key}.role`),
@@ -256,92 +248,191 @@ const AboutPage = () => {
     favoritegame: t(`${key}.favoritegame`),
     image, // se agrega aquí la foto
   }));
-  const writersTranslations = writersTranslationArrays.map(({ key, image }) => ({
-    name: t(`${key}.name`),
-    role: t(`${key}.role`),
-    description: t(`${key}.description`),
-    favoritegame: t(`${key}.favoritegame`),
-    image, // se agrega aquí la foto
-  }));
+  const writersTranslations = writersTranslationArrays.map(
+    ({ key, image }) => ({
+      name: t(`${key}.name`),
+      role: t(`${key}.role`),
+      description: t(`${key}.description`),
+      favoritegame: t(`${key}.favoritegame`),
+      image, // se agrega aquí la foto
+    })
+  );
+  const externalsTranslations = externalsTranslationArrays.map(
+    ({ key, image }) => ({
+      name: t(`${key}.name`),
+      role: t(`${key}.role`),
+      description: t(`${key}.description`),
+      favoritegame: t(`${key}.favoritegame`),
+      image, // se agrega aquí la foto
+    })
+  );
+
+  const [activeSection, setActiveSection] = useState("top");
+
+useEffect(() => {
+  const sections = document.querySelectorAll(".page-section-style");
+  const observer = new IntersectionObserver(
+  (entries) => {
+    const visible = entries.reduce((max, entry) =>
+      entry.intersectionRatio > max.intersectionRatio ? entry : max
+    );
+    if (visible.isIntersecting) {
+      setActiveSection(visible.target.id);
+    }
+  },
+  {
+    threshold: [0.25, 0.5, 0.75], // multiple thresholds for finer ratios
+    rootMargin: "0px 0px -40% 0px",
+  }
+);
+
+  sections.forEach((section) => observer.observe(section));
+
+  // Extra listener for "top of page"
+  const handleScroll = () => {
+    if (window.scrollY <50) {
+      setActiveSection("top");
+    }
+  };
+  window.addEventListener("scroll", handleScroll);
+
+  return () => {
+    sections.forEach((section) => observer.unobserve(section));
+    window.removeEventListener("scroll", handleScroll);
+  };
+}, []);
 
 
-  const artistURL =
-    "https://cdn.discordapp.com/attachments/778680833153564693/1252456137639333918/rsh175m.png?ex=667593ec&is=6674426c&hm=27208a7bcfeea26e79871dbde004e6310f79a75e5f568bb75d7d359eea29714c&";
-
-  const codersURL =
-    "https://cdn.discordapp.com/attachments/778680833153564693/1252456137857564743/rsh175m.png?ex=667593ec&is=6674426c&hm=dfdad42aa8dd34fec717d216dd6849c150048381c120e7a9e5fad98ff762dd06&";
-  const bardURL =
-    "https://cdn.discordapp.com/attachments/778680833153564693/1252456138050506852/rsh175m.png?ex=667593ec&is=6674426c&hm=91d15a5eae74101177eb2abb20c47405d61aa61f217f04c272df0c6b9442ae5a&";
-  // const logoURL =
-  // "https://img1.wsimg.com/isteam/ip/b4d39968-ce34-4e68-ac72-ba40d4530675/Babel%20Armada%20GeoNova%20Icon.png/:/rs=w:600,h:600,cg:true,m/cr=w:600,h:600";
 
   return (
     <div className="main-content">
-      <div className="list-guys-content">
-        <ul>
-          <li>
-            <a href="/#/about/#artist">Artist</a>
-          </li>
-          <li>
-            <a href="/#/about/#coders">Coders</a>
-          </li>
-          <li>
-            <a href="/#/about/#marketers">Marketers</a>
-          </li>
-          <li>
-            <a href="/#/about/#writers">Writers</a>
-          </li>
-          <li>
-            <a href="/#/about/#bards">Bards</a>
-          </li>
-        </ul>
-      </div>
+     <div className="list-guys-content">
+  <ul>
+    <li>
+      <button
+        style={{ "--hover-color": "#3398E0" }} // Artist cardColor
+        className={
+      activeSection === "artist" || activeSection === "top" ? "active" : ""
+    }
+        onClick={() =>
+          document.getElementById("artist")?.scrollIntoView({ behavior: "smooth" })
+        }
+      >
+        Artist
+      </button>
+    </li>
+    <li>
+      <button
+        style={{ "--hover-color": "#33C572" }} // Coders cardColor
+        className={
+      activeSection === "coders" || activeSection === "top" ? "active" : ""
+    }
+        onClick={() =>
+          document.getElementById("coders")?.scrollIntoView({ behavior: "smooth" })
+        }
+      >
+        Coders
+      </button>
+    </li>
+    <li>
+      <button
+        style={{ "--hover-color": "#E41F64" }} // Marketers cardColor
+        className={
+      activeSection === "marketers" || activeSection === "top" ? "active" : ""
+    }
+        onClick={() =>
+          document.getElementById("marketers")?.scrollIntoView({ behavior: "smooth" })
+        }
+      >
+        Marketers
+      </button>
+    </li>
+    <li>
+      <button
+        style={{ "--hover-color": "#E67F23" }} // Writers cardColor
+        className={
+      activeSection === "writers" || activeSection === "top" ? "active" : ""
+    }
+        onClick={() =>
+          document.getElementById("writers")?.scrollIntoView({ behavior: "smooth" })
+        }
+      >
+        Writers
+      </button>
+    </li>
+    <li>
+      <button
+        style={{ "--hover-color": "#E8C511" }} // Bards cardColor
+        className={
+      activeSection === "bards" || activeSection === "top" ? "active" : ""
+    }
+        onClick={() =>
+          document.getElementById("bards")?.scrollIntoView({ behavior: "smooth" })
+        }
+      >
+        Bards
+      </button>
+    </li>
+    <li>
+      <button
+        style={{ "--hover-color": "#D7D6D6FF" }} // Externals cardColor
+        className={
+      activeSection === "externals" || activeSection === "top" ? "active" : ""
+    }
+        onClick={() =>
+          document.getElementById("externals")?.scrollIntoView({ behavior: "smooth" })
+        }
+      >
+        Externals
+      </button>
+    </li>
+  </ul>
+</div>
+
       <h1 className="header">{t("about.title")}</h1>
       <hr />
       <ImageTextSection
         imageUrl={Logo}
         // subHeading={t("about.subtitle")}
-        bodyText1={
-          "Founded in January of 2020, GeoNova Gaming has one goal which sets us apart from any other video game company out there...."
-        }
-        bodyText2={
-          "Humans have always been telling stories and passing them down, teaching younger generations important values and morals, which in turn shaped the beginning of society...."
-        }
+        bodyText1= {t("about.bodyP1")}
+       
+        bodyText2= {t("about.bodyP2")}
       />
       <PageSection
-        sectionName={"Artist"}
-        srcURL={artistURL}
+        sectionName={"Artists"}
         translatedArray={artistTranslations}
         cardColor={"#3398E0"}
         dataTarget={"artist"}
       />
       <PageSection
         sectionName={"Coders"}
-        srcURL={codersURL}
         translatedArray={coderTranslations}
         cardColor={"#33C572"}
         dataTarget={"coders"}
       />
       <PageSection
         sectionName={"Marketers"}
-        srcURL={bardURL}
         translatedArray={marketersTranslations}
         cardColor={"#E41F64"}
         dataTarget={"marketers"}
       />
       <PageSection
         sectionName={"Writers"}
-        srcURL={bardURL}
         translatedArray={writersTranslations}
         cardColor={"#E67F23"}
         dataTarget={"writers"}
       />
       <PageSection
         sectionName={"Bards"}
-        srcURL={bardURL}
         translatedArray={bardTranslations}
         cardColor={"#E8C511"}
         dataTarget={"bards"}
+      />
+      <PageSection
+        sectionName={"Externals"}
+        translatedArray={externalsTranslations}
+        cardColor={"#D7D6D6FF"}
+        dataTarget={"externals"}
       />
     </div>
   );

@@ -62,3 +62,10 @@
   padding-top: 3px;
   animation: revealText 2s steps(20, end) forwards;
 }
+
+.navBarStyles .nav-link.active {
+  font-weight: bold;
+  color: #ebebeb !important; /* highlight color */
+  text-shadow: 0 0 6px #ff00ff; /* glowing effect */
+}
+

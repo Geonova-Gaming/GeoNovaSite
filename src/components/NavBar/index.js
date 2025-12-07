@@ -1,68 +1,23 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
 import "./navbar.css";
-// import GeoNova from "../../assets/images/GeoNovaLogo.png";
 import GeoNova from "../../assets/images/Geonova.png";
 
 function NavBar() {
   const location = useLocation();
-
   const [isScrollingDown, setIsScrollingDown] = useState(false);
 
+  // Track scroll to darken background
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollTop = window.scrollY;
-
-      if (currentScrollTop > 0) {
-        setIsScrollingDown(true);
-      } else {
-        setIsScrollingDown(false);
-      }
+      setIsScrollingDown(currentScrollTop > 0);
     };
-
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const applyGlitchEffect = () => {
-      const glitchElements = document.querySelectorAll(".glitch-text");
-      if (!glitchElements.length) return;
-
-      const interval = setInterval(() => {
-        glitchElements.forEach((element) => {
-          element.style.opacity = "0.3";
-          element.style.animation = "glitch 0.3s steps(1, end) alternate";
-
-          setTimeout(() => {
-            element.style.opacity = "1";
-            element.style.animation = "none";
-          }, 300);
-        });
-      }, 4000);
-
-      return interval;
-    };
-
-    let glitchInterval = applyGlitchEffect();
-
-    const handleVisibilityChange = () => {
-      if (document.visibilityState === "visible") {
-        clearInterval(glitchInterval);
-        glitchInterval = applyGlitchEffect();
-      }
-    };
-
-    document.addEventListener("visibilitychange", handleVisibilityChange);
-
-    return () => {
-      clearInterval(glitchInterval);
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
-    };
   }, []);
 
   return (
@@ -79,17 +34,9 @@ function NavBar() {
         to="/"
         style={{ display: "flex", alignItems: "center" }}
       >
-        <img alt="" src={GeoNova} className="d-inline-block navbarImage" />{" "}
+        <img alt="" src={GeoNova} className="d-inline-block navbarImage" />
         <div className="degrade geonovaText">
-          <div className="navText">
-            {/* TODO: Remove Glitching texts */}
-            {/* G<span className="glitch-text">E</span>
-            ONO
-            <span className="glitch-text">V</span>
-            <span>A GAMI</span>
-            <span className="glitch-text">NG</span> */}
-            GEONOVA GAMING
-          </div>
+          <div className="navText">GEONOVA GAMING</div>
         </div>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -100,30 +47,46 @@ function NavBar() {
       >
         <Nav activeKey={location.pathname} className="ms-auto" as="ul">
           <Nav.Item as="li">
-            <Nav.Link as={Link} to="/">
-              Home
+            <Nav.Link as={Link} to="/" eventKey="/">
+              <span className={location.pathname === "/" ? "glitch-text" : ""}>
+                Home
+              </span>
             </Nav.Link>
           </Nav.Item>
           <Nav.Item as="li">
-            <Nav.Link as={Link} to="/games">
-              {/* <span className="glitch-text">Games</span> */}
-              <span>Games</span>
+            <Nav.Link as={Link} to="/games" eventKey="/games">
+              <span
+                className={location.pathname === "/games" ? "glitch-text" : ""}
+              >
+                Games
+              </span>
             </Nav.Link>
           </Nav.Item>
           <Nav.Item as="li">
-            <Nav.Link as={Link} to="/news">
-              News
+            <Nav.Link as={Link} to="/news" eventKey="/news">
+              <span
+                className={location.pathname === "/news" ? "glitch-text" : ""}
+              >
+                News
+              </span>
             </Nav.Link>
           </Nav.Item>
           <Nav.Item as="li">
-            <Nav.Link as={Link} to="/about">
-              About
+            <Nav.Link as={Link} to="/about" eventKey="/about">
+              <span
+                className={location.pathname === "/about" ? "glitch-text" : ""}
+              >
+                About
+              </span>
             </Nav.Link>
           </Nav.Item>
           <Nav.Item as="li">
-            <Nav.Link as={Link} to="/contact">
-              {/* <span className="glitch-text">Contact</span> */}
-              <span>Contact</span>
+            <Nav.Link as={Link} to="/contact" eventKey="/contact">
+              <span
+                className={location.pathname === "/contact" ? "glitch-text" : ""}
+              >
+                Contact
+              </span>
             </Nav.Link>
           </Nav.Item>
         </Nav>

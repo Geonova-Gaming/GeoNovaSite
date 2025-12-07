@@ -13,8 +13,9 @@ const ContactSupport = () => {
     <div className="contact-support">
       <Container>
         <Row style={{ height: "100%" }}>
+          {/* TODO: Change from 12 back to 6  */}
           <Col
-            xs={6}
+            xs={12}
             className="d-flex flex-column justify-content-between text-center"
           >
             <Row>
@@ -27,12 +28,12 @@ const ContactSupport = () => {
             </Row>
             <Row>
               <Link to="/contact">
-                {/* <button className="custom-button">Contact Us</button> */}
                 <button className="first-button">CONTACT US</button>
               </Link>
             </Row>
           </Col>
-          <Col
+          {/* TODO: Uncomment this once the TRE is complete and Kickstart is live */}
+          {/* <Col
             xs={6}
             className="d-flex flex-column justify-content-between text-center"
           >
@@ -56,7 +57,7 @@ const ContactSupport = () => {
                 <button className="first-button">DONATE</button>
               </a>
             </Row>
-          </Col>
+          </Col> */}
         </Row>
       </Container>
     </div>

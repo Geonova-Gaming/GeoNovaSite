@@ -17,8 +17,8 @@
   },
   "about": {
     "title": "WE ARE GEONOVA",
-    "bodyP1": "Founded in January of 2020, GeoNova Gaming has one goal which sets us apart from any other video game company out there. Our mission is simple: to change the world for the better. The world is constantly changing, adapting; even the way it changes, well,  changes.",
-    "bodyP2": " ",
+    "bodyP1": "Founded in January of 2020, GeoNova Gaming has one goal which sets us apart from any other video game company out there. Our mission is simple: to change the world for the better. The world is constantly changing, adapting; even the way it changes, well, changes.",
+    "bodyP2": "Humans have always been telling stories and passing them down, teaching younger generations important values and morals, which in turn shaped the beginning of society. Since then, we've evolved from the spoken word, to the written one. Shakespeare, Thoreau, Austen, WOolf, and server other authors, would create worlds with the power of ink and paper. Then we evolved further into the visual portrayal of these worlds, using cinema, TV, and other media platforms to cpativate audiences with storytelling. Do you remember the adventures and stories as a child, the countless of life lessons and wise words spoken from certain characters? We do.",
     "artistSection1": {
       "name": "Naomi Hopton",
       "role": "Art Lead",
@@ -44,54 +44,48 @@
       "favoritegame": "Like A Dragon: Infinite Wealth."
     },
     "coderSection2": {
-      "name": "Nico Gutiérrez",
-      "role": " Mechatronic Engineer / Fullstack Web Developer / Software Developer / Computer technician",
-      "description": "🤣",
-      "favoritegame": "The Legend of Zelda, Metroid 3."
-    },
-    "coderSection3": {
       "name": "Carl Antoine",
       "role": "Software Developer",
       "description": "I am family-orientated and love helping out when I can. I'm a software developer and like to make games.",
       "favoritegame": "Minecraft."
     },
-    "coderSection4": {
+    "coderSection3": {
       "name": "Daniel Rodriguez",
       "role": "Coder",
       "description": "Been in love with video games since the age of 3. I play fighting games competitively, mostly Ultimate Marvel vs. Capcom 3! Best Magneto player in FL and 5th place at CEOtaku!.",
       "favoritegame": "Metal Gear Solid 2."
     },
-    "coderSection5": {
+    "coderSection4": {
       "name": "India “Indō” Franklin",
       "role": "Coder",
       "description": "I'm a creative and driven person who loves building strong connections and coming up with innovative ideas to create great results for our clients and team. 'Dreams didn't make us kings. Dragons did' - Daemon Targaryen.",
       "favoritegame": "REV, Dead By Daylight, Animal Crossing."
     },
-    "coderSection6": {
+    "coderSection5": {
       "name": "Paul Howard",
       "role": "Coder",
       "description": "I started my gaming adventure on old DOS games, and never lost my love for the craft. Now, I work on coding them myself!.",
       "favoritegame": "Dragon’s Dogma: Dark Arisen."
     },
-    "coderSection7": {
+    "coderSection6": {
       "name": "Steffan Watts",
       "role": "Coder",
       "description": "My passion for games and the creative nature involved in making them began at an early age. So now being able to use my skills and take my own creative ideas and turn them into a reality so that I can share with people is really an amazing experience.",
       "favoritegame": "Assassin's Creed Ezio Series, Uncharted Series, Witcher 3."
     },
-    "coderSection8": {
+    "coderSection7": {
       "name": "Brandon Johnston",
       "role": "Game Developer",
       "description": "I’m an aspiring game developer from Middle Tennessee. I’m also a two time published creative fiction author.",
       "favoritegame": "Need For Speed: Most Wanted (2005)."
     },
-    "coderSection9": {
+    "coderSection8": {
       "name": "Anthony Ferdin",
       "role": "Game Designer",
       "description": "I’m an aspiring game developer from Middle Tennessee. I’m also a two time published creative fiction author.",
       "favoritegame": " Elden Ring."
     },
-    "coderSection10": {
+    "coderSection9": {
       "name": "Cameron Ghaemmaghami",
       "role": "Software Engineering",
       "description": "Graduate from California that can solve FizzBuzz like no one else. Video games bring me great joy and anger. I program things that produce the former, but doing so produces the latter.",
@@ -99,7 +93,7 @@
     },
     "writersSection1": {
       "name": "Alunaria Verano",
-      "role": "Lead Write",
+      "role": "Lead Writer",
       "description": "Hello my name is Alunaría, I am GeoNova’s Lead Writer.",
       "favoritegame": "Saints Row the 3rd."
     },
@@ -146,16 +140,28 @@
       "favoritegame": "INSIDE"
     },
     "marketersSection2": {
+      "name": "Carolina Carralero",
+      "role": "Video Editing Marketer",
+      "description": "Hi! I'm Carolina! I am GeoNova Gaming's Video Editing Marketer! I enjoy editing, singing, dancing and learning languages! I'm currently learning Korean and relearning Spanish!",
+      "favoritegame": "Hitman Series"
+    },
+    "marketersSection3": {
       "name": "Sara Gennevee Alvarez",
       "role": "Community Manager",
       "description": "Hi everyone! My name is Sara and I am determined to be that one women strutting in the city with a suit and tie, high heels on, briefcase on the side, going up the mountains to my cabin next to a mini farm!.",
       "favoritegame": "Jazzpun: Directors Cut"
     },
-    "marketersSection3": {
-      "name": "Carolina Carralero",
-      "role": "Video Editing Marketer",
-      "description": "Hi! I'm Carolina! I am GeoNova Gaming's Video Editing Marketer! I enjoy editing, singing, dancing and learning languages! I'm currently learning Korean and relearning Spanish!",
-      "favoritegame": "Hitman Series"
+    "externalsSection1": {
+      "name": "Nico Gutiérrez",
+      "role": " Mechatronic Engineer / Fullstack Web Developer / Software Developer / Computer Technician",
+      "description": "🤣",
+      "favoritegame": "The Legend of Zelda, Metroid 3."
+    },
+    "externalsSection2": {
+      "name": "Guilherme 'Badger' Inácio",
+      "role": "Artist",
+      "description": "Olá, I'm a human that’s been passionate about arts & crafts since I was around 5 years old, always inspired by any soothing fantasy music. I've always loved drawing and modeling living beings, from real animals to mythical creatures.",
+      "favoritegame": "TESV: Skyrim, Fable 2 and The Witcher 3."
     }
   },
   "games": {

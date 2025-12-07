@@ -13,6 +13,7 @@ import NewsPage from "./news";
 import i18n from "../i18n";
 import SubBar from "../components/SubBar";
 import LovebugArticlePage from "./news/ArticlePages/lovebugArticle";
+import NotFoundPage from "./notFound";
 // import "/src/styles/global.scss";
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Route path="/news" element={<NewsPage />} />
         <Route path="/news/lovebugs" element={<LovebugArticlePage />} />
         <Route path="/donate" element={<DonatePage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <SubBar />
       <MiscNav />

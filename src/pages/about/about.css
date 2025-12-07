@@ -17,6 +17,7 @@
   top: 50%; 
   right: 3px; 
   font-size: 15px; 
+  text-align: right;       /* align all children to the right */
 }
 
 .list-guys-content ul {
@@ -28,6 +29,32 @@
 
 .list-guys-content ul li {
   cursor: pointer;
+}
+
+.list-guys-content button {
+  background: none;        /* remove background */
+  border: none;            /* remove border */
+  color: white;            /* make text white */
+  font-size: 1.2rem;       /* adjust size if needed */
+  cursor: pointer;         /* keep pointer cursor */
+  padding: 0;              /* remove extra padding */
+  margin: 0.5rem 0;        /* spacing between items */
+  text-align: left;        /* align like list text */
+  transition: color 0.2s ease;
+}
+
+.list-guys-content button:hover {
+  color: var(--hover-color);
+ text-shadow:
+  0 0 6px var(--hover-color),
+  0 0 12px var(--hover-color),
+  0 0 24px var(--hover-color);
+}
+
+.list-guys-content button.active {
+  color: var(--hover-color);
+  text-shadow: 0 0 6px var(--hover-color), 0 0 12px var(--hover-color), 0 0 24px var(--hover-color);
+  font-weight: bold; /* optional */
 }
 
 .card-body{

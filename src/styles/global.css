@@ -198,6 +198,21 @@ h2 {
   transition: all 0.2s ease-in-out;
 }
 
+.treEvent-button {
+  font-size: 2.5rem;
+  padding: 0.75rem 1.5rem;
+  color: #fff;
+  border: 4px solid;
+  background-color: transparent; /* o el color que quieras */
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border-image: linear-gradient(to bottom, white, #ff00ffb8) 1;
+  text-shadow: 2px -1px 0 #000, -3px 3px 2px #ff00ffb8;
+  transition: all 0.2s ease-in-out;
+}
+
 .first-button:hover {
   transform: rotate(-1.5deg) scale(1.06);
   filter: brightness(1.1);
@@ -205,6 +220,11 @@ h2 {
 
 .second-button:hover {
   transform: rotate(1.5deg) scale(1.06);
+  filter: brightness(1.1);
+}
+
+.treEvent-button:hover {
+  transform: rotate(-1.5deg) scale(1.06);
   filter: brightness(1.1);
 }
 
