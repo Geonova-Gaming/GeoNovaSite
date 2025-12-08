@@ -148,7 +148,7 @@ const NewsPage = () => {
   }, []);
 
   return (
-    <div className="main-content">
+    <div className="main-content  wrapper p-5">
       {/* Stars background */}
       <div className="main-stars">
         <div className="stars-container" ref={starsRef}></div>
