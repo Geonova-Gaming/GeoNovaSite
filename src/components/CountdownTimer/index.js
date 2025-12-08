@@ -1,4 +1,3 @@
-// CountdownTimer.jsx
 import React, { useEffect, useRef } from "react";
 import "./countdownTimer.css";
 
@@ -62,14 +61,14 @@ const CountdownTimer = ({ targetDate, title }) => {
 
         {/* Countdown text */}
         <text x="200" y="350" className="time-value" ref={ddRef}></text>
-        <text x="500" y="350" className="time-value" ref={hhRef}></text>
-        <text x="800" y="350" className="time-value" ref={mmRef}></text>
-        <text x="1100" y="350" className="time-value" ref={ssRef}></text>
+        <text x="550" y="350" className="time-value" ref={hhRef}></text>
+        <text x="850" y="350" className="time-value" ref={mmRef} ></text>
+        <text x="1150" y="350" className="time-value" ref={ssRef}></text>
 
         <text x="200" y="450" className="time-label">DAYS</text>
-        <text x="500" y="450" className="time-label">HRS</text>
-        <text x="800" y="450" className="time-label">MIN</text>
-        <text x="1100" y="450" className="time-label">SEC</text>
+        <text x="555" y="450" className="time-label">HRS</text>
+        <text x="850" y="450" className="time-label">MIN</text>
+        <text x="1150" y="450" className="time-label">SEC</text>
       </svg>
     </div>
   );

@@ -14,7 +14,7 @@ const aboutUsData = [
     id: 1,
     image: Geonova, // Replace with actual image URL
     heading: "Who We Are",
-    subheading: "A passionate group of writers, musicians, developers and artists",
+    subheading: "A passionate group of writers, musicians, developers, and artists",
   },
   {
     id: 2,
@@ -31,8 +31,8 @@ const aboutUsData = [
   {
     id: 4,
     image: Bard, // Replace with actual image URL
-    heading: "Bard",
-    subheading: "Composing memorable music on our new and exciting projects",
+    heading: "Bards",
+    subheading: "Composing memorable music for our new and exciting projects",
   },
 ];
 

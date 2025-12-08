@@ -177,15 +177,14 @@ function ImageTextSection({ imageUrl, subHeading, bodyText1, bodyText2 }) {
 const AboutPage = () => {
   const coderTranslationArray = [
     { key: "about.coderSection1", image: Tam },
-    // { key: "about.coderSection2", image: Nico },
-    { key: "about.coderSection3", image: Carl },
-    { key: "about.coderSection4", image: Daniel },
-    { key: "about.coderSection5", image: India },
-    { key: "about.coderSection6", image: Paul },
-    { key: "about.coderSection7", image: Steffan },
-    { key: "about.coderSection8", image: Brandon },
-    { key: "about.coderSection9", image: Anthony },
-    { key: "about.coderSection10", image: Cameron },
+    { key: "about.coderSection2", image: Carl },
+    { key: "about.coderSection3", image: Daniel },
+    { key: "about.coderSection4", image: India },
+    { key: "about.coderSection5", image: Paul },
+    { key: "about.coderSection6", image: Steffan },
+    { key: "about.coderSection7", image: Brandon },
+    { key: "about.coderSection8", image: Anthony },
+    { key: "about.coderSection9", image: Cameron },
   ];
 
   const artistTranslationArray = [

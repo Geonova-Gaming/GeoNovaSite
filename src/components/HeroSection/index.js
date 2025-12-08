@@ -15,8 +15,6 @@ const HeroSection = () => {
   return (
     <header className="showcase">
       <div className="showcase-content">
-        {/* <GamingButtonComponent>READ ABOUT OUR LATEST GAME</GamingButtonComponent> */}
-        {/* <GamingButtonCircle>READ A<span className="glitch-text">B</span>OUT OUR LATEST <span className="glitch-text">GAME</span></GamingButtonCircle> */}
       <Container>
          <Row className="justify-content-center">
             <Col xs={12} className="text-center">

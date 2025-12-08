@@ -1,8 +1,11 @@
 /* src/styles/global.css */
+/* @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap'); */
+
 @font-face {
   font-family: 'Centauri';
   src: url('/public/fonts/Centauri.ttf') format('opentype');
 }
+
 
 body {
   font-family: 'Orbitron', sans-serif !important;

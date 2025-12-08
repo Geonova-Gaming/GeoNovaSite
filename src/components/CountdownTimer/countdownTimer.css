@@ -25,8 +25,8 @@ svg {
 
 .time-value {
   fill: #b99fff ;
-  font-size: clamp(60px, 12vw, 180px);
-  font-family: "Creepster", cursive;
+  font-size: clamp(60px, 12vw, 140px);
+  font-family: "Orbitron", cursive;
   text-anchor: middle;
   filter: url(#glow);
 }

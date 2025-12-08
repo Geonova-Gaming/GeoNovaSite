@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.2c7220cb.css",
-    "main.js": "/static/js/main.3caed5a6.js",
+    "main.css": "/static/css/main.7760ae40.css",
+    "main.js": "/static/js/main.ceee650b.js",
+    "static/media/Carolina.png": "/static/media/Carolina.521dd44d2e0ab5f6590c.png",
     "static/media/QuestionMark.png": "/static/media/QuestionMark.f34a6cf0b5017d078460.png",
     "static/media/city.png": "/static/media/city.9296aaf2d83e78d146bc.png",
     "static/media/Nimi.png": "/static/media/Nimi.13a2d45a43a7e4c01798.png",
     "static/media/Artistas.png": "/static/media/Artistas.6ff297381d78bb86dcac.png",
     "static/media/news2.png": "/static/media/news2.2ef0f6ad02f443468c46.png",
     "static/media/musik.png": "/static/media/musik.3eb5f03bd81560557756.png",
+    "static/media/Guilherme.png": "/static/media/Guilherme.66d9d5b3031b9dc2b23f.png",
     "static/media/Tam1.png": "/static/media/Tam1.52fb5fffe67a0812bd0b.png",
     "static/media/Ryan.png": "/static/media/Ryan.0cba8755def31fd8fe27.png",
     "static/media/Daniel.png": "/static/media/Daniel.325c92e25da1b87a692f.png",
@@ -39,11 +41,11 @@
     "static/media/rosy.png": "/static/media/rosy.0a46c7d690f0ce83e9f8.png",
     "static/media/Centauri.ttf": "/static/media/Centauri.2e5cc0d9ef8d3d130663.ttf",
     "index.html": "/index.html",
-    "main.2c7220cb.css.map": "/static/css/main.2c7220cb.css.map",
-    "main.3caed5a6.js.map": "/static/js/main.3caed5a6.js.map"
+    "main.7760ae40.css.map": "/static/css/main.7760ae40.css.map",
+    "main.ceee650b.js.map": "/static/js/main.ceee650b.js.map"
   },
   "entrypoints": [
-    "static/css/main.2c7220cb.css",
-    "static/js/main.3caed5a6.js"
+    "static/css/main.7760ae40.css",
+    "static/js/main.ceee650b.js"
   ]
 }
