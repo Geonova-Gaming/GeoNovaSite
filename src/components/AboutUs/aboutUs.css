@@ -1,12 +1,101 @@
-.about-us {
-  /* padding: 5rem 0;  */
+/* ============================
+   GRID LAYOUT (5 equal columns)
+   ============================ */
+.about-us .row {
+  display: grid !important;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2.5rem; /* spacing between items */
+  width: 100%;
+  margin: 0;
 }
 
-.image-about-style{
+/* Ensures each grid cell fills its space */
+.about-col {
   width: 100%;
-  height: 450px;
+}
+
+/* ============================
+   IMAGE STYLING
+   ============================ */
+.image-about-style {
+  width: 100%;
+  height: 350px; /* adjust as needed */
   object-fit: cover;
   border: 4px solid;
   margin-bottom: 20px;
   border-image: linear-gradient(to bottom, white, #ff00ffb8) 1;
+  border-radius: 12px;
+  transition: filter 0.3s ease;
+}
+
+/* Glow on hover */
+.about-item:hover .image-about-style {
+  filter: drop-shadow(0 0 8px var(--glow-color))
+          drop-shadow(0 0 16px var(--glow-color))
+          drop-shadow(0 0 32px var(--glow-color));
+}
+
+/* ============================
+   ITEM CONTAINER
+   ============================ */
+.about-item {
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.85;
+  border-radius: 12px;
+}
+
+.about-item:hover {
+  transform: scale(1.06);
+  opacity: 1;
+}
+
+/* ============================
+   HEADINGS + TEXT
+   ============================ */
+.about-item h3 {
+  margin-top: 15px;
+  color: white;
+  transition: text-shadow 0.3s ease;
+}
+
+.about-item:hover h3 {
+  text-shadow:
+    0 0 6px var(--glow-color),
+    0 0 12px var(--glow-color),
+    0 0 24px var(--glow-color);
+}
+
+.about-item p {
+  color: white;
+  opacity: 0.9;
+  margin-top: 10px;
+}
+
+/* ============================
+   RESPONSIVE BREAKPOINTS
+   ============================ */
+@media (max-width: 1400px) {
+  .about-us .row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .about-us .row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-us .row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .about-us .row {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

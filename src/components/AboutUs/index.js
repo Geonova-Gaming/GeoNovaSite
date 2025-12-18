@@ -2,38 +2,51 @@ import React from "react";
 import { Col, Row, Image, Container } from "react-bootstrap";
 
 import "./aboutUs.css";
-import Bard from "../../assets/images/musik.png";
-import Coders from "../../assets/images/keyboard.png";
-import Artists from "../../assets/images/Artistas.png";
+import Bard from "../../assets/images/bardsemblem.png";
+import Coders from "../../assets/images/codingemblem_.png";
+import Artists from "../../assets/images/artistemblem.png";
+import Marketers from "../../assets/images/marketingemblem_.png";
 // import Geonova from "../../assets/images/Genova.png";
-import Geonova from "../../assets/images/Geonova.png";
+import Geonova from "../../assets/images/writersemblem.png";
 
 //TODO: Add translations to this, don't  hardcode the values
 const aboutUsData = [
   {
     id: 1,
-    image: Geonova, // Replace with actual image URL
-    heading: "Who We Are",
-    subheading: "A passionate group of writers, musicians, developers, and artists",
+    image: Artists,
+    heading: "Artists",
+    subheading: "Aiming to create art that captures our vision",
+    color: "#00eaff", // cyan glow
   },
   {
     id: 2,
-    image: Artists, // Replace with actual image URL
-    heading: "Artists",
-    subheading: "Aiming to create art that captures our vision",
-  },
-  {
-    id: 3,
-    image: Coders, // Replace with actual image URL
+    image: Coders,
     heading: "Coders",
-    subheading: "Create fun and engaging games for everyone",
+    subheading: "Turning brilliant ideas into reality through code",
+    color: "#39ff14", // neon green glow
+  },
+   {
+    id: 3,
+    image: Marketers,
+    heading: "Marketers",
+    subheading: "Establishing our presence and driving growth for our projects",
+    color: "#ff4444", // red glow
+  },
+   {
+    id: 4,
+    image: Geonova,
+    heading: "Writers",
+    subheading:
+      "A passionate groups of storytellers crafting immersive narratives",
+    color: "#E67F23", // orange glow
   },
   {
-    id: 4,
-    image: Bard, // Replace with actual image URL
+    id: 5,
+    image: Bard,
     heading: "Bards",
     subheading: "Composing memorable music for our new and exciting projects",
-  },
+    color: "#E8C511", // gold glow
+  }
 ];
 
 const AboutUs = () => {
@@ -46,14 +59,19 @@ const AboutUs = () => {
         </div>
         <Row className="mx-0">
           {aboutUsData.map((item) => (
-            <Col key={item.id} xs={3} className="mx-0">
-              <Image
-                className="image-about-style"
-                src={item.image}
-                alt={item.heading}
-              />
-              <h3 className="my-h2 text-center">{item.heading}</h3>
-              <p className="custom-text text-center">{item.subheading}</p>
+            <Col key={item.id} className="about-col">
+              <div
+                className="about-item"
+                style={{ "--glow-color": item.color }}
+              >
+                <Image
+                  className="image-about-style"
+                  src={item.image}
+                  alt={item.heading}
+                />
+                <h3 className="my-h2">{item.heading}</h3>
+                <p className="custom-text">{item.subheading}</p>
+              </div>
             </Col>
           ))}
         </Row>

@@ -4,7 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
 import "./navbar.css";
-import GeoNova from "../../assets/images/Geonova.png";
+import GeoNova from "../../assets/images/gnLogo.png";
 
 function NavBar() {
   const location = useLocation();

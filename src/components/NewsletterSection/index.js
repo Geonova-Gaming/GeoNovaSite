@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 
-import GeonovaLogo from "../../assets/images/Geonova2.jpg"; // Import the JSON file
+import GeonovaLogo from "../../assets/images/purpleGNlogo.png"; // Import the JSON file
 import "./newsletterSection.css";
 
 const NewsletterSection = () => {

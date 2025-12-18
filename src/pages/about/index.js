@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 
 import Image from "react-bootstrap/Image";
 import "./about.css";
-import { Col, Form, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import { t } from "i18next";
 import { useLocation } from "react-router-dom";
 
-import { Container, Button, Card } from "react-bootstrap/";
+import { Container, Card } from "react-bootstrap/";
 
-import Logo from "../../assets/images/Geonova2.jpg";
+import Logo from "../../assets/images/rainbowGNlogo.png";
 
 // ARTIST
 import Naomi from "../../assets/team_images/artists/Naomi.png";
@@ -26,8 +26,6 @@ import Brandon from "../../assets/team_images/coders/Brandon.png";
 import Cameron from "../../assets/team_images/coders/Cameron1.png";
 import Daniel from "../../assets/team_images/coders/Daniel.png";
 import India from "../../assets/team_images/coders/India.png";
-import Mehki from "../../assets/team_images/coders/Mehki.png";
-import Nick from "../../assets/team_images/coders/Nick.png";
 import Paul from "../../assets/team_images/coders/Paul.png";
 import Steffan from "../../assets/team_images/coders/Steffan1.png";
 // CODERS
