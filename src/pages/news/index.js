@@ -1,8 +1,8 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useMemo } from "react";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import Logo from "../../assets/images/Geonova2.jpg";
+import Logo from "../../assets/images/gnLogo.png";
 
 import "./news.css"; // include your star CSS here too
 import { Nav } from "react-bootstrap";
@@ -87,18 +87,23 @@ const NewsPage = () => {
   const starsRef = useRef(null);
   const location = useLocation();
 
-  const filteredArticles =
-    filter === "all"
-      ? articles
-      : filter === "inProgress"
-      ? articles.filter(
-          (article) => !article.isGameComplete && article.tag === "Game"
-        )
-      : filter === "completed"
-      ? articles.filter(
-          (article) => article.isGameComplete && article.tag === "Game"
-        )
-      : [];
+  const filteredArticles = useMemo(() => {
+    if (filter === "all") return articles;
+
+    if (filter === "inProgress") {
+      return articles.filter(
+        (article) => !article.isGameComplete && article.tag === "Game"
+      );
+    }
+
+    if (filter === "completed") {
+      return articles.filter(
+        (article) => article.isGameComplete && article.tag === "Game"
+      );
+    }
+
+    return [];
+  }, [filter]);
 
   useEffect(() => {
     setShowEmpty(filteredArticles.length === 0);

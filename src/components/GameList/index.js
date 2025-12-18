@@ -4,7 +4,7 @@ import Game from "../Game";
 
 import "./gamelist.css";
 
-import unnamedImage from "../../assets/images/city.png";
+import gameSectionBG from "../../assets/images/GeoNovaBanner.png";
 import LovebugAppIcon from "../../assets/images/LovebugAppIcon.png";
 import questionMark from "../../assets/images/QuestionMark.png";
 import ImageWithTransition from "../../components/ImageBackground/ImageBackground";
@@ -60,7 +60,7 @@ useEffect(() => {
 
   return (
     <div className="d-flex" style={{ height: "100vh" }}>
-      <ImageWithTransition image={unnamedImage} section={"games"} />
+      <ImageWithTransition image={gameSectionBG} section={"games"} />
       <Container fluid className="w-100 z-1">
         <div xs={12} className="my-5">
           <h2 className="text-center z-3" style={{ color: "white" }}>

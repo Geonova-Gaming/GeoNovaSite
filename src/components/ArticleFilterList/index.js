@@ -5,13 +5,13 @@ import {
   Container,
   Pagination,
 } from "react-bootstrap";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import "./articlefilterlist.css";
 import articles from "../../pages/news/articles.json";
-import imagen from "../../assets/images/Genova-Icon.png";
-import news from "../../assets/images/news2.png";
-import GeoNovaIcon from "../../assets/images/Geonova1.png";
+import imagen from "../../assets/images/gnLogo.png";
+import news from "../../assets/images/GeoNovaSnowyBanner.png";
+import GeoNovaIcon from "../../assets/images/gnLogo.png";
 
 import ImageWithTransition from "../../components/ImageBackground/ImageBackground";
 
