@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.fff1ffc9.css",
-    "main.js": "/static/js/main.87745a9e.js",
+    "main.js": "/static/js/main.0d4a796d.js",
     "static/media/Carolina.png": "/static/media/Carolina.521dd44d2e0ab5f6590c.png",
     "static/media/rainbowGNlogo.png": "/static/media/rainbowGNlogo.cf00ad8ac3c0ea8b57a5.png",
     "static/media/QuestionMark.png": "/static/media/QuestionMark.f34a6cf0b5017d078460.png",
-    "static/media/city.png": "/static/media/city.9296aaf2d83e78d146bc.png",
     "static/media/Nimi.png": "/static/media/Nimi.13a2d45a43a7e4c01798.png",
     "static/media/bardsemblem.png": "/static/media/bardsemblem.96089bb748a2b08e2fac.png",
-    "static/media/news2.png": "/static/media/news2.2ef0f6ad02f443468c46.png",
+    "static/media/GeoNovaBanner.png": "/static/media/GeoNovaBanner.58ea65add84210fd5e59.png",
+    "static/media/GeoNovaSnowyBanner.png": "/static/media/GeoNovaSnowyBanner.f60a2d835fa512d53f4c.png",
     "static/media/codingemblem_.png": "/static/media/codingemblem_.82cbf3734bc204dfcb69.png",
     "static/media/writersemblem.png": "/static/media/writersemblem.0d320a915f9aacc2fff5.png",
     "static/media/artistemblem.png": "/static/media/artistemblem.9b530af1eb74f2a74232.png",
@@ -20,8 +20,6 @@
     "static/media/Zaku.png": "/static/media/Zaku.f05621a1452186868c6f.png",
     "static/media/India.png": "/static/media/India.7a6c44fe0da99c97098a.png",
     "static/media/LovebugAppIcon.png": "/static/media/LovebugAppIcon.6995e3ddbd568fa8051a.png",
-    "static/media/Genova-Icon.png": "/static/media/Genova-Icon.b5962d1a2474367b720c.png",
-    "static/media/Geonova1.png": "/static/media/Geonova1.b5962d1a2474367b720c.png",
     "static/media/Rubenstein.png": "/static/media/Rubenstein.3d3464974a1fcf66269c.png",
     "static/media/Naomi.png": "/static/media/Naomi.35759c71dacf0a23990c.png",
     "static/media/Rachel2.png": "/static/media/Rachel2.1c8a505116bb3504615b.png",
@@ -36,7 +34,6 @@
     "static/media/Joshua.png": "/static/media/Joshua.eb9924f5338c5b0345b2.png",
     "static/media/gnLogo.png": "/static/media/gnLogo.57d6a3d61e5635f4b6a9.png",
     "static/media/Sara.png": "/static/media/Sara.5b81dd6c96e91014b8b0.png",
-    "static/media/Geonova2.jpg": "/static/media/Geonova2.1a832f87e0aee5b09d81.jpg",
     "static/media/Alunaria.png": "/static/media/Alunaria.440351029da3a3a4f13a.png",
     "static/media/Steffan1.png": "/static/media/Steffan1.521385816d2188c7861e.png",
     "static/media/rosy.png": "/static/media/rosy.0a46c7d690f0ce83e9f8.png",
@@ -44,10 +41,10 @@
     "static/media/Centauri.ttf": "/static/media/Centauri.2e5cc0d9ef8d3d130663.ttf",
     "index.html": "/index.html",
     "main.fff1ffc9.css.map": "/static/css/main.fff1ffc9.css.map",
-    "main.87745a9e.js.map": "/static/js/main.87745a9e.js.map"
+    "main.0d4a796d.js.map": "/static/js/main.0d4a796d.js.map"
   },
   "entrypoints": [
     "static/css/main.fff1ffc9.css",
-    "static/js/main.87745a9e.js"
+    "static/js/main.0d4a796d.js"
   ]
 }
