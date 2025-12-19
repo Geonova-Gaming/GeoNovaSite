@@ -31,38 +31,29 @@ function CustomCarousel() {
     setActiveIndex(selectedIndex);
   };
 
-  return (
-    <Container>
-      <Carousel
-        activeIndex={activeIndex}
-        onSelect={handleSelect}
-        interval={null}
-        indicators={true}
-        controls={true}   // ensure arrows are rendered
-      >
-        {slides.map((slide, index) => (
-          <Carousel.Item key={index}>
-            {/* Image only */}
-            <img
-              className="carousel-image"
-              src={slide.image}
-              alt={slide.header}
-            />
+ return (
+  <div className="carousel-wrapper">
+    <Carousel
+      activeIndex={activeIndex}
+      onSelect={handleSelect}
+      interval={null}
+      indicators={true}
+      controls={true}
+    >
+      {slides.map((slide, index) => (
+        <Carousel.Item key={index}>
+          <img className="carousel-image" src={slide.image} alt={slide.header} />
 
-            {/* Caption BELOW image */}
-            <div className="carousel-caption-below text-center">
-              <Row>
-                <Col>
-                  <h2>{slide.header}</h2>
-                  <p>{slide.subtext}</p>
-                </Col>
-              </Row>
-            </div>
-          </Carousel.Item>
-        ))}
-      </Carousel>
-    </Container>
-  );
+          <div className="carousel-caption-below text-center">
+            <h2>{slide.header}</h2>
+            <p>{slide.subtext}</p>
+          </div>
+        </Carousel.Item>
+      ))}
+    </Carousel>
+  </div>
+);
+
 }
 
 export default CustomCarousel;

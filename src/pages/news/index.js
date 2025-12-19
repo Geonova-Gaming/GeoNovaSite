@@ -1,16 +1,10 @@
 import React, { useEffect, useState, useRef, useMemo } from "react";
-import Container from "react-bootstrap/Container";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
-import Logo from "../../assets/images/gnLogo.png";
-
-import "./news.css"; // include your star CSS here too
-import { Nav } from "react-bootstrap";
+import { Button, Card, Nav } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
+import Logo from "../../assets/images/gnLogo.png";
+import "./news.css";
+import articles from "./articles.json";
 
-import articles from "./articles.json"; // Import the JSON file
-
-// ------------------ ArticleCard ------------------
 function ArticleCard({ article }) {
   const location = useLocation();
 
@@ -19,7 +13,7 @@ function ArticleCard({ article }) {
   }, [location.hash]);
 
   return (
-    <Card style={{ width: "18rem" }} className="cards-style-news m-2">
+    <Card className="cards-style-news">
       <Card.Img variant="top" src={Logo} />
       <Card.Body className="d-flex flex-column align-items-center">
         <Card.Text>{article.date}</Card.Text>
@@ -37,10 +31,9 @@ function ArticleCard({ article }) {
   );
 }
 
-// ------------------ ArticleList ------------------
 function ArticleList({ articlesData }) {
   return (
-    <div className="d-flex flex-wrap justify-content-center">
+    <div className="articles-grid">
       {articlesData.map((article, index) => (
         <ArticleCard key={index} article={article} />
       ))}
@@ -48,31 +41,21 @@ function ArticleList({ articlesData }) {
   );
 }
 
-// ------------------ ArticleNav ------------------
 function ArticleNav({ setFilter }) {
   return (
-    <Nav defaultActiveKey="/home" as="ul">
+    <Nav className="news-nav" as="ul">
       <Nav.Item as="li">
-        <Nav.Link
-          className="custom-button-news"
-          onClick={() => setFilter("all")}
-        >
+        <Nav.Link className="custom-button-news" onClick={() => setFilter("all")}>
           All Posts
         </Nav.Link>
       </Nav.Item>
       <Nav.Item as="li">
-        <Nav.Link
-          className="custom-button-news"
-          onClick={() => setFilter("inProgress")}
-        >
+        <Nav.Link className="custom-button-news" onClick={() => setFilter("inProgress")}>
           Games In Progress
         </Nav.Link>
       </Nav.Item>
       <Nav.Item as="li">
-        <Nav.Link
-          className="custom-button-news"
-          onClick={() => setFilter("completed")}
-        >
+        <Nav.Link className="custom-button-news" onClick={() => setFilter("completed")}>
           Games
         </Nav.Link>
       </Nav.Item>
@@ -80,7 +63,6 @@ function ArticleNav({ setFilter }) {
   );
 }
 
-// ------------------ NewsPage ------------------
 const NewsPage = () => {
   const [filter, setFilter] = useState("all");
   const [showEmpty, setShowEmpty] = useState(false);
@@ -89,19 +71,10 @@ const NewsPage = () => {
 
   const filteredArticles = useMemo(() => {
     if (filter === "all") return articles;
-
-    if (filter === "inProgress") {
-      return articles.filter(
-        (article) => !article.isGameComplete && article.tag === "Game"
-      );
-    }
-
-    if (filter === "completed") {
-      return articles.filter(
-        (article) => article.isGameComplete && article.tag === "Game"
-      );
-    }
-
+    if (filter === "inProgress")
+      return articles.filter(a => !a.isGameComplete && a.tag === "Game");
+    if (filter === "completed")
+      return articles.filter(a => a.isGameComplete && a.tag === "Game");
     return [];
   }, [filter]);
 
@@ -113,82 +86,62 @@ const NewsPage = () => {
     window.scrollTo(0, 0);
   }, [location.hash]);
 
-  // Star background effect
   useEffect(() => {
     const container = starsRef.current;
     if (!container) return;
     container.innerHTML = "";
 
-    // Static stars
     for (let i = 0; i < 300; i++) {
-      const staticStar = document.createElement("div");
-      staticStar.className = "star-static";
-      staticStar.style.left = `${Math.random() * 100}vw`;
-      staticStar.style.top = `${Math.random() * 100}vh`;
-      staticStar.style.opacity = Math.random();
-      container.appendChild(staticStar);
+      const s = document.createElement("div");
+      s.className = "star-static";
+      s.style.left = `${Math.random() * 100}vw`;
+      s.style.top = `${Math.random() * 100}vh`;
+      s.style.opacity = Math.random();
+      container.appendChild(s);
     }
 
-    // Twinkling stars
     for (let i = 0; i < 200; i++) {
-      const opaStar = document.createElement("div");
-      opaStar.className = "star-static";
-      opaStar.style.left = `${Math.random() * 100}vw`;
-      opaStar.style.top = `${Math.random() * 100}vh`;
-      opaStar.style.animationDuration = `5s`;
-      opaStar.style.opacity = Math.random();
-      container.appendChild(opaStar);
+      const s = document.createElement("div");
+      s.className = "star-static";
+      s.style.left = `${Math.random() * 100}vw`;
+      s.style.top = `${Math.random() * 100}vh`;
+      s.style.animationDuration = `5s`;
+      s.style.opacity = Math.random();
+      container.appendChild(s);
     }
 
-    // Moving stars
     for (let i = 0; i < 10; i++) {
-      const starMov = document.createElement("div");
-      starMov.className = "star-movement";
-      starMov.style.left = `${Math.random() * 100}vw`;
-      starMov.style.top = `${Math.random() * 100}vh`;
-      starMov.style.animationDuration = `6s`;
-      starMov.style.opacity = Math.random();
-      container.appendChild(starMov);
+      const s = document.createElement("div");
+      s.className = "star-movement";
+      s.style.left = `${Math.random() * 100}vw`;
+      s.style.top = `${Math.random() * 100}vh`;
+      s.style.animationDuration = `6s`;
+      s.style.opacity = Math.random();
+      container.appendChild(s);
     }
   }, []);
 
   return (
-    <div className="main-content  wrapper p-5">
-      {/* Stars background */}
+    <div className="news-wrapper">
       <div className="main-stars">
         <div className="stars-container" ref={starsRef}></div>
       </div>
 
-      <Container fluid className="mt-5">
-        <Container>
-          <h1 className="header">News</h1>
-          <hr />
-        </Container>
+      <div className="news-inner">
+        <h1 className="header">News</h1>
+        <hr className="full-bleed-hr" />
 
-        {showEmpty ? (
-          <>
-            <Container className="d-flex justify-content-center mt-5 p-2">
-              <ArticleNav setFilter={setFilter} />
-            </Container>
-            <Container className="d-flex justify-content-center mt-5 p-2">
-              <ArticleList articlesData={filteredArticles} />
-            </Container>
-          </>
+        {/* TODO: Uncomment this once we have content to add */}
+        {/* <ArticleNav setFilter={setFilter} /> */}
+
+        {!showEmpty ? (
+          <div className="empty-box">
+            <h3>Come back later for news about our upcoming games!</h3>
+          </div>
         ) : (
-          <Container
-            className="d-flex justify-content-center align-items-center mt-5 p-5"
-            style={{
-              minHeight: "300px",
-              backgroundColor: "rgba(255,255,255,0.05)",
-              borderRadius: "8px",
-            }}
-          >
-            <h3 style={{ color: "white", textAlign: "center" }}>
-              Come back later for news about our upcoming games!
-            </h3>
-          </Container>
+          <ArticleList articlesData={filteredArticles} />
         )}
-      </Container>
+      </div>
     </div>
   );
 };

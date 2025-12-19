@@ -1,24 +1,23 @@
-.header {
-  text-align: center;
+/* Full cosmic background */
+.contact-wrapper {
+  background: black;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  position: relative;
 }
 
-.main-content {
-  background-color: black; /* Inherit background color from parent */
-}
-
-.wrapper {
-  height: 100vh; /* Set viewport height */
-}
-
+/* Starfield stays behind everything */
 .main-stars {
-  position: fixed;       /* stays behind everything */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  z-index: -1;           /* push behind content */
-  pointer-events: none;  /* allow clicks to pass through */
+  z-index: -1;
+  pointer-events: none;
 }
 
 .stars-container {
@@ -27,41 +26,59 @@
   height: 100%;
 }
 
-
-.star-static,
-.star-movement {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: white;
-  border-radius: 50%;
+/* Page content wrapper */
+.contact-inner {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  color: white;
 }
 
-.star-static {
-  animation: twinkle 5s infinite alternate;
+/* Form box */
+.contact-form-box {
+  padding: 2rem;
 }
 
-.star-movement {
-  width: 3px;
-  height: 3px;
-  background: #fff;
-  animation: moveStar linear infinite;
+/* Title */
+.header {
+  text-align: center;
+  color: white;
+  margin-bottom: 2rem;
 }
 
-@keyframes twinkle {
-  from { opacity: 0.2; }
-  to { opacity: 1; }
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .contact-inner {
+    padding: 2rem 1rem;
+  }
+
+  .contact-form-box {
+    padding: 1.5rem;
+  }
+
+  .header {
+    font-size: 1.8rem;
+  }
 }
 
-@keyframes moveStar {
-  from { transform: translateY(0); }
-  to { transform: translateY(100vh); }
+@media (max-width: 480px) {
+  .contact-inner {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .contact-form-box {
+    padding: 1rem;
+  }
+
+  .header {
+    font-size: 1.5rem;
+  }
 }
 
 /* Inverted form controls */
 .form-control {
-  background-color: #212529; /* dark */
-  color: #f8f9fa;            /* light */
+  background-color: #212529;
+  color: #f8f9fa;
   border: 1px solid #f8f9fa;
 }
-

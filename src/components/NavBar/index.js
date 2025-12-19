@@ -10,11 +10,9 @@ function NavBar() {
   const location = useLocation();
   const [isScrollingDown, setIsScrollingDown] = useState(false);
 
-  // Track scroll to darken background
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollTop = window.scrollY;
-      setIsScrollingDown(currentScrollTop > 0);
+      setIsScrollingDown(window.scrollY > 0);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -23,28 +21,19 @@ function NavBar() {
   return (
     <Navbar
       fixed="top"
-      className="navBarStyles"
-      style={{
-        ...(isScrollingDown ? { background: "rgba(0, 0, 0, 0.8)" } : {}),
-        padding: "0px",
-      }}
+      expand="md"
+      className={`navBarStyles ${isScrollingDown ? "nav-scrolled" : ""}`}
     >
-      <Navbar.Brand
-        as={Link}
-        to="/"
-        style={{ display: "flex", alignItems: "center" }}
-      >
-        <img alt="" src={GeoNova} className="d-inline-block navbarImage" />
+      <Navbar.Brand as={Link} to="/" className="brand-container">
+        <img alt="" src={GeoNova} className="navbarImage" />
         <div className="degrade geonovaText">
           <div className="navText">GEONOVA GAMING</div>
         </div>
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse
-        id="basic-navbar-nav"
-        style={{ height: "100px" }}
-        className="justify-content-end"
-      >
+
+      <Navbar.Toggle aria-controls="basic-navbar-nav" className="custom-toggler" />
+
+      <Navbar.Collapse id="basic-navbar-nav" className="nav-collapse">
         <Nav activeKey={location.pathname} className="ms-auto" as="ul">
           <Nav.Item as="li">
             <Nav.Link as={Link} to="/" eventKey="/">
@@ -53,38 +42,34 @@ function NavBar() {
               </span>
             </Nav.Link>
           </Nav.Item>
+
           <Nav.Item as="li">
             <Nav.Link as={Link} to="/games" eventKey="/games">
-              <span
-                className={location.pathname === "/games" ? "glitch-text" : ""}
-              >
+              <span className={location.pathname === "/games" ? "glitch-text" : ""}>
                 Games
               </span>
             </Nav.Link>
           </Nav.Item>
+
           <Nav.Item as="li">
             <Nav.Link as={Link} to="/news" eventKey="/news">
-              <span
-                className={location.pathname === "/news" ? "glitch-text" : ""}
-              >
+              <span className={location.pathname === "/news" ? "glitch-text" : ""}>
                 News
               </span>
             </Nav.Link>
           </Nav.Item>
+
           <Nav.Item as="li">
             <Nav.Link as={Link} to="/about" eventKey="/about">
-              <span
-                className={location.pathname === "/about" ? "glitch-text" : ""}
-              >
+              <span className={location.pathname === "/about" ? "glitch-text" : ""}>
                 About
               </span>
             </Nav.Link>
           </Nav.Item>
+
           <Nav.Item as="li">
             <Nav.Link as={Link} to="/contact" eventKey="/contact">
-              <span
-                className={location.pathname === "/contact" ? "glitch-text" : ""}
-              >
+              <span className={location.pathname === "/contact" ? "glitch-text" : ""}>
                 Contact
               </span>
             </Nav.Link>

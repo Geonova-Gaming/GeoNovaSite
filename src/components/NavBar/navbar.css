@@ -1,71 +1,116 @@
-.navbar .nav-link {
-  color: rgb(190, 190, 190); /* Example: Set a contrasting color */
-  font-weight: bold;
-}
-.navbar-light .navbar-nav .nav-link.active {
-  color: rgb(255, 255, 255);
-}
-
-.navbar .nav-link:hover {
-  color: #ffffff; /* Change to your desired hover color */
+/* ============================
+   NAVBAR BASE
+   ============================ */
+.navBarStyles {
+  width: 100%;
+  padding: 0;
+  transition: background 0.3s ease;
+  background: transparent;
 }
 
-.navBarStyles{
-  height: 100px;
-  background-color: rgba(0, 0, 0, 0);
+.nav-scrolled {
+  background: rgba(0, 0, 0, 0.85);
 }
 
-.degrade {
-  height: 100px;
-  width: 160px;
-  background: linear-gradient(to right, black, transparent);
-}
-
-#basic-navbar-nav{
-  background: linear-gradient(to left, black, transparent);
+/* ============================
+   BRAND AREA
+   ============================ */
+.brand-container {
+  display: flex;
+  align-items: center;
 }
 
 .navbarImage {
-  background: rgba(0, 0, 0, 1);
-  height: 100px;
-  width: inherit;
-  padding: 15px;
+  height: 80px;
+  padding: 10px;
+  background: black;
+}
+
+.degrade {
+  height: 80px;
+  width: 160px;
+  background: linear-gradient(to right, black, transparent);
+  display: flex;
+  align-items: center;
 }
 
 .geonovaText {
   color: white;
-  display: flex;
-  align-items: center;
-  padding-left: 10px;
   font-weight: bold;
   font-size: 20px;
+  padding-left: 10px;
 }
 
-@keyframes revealText {
-  from {
-    width: 0;
-    opacity: 0;
-  }
-  to {
-    width: 100%;
-    opacity: 1;
-  }
-}
-
+/* Text reveal animation */
 .navText {
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
-  border-right: 2px solid white; /* Simula efecto de escritura */
+  border-right: 2px solid white;
   padding-right: 15px;
   font-size: 13px;
   padding-top: 3px;
   animation: revealText 2s steps(20, end) forwards;
 }
 
-.navBarStyles .nav-link.active {
-  font-weight: bold;
-  color: #ebebeb !important; /* highlight color */
-  text-shadow: 0 0 6px #ff00ff; /* glowing effect */
+@keyframes revealText {
+  from { width: 0; opacity: 0; }
+  to { width: 100%; opacity: 1; }
 }
 
+/* ============================
+   NAV LINKS
+   ============================ */
+.navbar .nav-link {
+  color: rgb(190, 190, 190);
+  font-weight: bold;
+}
+
+.navbar .nav-link:hover {
+  color: white;
+}
+
+.navBarStyles .nav-link.active {
+  color: #ebebeb !important;
+  text-shadow: 0 0 6px #ff00ff;
+}
+
+/* ============================
+   COLLAPSED MENU
+   ============================ */
+.nav-collapse {
+  background: linear-gradient(to left, black, transparent);
+  padding: 1rem;
+}
+
+/* Toggle button visibility */
+.custom-toggler {
+  border-color: white;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* ============================
+   MOBILE OPTIMIZATION
+   ============================ */
+@media (max-width: 500px) {
+  .navbarImage {
+    height: 60px;
+    padding: 6px;
+  }
+
+  .degrade {
+    height: 60px;
+    width: 120px;
+  }
+
+  .geonovaText {
+    font-size: 14px;
+  }
+
+  .navText {
+    font-size: 11px;
+  }
+}

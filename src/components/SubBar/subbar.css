@@ -1,3 +1,50 @@
-.main-content {
-  background-color: black; /* Inherit background color from parent */
+/* Full-width black footer */
+.subbar-wrapper {
+  background-color: black;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+/* Remove Bootstrap padding issues */
+.subbar-container {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Desktop layout */
+.subbar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  color: white;
+}
+
+/* Left, center, right sections */
+.subbar-left,
+.subbar-center,
+.subbar-right {
+  padding: 0.5rem 0;
+}
+
+/* Right section aligns right on desktop */
+.subbar-right {
+  text-align: right;
+}
+
+/* ============================
+   MOBILE LAYOUT
+   ============================ */
+@media (max-width: 768px) {
+  .subbar-row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .subbar-left,
+  .subbar-center,
+  .subbar-right {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
 }

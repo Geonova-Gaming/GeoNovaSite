@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Container, FloatingLabel, Form, Button } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
-import "./contact.css"; // include your inverted form + star CSS
+import "./contact.css";
 
 const ContactPage = () => {
   const [name, setName] = useState("");
@@ -17,34 +17,23 @@ const ContactPage = () => {
   };
 
   const handleSubmit = (event) => {
-  event.preventDefault();
-  const formData = { name, email, message, selectedFile };
-
-  // Log the form data
-
-  // Extra confirmation message
-
-  // Optional: browser popup alert
-  alert("Form submission works! ✅");
-
-  // Reset form state
-  setName("");
-  setEmail("");
-  setMessage("");
-  setSelectedFile(null);
-};
+    event.preventDefault();
+    alert("Form submission works! ✅");
+    setName("");
+    setEmail("");
+    setMessage("");
+    setSelectedFile(null);
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.hash]);
 
-  // Star background effect
   useEffect(() => {
     const container = starsRef.current;
     if (!container) return;
     container.innerHTML = "";
 
-    // Static stars
     for (let i = 0; i < 300; i++) {
       const staticStar = document.createElement("div");
       staticStar.className = "star-static";
@@ -54,7 +43,6 @@ const ContactPage = () => {
       container.appendChild(staticStar);
     }
 
-    // Twinkling stars
     for (let i = 0; i < 200; i++) {
       const opaStar = document.createElement("div");
       opaStar.className = "star-static";
@@ -65,7 +53,6 @@ const ContactPage = () => {
       container.appendChild(opaStar);
     }
 
-    // Moving stars
     for (let i = 0; i < 10; i++) {
       const starMov = document.createElement("div");
       starMov.className = "star-movement";
@@ -78,21 +65,22 @@ const ContactPage = () => {
   }, []);
 
   return (
-    <div className="p-5 main-content wrapper">
-      {/* Stars background */}
+    <div className="contact-wrapper">
       <div className="main-stars">
         <div className="stars-container" ref={starsRef}></div>
       </div>
 
-      <Container className="p-5">
-        <h1 className="header p-5">Contact Us</h1>
-        <Container className="p-5 bg-dark text-light rounded-3">
+      <div className="contact-inner">
+        <h1 className="header">Contact Us</h1>
+
+        <div className="contact-form-box bg-dark text-light rounded-3">
           <hr className="border-light" />
+
           <Form onSubmit={handleSubmit}>
             <h5 className="text-center text-light">Send Message</h5>
 
             <Form.Group className="mb-3">
-              <FloatingLabel controlId="floatingName" label="Name" className="text-light">
+              <FloatingLabel controlId="floatingName" label="Name">
                 <Form.Control
                   type="text"
                   placeholder="Name"
@@ -104,7 +92,7 @@ const ContactPage = () => {
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <FloatingLabel controlId="floatingInput" label="Email address" className="text-light">
+              <FloatingLabel controlId="floatingInput" label="Email address">
                 <Form.Control
                   type="email"
                   placeholder="name@example.com"
@@ -116,7 +104,7 @@ const ContactPage = () => {
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <FloatingLabel controlId="floatingTextarea2" label="Message" className="text-light">
+              <FloatingLabel controlId="floatingTextarea2" label="Message">
                 <Form.Control
                   as="textarea"
                   placeholder="Leave a comment here"
@@ -144,8 +132,8 @@ const ContactPage = () => {
               </Button>
             </div>
           </Form>
-        </Container>
-      </Container>
+        </div>
+      </div>
     </div>
   );
 };
