@@ -67,10 +67,17 @@ function NavBar() {
             </Nav.Link>
           </Nav.Item>
 
-          <Nav.Item as="li">
+          {/* <Nav.Item as="li">
             <Nav.Link as={Link} to="/contact" eventKey="/contact">
               <span className={location.pathname === "/contact" ? "glitch-text" : ""}>
                 Contact
+              </span>
+            </Nav.Link>
+          </Nav.Item> */}
+           <Nav.Item as="li">
+            <Nav.Link as={Link} to="/newsletter" eventKey="/newsletter">
+              <span className={location.pathname === "/newsletter" ? "glitch-text" : ""}>
+                Newsletter
               </span>
             </Nav.Link>
           </Nav.Item>

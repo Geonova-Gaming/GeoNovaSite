@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 
-import GeonovaLogo from "../../assets/images/purpleGNlogo.png"; // Import the JSON file
+import GeonovaLogo from "../../assets/images/purpleGNlogo.png";
 import "./newsletterSection.css";
 
 const NewsletterSection = () => {
   const [email, setEmail] = useState("");
   const [isValid, setIsValid] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -17,13 +19,36 @@ const NewsletterSection = () => {
     setIsValid(regex.test(value));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (isValid) {
-      alert(`Thanks for signing up, ${email}!`);
+    if (!isValid) return;
+
+    setLoading(true);
+
+    try {
+      const res = await fetch(
+        "https://d406ee064676d505936c2cfe097772d3.m.pipedream.net",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email }),
+        }
+      );
+
+      if (!res.ok) throw new Error("Network error");
+
+      setSuccess(true);
       setEmail("");
       setIsValid(false);
+
+      // Hide success message after a few seconds
+      setTimeout(() => setSuccess(false), 4000);
+    } catch (err) {
+      console.error(err);
+      alert("Something went wrong. Please try again.");
     }
+
+    setLoading(false);
   };
 
   return (
@@ -35,28 +60,37 @@ const NewsletterSection = () => {
             <h1 className="fw-bold mb-3 gradient-color">
               Join Our Newsletter
             </h1>
+
             <p className="lead" style={{ color: "#ccc" }}>
-              Stay in the loop with our latest projects! Members get access to exclusive conten
-              delivered straight to their inbox.
+              Stay in the loop with our latest projects! Members get access to
+              exclusive content delivered straight to their inbox.
             </p>
 
             <Form onSubmit={handleSubmit} className="mt-4">
-              <div className="d-flex mb-4">
+              <div className="d-flex flex-column flex-sm-row mb-3">
                 <Form.Control
                   type="email"
                   placeholder="Enter your email"
                   value={email}
                   onChange={handleChange}
-                  className="me-2"
+                  className="me-sm-2 mb-2 mb-sm-0"
                 />
+
                 <Button
                   type="submit"
                   className="signup-btn"
-                  disabled={!isValid}
+                  disabled={!isValid || loading}
                 >
-                  Sign Up Now
+                  {loading ? "Signing Up..." : "Sign Up Now"}
                 </Button>
               </div>
+
+              {/* Success message */}
+              {success && (
+                <div style={{ color: "#4caf50", marginBottom: "0.75rem" }}>
+                  You’re in! Check your inbox for updates.
+                </div>
+              )}
 
               {/* Consent text */}
               <small style={{ color: "#ccc" }}>

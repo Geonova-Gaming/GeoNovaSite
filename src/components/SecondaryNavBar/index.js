@@ -13,9 +13,15 @@ function MiscNavContent() {
         <Nav.Link href="/about">About</Nav.Link>
       </Link>
       </Nav.Item>
-      <Nav.Item>
+      {/* TODO: Revert back to Contact later */}
+      {/* <Nav.Item>
       <Link to="/contact" className="footer-nav-link">
         <Nav.Link href="/contact">Contact</Nav.Link>
+        </Link>
+      </Nav.Item> */}
+      <Nav.Item>
+      <Link to="/newsletter" className="footer-nav-link">
+        <Nav.Link href="/newsletter">Newsletter</Nav.Link>
         </Link>
       </Nav.Item>
       <Nav.Item>

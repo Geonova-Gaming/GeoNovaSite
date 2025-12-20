@@ -205,8 +205,8 @@ const AboutPage = () => {
   ];
 
   const writersTranslationArrays = [
-    { key: "about.writersSection1", image: Alunaria },
-    { key: "about.writersSection2", image: Zaku },
+    { key: "about.writersSection1", image: Zaku },
+    { key: "about.writersSection2", image: Alunaria },
     { key: "about.writersSection3", image: Gracie },
   ];
 

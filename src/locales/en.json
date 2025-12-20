@@ -92,16 +92,16 @@
       "favoritegame": "  The Witcher 3: Wild Hunt, Fire Emblem."
     },
     "writersSection1": {
-      "name": "Alunaria Verano",
-      "role": "Lead Writer",
-      "description": "Hello my name is Alunaría, I am GeoNova’s Lead Writer.",
-      "favoritegame": "Saints Row the 3rd."
-    },
-    "writersSection2": {
       "name": "Michael “Zaku” Nutt",
-      "role": "Writer",
+      "role": "Lead Writer",
       "description": "Born and raised in Texas, I have always been influenced by stories since I was young. Finding my passion for writing in high school, I set out to become a game writer, abandoning my shallow hope of becoming an engineer. My only wish now is to create narrative experiences that mean as much to people as they did to me growing up.",
       "favoritegame": "Cyberpunk: 2077."
+    },
+    "writersSection2": {
+      "name": "Alunaria Verano",
+      "role": "Writer",
+      "description": "Hello my name is Alunaría, I am proud member of GeoNova’s Writing department!",
+      "favoritegame": "Saints Row the 3rd."
     },
     "writersSection3": {
       "name": "Gracie “Pantaloons” Todd",

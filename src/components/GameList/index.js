@@ -59,7 +59,7 @@ useEffect(() => {
 }, []);
 
   return (
-    <div className="d-flex" style={{ height: "100vh" }}>
+<div className="d-flex flex-column position-relative" style={{ minHeight: "100vh" }}>
       <ImageWithTransition image={gameSectionBG} section={"games"} />
       <Container fluid className="w-100 z-1">
         <div xs={12} className="my-5">

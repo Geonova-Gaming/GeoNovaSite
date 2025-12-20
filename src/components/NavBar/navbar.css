@@ -101,10 +101,7 @@
     padding: 6px;
   }
 
-  .degrade {
-    height: 60px;
-    width: 120px;
-  }
+.degrade { min-width: 160px; width: auto; padding-right: 20px; /* keeps the fade effect */ }
 
   .geonovaText {
     font-size: 14px;
