@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.9d0ee35c.css",
-    "main.js": "/static/js/main.e996c912.js",
+    "main.js": "/static/js/main.dcf029a1.js",
     "static/media/Carolina.png": "/static/media/Carolina.521dd44d2e0ab5f6590c.png",
     "static/media/rainbowGNlogo.png": "/static/media/rainbowGNlogo.cf00ad8ac3c0ea8b57a5.png",
     "static/media/QuestionMark.png": "/static/media/QuestionMark.f34a6cf0b5017d078460.png",
@@ -41,10 +41,10 @@
     "static/media/Centauri.ttf": "/static/media/Centauri.2e5cc0d9ef8d3d130663.ttf",
     "index.html": "/index.html",
     "main.9d0ee35c.css.map": "/static/css/main.9d0ee35c.css.map",
-    "main.e996c912.js.map": "/static/js/main.e996c912.js.map"
+    "main.dcf029a1.js.map": "/static/js/main.dcf029a1.js.map"
   },
   "entrypoints": [
     "static/css/main.9d0ee35c.css",
-    "static/js/main.e996c912.js"
+    "static/js/main.dcf029a1.js"
   ]
 }
