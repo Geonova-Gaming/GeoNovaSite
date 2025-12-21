@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.fff1ffc9.css",
-    "main.js": "/static/js/main.70a8af40.js",
+    "main.css": "/static/css/main.9d0ee35c.css",
+    "main.js": "/static/js/main.e996c912.js",
     "static/media/Carolina.png": "/static/media/Carolina.521dd44d2e0ab5f6590c.png",
     "static/media/rainbowGNlogo.png": "/static/media/rainbowGNlogo.cf00ad8ac3c0ea8b57a5.png",
     "static/media/QuestionMark.png": "/static/media/QuestionMark.f34a6cf0b5017d078460.png",
@@ -11,11 +11,11 @@
     "static/media/GeoNovaSnowyBanner.png": "/static/media/GeoNovaSnowyBanner.f60a2d835fa512d53f4c.png",
     "static/media/artistemblem.png": "/static/media/artistemblem.455ea722d76090425c4f.png",
     "static/media/codingemblem_.png": "/static/media/codingemblem_.b4adb530a5ed50886fa7.png",
-    "static/media/writersemblem.png": "/static/media/writersemblem.7cb01761ddd046ad2f6f.png",
     "static/media/Guilherme.png": "/static/media/Guilherme.66d9d5b3031b9dc2b23f.png",
     "static/media/Tam1.png": "/static/media/Tam1.52fb5fffe67a0812bd0b.png",
     "static/media/Ryan.png": "/static/media/Ryan.0cba8755def31fd8fe27.png",
     "static/media/marketingemblem_.png": "/static/media/marketingemblem_.e83ea91c3a463221457c.png",
+    "static/media/rainbowGNlogoCopy.png": "/static/media/rainbowGNlogoCopy.748faaf409fbfe8134cb.png",
     "static/media/Daniel.png": "/static/media/Daniel.325c92e25da1b87a692f.png",
     "static/media/Zaku.png": "/static/media/Zaku.f05621a1452186868c6f.png",
     "static/media/India.png": "/static/media/India.7a6c44fe0da99c97098a.png",
@@ -40,11 +40,11 @@
     "static/media/purpleGNlogo.png": "/static/media/purpleGNlogo.7cb46f742ac3fd2baa2d.png",
     "static/media/Centauri.ttf": "/static/media/Centauri.2e5cc0d9ef8d3d130663.ttf",
     "index.html": "/index.html",
-    "main.fff1ffc9.css.map": "/static/css/main.fff1ffc9.css.map",
-    "main.70a8af40.js.map": "/static/js/main.70a8af40.js.map"
+    "main.9d0ee35c.css.map": "/static/css/main.9d0ee35c.css.map",
+    "main.e996c912.js.map": "/static/js/main.e996c912.js.map"
   },
   "entrypoints": [
-    "static/css/main.fff1ffc9.css",
-    "static/js/main.70a8af40.js"
+    "static/css/main.9d0ee35c.css",
+    "static/js/main.e996c912.js"
   ]
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./countdownTimer.css";
 
 const CountdownTimer = ({ targetDate, title }) => {
@@ -7,22 +7,36 @@ const CountdownTimer = ({ targetDate, title }) => {
   const mmRef = useRef(null);
   const ssRef = useRef(null);
 
+  const [isLive, setIsLive] = useState(false);
+
+  // Convert targetDate to EST 5:00 PM
   const getTargetDate = () => {
-    if (targetDate) return new Date(targetDate);
-    // fallback: next Halloween
-    const now = new Date();
-    let year = now.getFullYear();
-    let halloween = new Date(year, 9, 31);
-    if (halloween.getTime() < now.getTime()) {
-      halloween = new Date(year + 1, 9, 31);
-    }
-    return halloween;
+    const date = new Date(targetDate);
+
+    // Force 5:00 PM EST
+    date.setHours(17, 0, 0, 0);
+
+    return date;
   };
 
   const updateCountdown = () => {
+    const now = new Date();
+
+    //  Convert now to EST
+    const nowEST = new Date(
+      now.toLocaleString("en-US", { timeZone: "America/New_York" })
+    );
+
+    const target = getTargetDate();
+    const dist = target.getTime() - nowEST.getTime();
+
+    // If event time has passed → switch to LIVE mode
+    if (dist <= 0) {
+      setIsLive(true);
+      return;
+    }
+
     const s = 1000, m = s * 60, h = m * 60, d = h * 24;
-    const now = new Date().getTime();
-    const dist = getTargetDate().getTime() - now;
     const days = Math.floor(dist / d);
     const hours = Math.floor((dist % d) / h);
     const mins = Math.floor((dist % h) / m);
@@ -41,13 +55,20 @@ const CountdownTimer = ({ targetDate, title }) => {
     return () => clearInterval(countdownInterval);
   }, [targetDate]);
 
+  // If event is live, show message instead of countdown
+  if (isLive) {
+    return (
+      <div className="countdown-container">
+        <h2 className="countdown-title">Title Reveal Event is now live!</h2>
+      </div>
+    );
+  }
+
   return (
     <div className="countdown-container">
-      {/* Title above countdown */}
       {title && <h2 className="countdown-title">{title}</h2>}
 
       <svg viewBox="0 0 1400 700" opacity="1">
-        {/* Glow filter only */}
         <filter id="glow" width="300%" height="300%" x="-100%" y="-100%">
           <feGaussianBlur in="SourceAlpha" stdDeviation="20" result="blur" />
           <feFlood floodColor="rgba(128, 86, 244, 0.75)" result="flood" />
@@ -59,10 +80,9 @@ const CountdownTimer = ({ targetDate, title }) => {
           </feMerge>
         </filter>
 
-        {/* Countdown text */}
         <text x="200" y="350" className="time-value" ref={ddRef}></text>
         <text x="550" y="350" className="time-value" ref={hhRef}></text>
-        <text x="850" y="350" className="time-value" ref={mmRef} ></text>
+        <text x="850" y="350" className="time-value" ref={mmRef}></text>
         <text x="1150" y="350" className="time-value" ref={ssRef}></text>
 
         <text x="200" y="450" className="time-label">DAYS</text>
