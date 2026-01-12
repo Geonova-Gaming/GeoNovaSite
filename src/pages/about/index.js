@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import Image from "react-bootstrap/Image";
 import "./about.css";
 import { Col, Row } from "react-bootstrap";
@@ -10,14 +9,10 @@ import { Container, Card } from "react-bootstrap/";
 
 import Logo from "../../assets/images/rainbowGNlogo.png";
 
-// ARTIST
 import Naomi from "../../assets/team_images/artists/Naomi.png";
 import Ryan from "../../assets/team_images/artists/Ryan.png";
 import Nimi from "../../assets/team_images/artists/Nimi.png";
 
-// ARTIST
-
-// CODERS
 import Nico from "../../assets/team_images/coders/Nico.jpg";
 import Tam from "../../assets/team_images/coders/Tam1.png";
 import Carl from "../../assets/team_images/coders/Carl2.png";
@@ -28,33 +23,25 @@ import Daniel from "../../assets/team_images/coders/Daniel.png";
 import India from "../../assets/team_images/coders/India.png";
 import Paul from "../../assets/team_images/coders/Paul.png";
 import Steffan from "../../assets/team_images/coders/Steffan1.png";
-// CODERS
 
-// WRITERS
 import Alunaria from "../../assets/team_images/writers/Alunaria.png";
 import Zaku from "../../assets/team_images/writers/Zaku.png";
 import Gracie from "../../assets/team_images/writers/Gracie.png";
-// WRITERS
 
-// BARDS
 import Michelle from "../../assets/team_images/bards/Michelle.png";
 import Rubenstein from "../../assets/team_images/bards/Rubenstein.png";
 import Rachel from "../../assets/team_images/bards/Rachel2.png";
 import Joshua from "../../assets/team_images/bards/Joshua.png";
-// BARDS
 
-// MARKETERS
 import Rosy from "../../assets/team_images/marketers/rosy.png";
 import Carolina from "../../assets/team_images/marketers/Carolina.png";
 import Sara from "../../assets/team_images/marketers/Sara.png";
 
-//EXTRA HELPERS
 import Guilherme from "../../assets/team_images/external/Guilherme.png";
 
 function PageSection({ sectionName, translatedArray, cardColor, dataTarget }) {
   const location = useLocation();
 
-  // Scroll to top on route change (except initial render)
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.hash]);
@@ -91,7 +78,6 @@ function PageSection({ sectionName, translatedArray, cardColor, dataTarget }) {
             }}
             className="my-hr"
           />
-          {/* Title using sectionName prop */}
         </Col>
       </Row>
       <Row className="m-5 justify-content-center">
@@ -104,6 +90,8 @@ function PageSection({ sectionName, translatedArray, cardColor, dataTarget }) {
 }
 
 function Cards({ key, buddy, cardColor }) {
+  const [loaded, setLoaded] = useState(false);
+
   return (
     <Card
       className="cards-style"
@@ -114,9 +102,10 @@ function Cards({ key, buddy, cardColor }) {
       </Card.Title>
       <div className="image-container-about">
         <Card.Img
-          variant="top"
+          loading="lazy"
           src={buddy?.image}
-          className="card-image-style"
+          className={`card-image-style ${loaded ? "loaded" : ""}`}
+          onLoad={() => setLoaded(true)}
         />
         <button className="photo-button-about">Learn More</button>
       </div>
@@ -130,7 +119,6 @@ function Cards({ key, buddy, cardColor }) {
         <Card.Text>
           <strong>Favorite Game:</strong> {buddy?.favoritegame}
         </Card.Text>
-        {/* <Card.Text><strong>Descriptión:</strong> {buddy?.description?.slice(0, 20) + (buddy?.description?.length > 20 ? "..." : "")}</Card.Text> */}
         <Card.Text className="description-text">
           <strong>Descriptión:</strong> {buddy?.description}
         </Card.Text>
@@ -143,7 +131,6 @@ function ImageTextSection({ imageUrl, subHeading, bodyText1, bodyText2 }) {
   return (
     <Container>
       <Row>
-        {/* Add margin-top for spacing */}
         <Col sm={3}>
           <Image
             src={imageUrl}
@@ -151,19 +138,15 @@ function ImageTextSection({ imageUrl, subHeading, bodyText1, bodyText2 }) {
             className="images-about-us border-gradient"
             width={200}
           />{" "}
-          {/* Large image */}
         </Col>
         <Col sm={9} className="d-flex align-items-center">
           <Container>
             <Row>
               <h2 className="my-h2 subtitle-styles">{subHeading}</h2>{" "}
-              {/* Sub heading text */}
             </Row>
             <Row>
               <p className="my-h2 paragraph-styles">{bodyText1}</p>{" "}
-              {/* Body text for sub heading */}
               <p className="my-h2 paragraph-styles">{bodyText2}</p>{" "}
-              {/* Body text for sub heading */}
             </Row>
           </Container>
         </Col>
@@ -263,137 +246,155 @@ const AboutPage = () => {
       image, // se agrega aquí la foto
     })
   );
-
   const [activeSection, setActiveSection] = useState("top");
 
-useEffect(() => {
-  const sections = document.querySelectorAll(".page-section-style");
-  const observer = new IntersectionObserver(
-  (entries) => {
-    const visible = entries.reduce((max, entry) =>
-      entry.intersectionRatio > max.intersectionRatio ? entry : max
+  useEffect(() => {
+    const sections = document.querySelectorAll(".page-section-style");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.reduce((max, entry) =>
+          entry.intersectionRatio > max.intersectionRatio ? entry : max
+        );
+        if (visible.isIntersecting) {
+          setActiveSection(visible.target.id);
+        }
+      },
+      {
+        threshold: [0.25, 0.5, 0.75], // multiple thresholds for finer ratios
+        rootMargin: "0px 0px -40% 0px",
+      }
     );
-    if (visible.isIntersecting) {
-      setActiveSection(visible.target.id);
-    }
-  },
-  {
-    threshold: [0.25, 0.5, 0.75], // multiple thresholds for finer ratios
-    rootMargin: "0px 0px -40% 0px",
-  }
-);
+    sections.forEach((section) => observer.observe(section));
 
-  sections.forEach((section) => observer.observe(section));
+    const handleScroll = () => {
+      if (window.scrollY < 50) {
+        setActiveSection("top");
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
 
-  // Extra listener for "top of page"
-  const handleScroll = () => {
-    if (window.scrollY <50) {
-      setActiveSection("top");
-    }
-  };
-  window.addEventListener("scroll", handleScroll);
-
-  return () => {
-    sections.forEach((section) => observer.unobserve(section));
-    window.removeEventListener("scroll", handleScroll);
-  };
-}, []);
-
-
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div className="main-content">
-     <div className="list-guys-content">
-  <ul>
-    <li>
-      <button
-        style={{ "--hover-color": "#3398E0" }} // Artist cardColor
-        className={
-      activeSection === "artist" || activeSection === "top" ? "active" : ""
-    }
-        onClick={() =>
-          document.getElementById("artist")?.scrollIntoView({ behavior: "smooth" })
-        }
-      >
-        Artist
-      </button>
-    </li>
-    <li>
-      <button
-        style={{ "--hover-color": "#33C572" }} // Coders cardColor
-        className={
-      activeSection === "coders" || activeSection === "top" ? "active" : ""
-    }
-        onClick={() =>
-          document.getElementById("coders")?.scrollIntoView({ behavior: "smooth" })
-        }
-      >
-        Coders
-      </button>
-    </li>
-    <li>
-      <button
-        style={{ "--hover-color": "#E41F64" }} // Marketers cardColor
-        className={
-      activeSection === "marketers" || activeSection === "top" ? "active" : ""
-    }
-        onClick={() =>
-          document.getElementById("marketers")?.scrollIntoView({ behavior: "smooth" })
-        }
-      >
-        Marketers
-      </button>
-    </li>
-    <li>
-      <button
-        style={{ "--hover-color": "#E67F23" }} // Writers cardColor
-        className={
-      activeSection === "writers" || activeSection === "top" ? "active" : ""
-    }
-        onClick={() =>
-          document.getElementById("writers")?.scrollIntoView({ behavior: "smooth" })
-        }
-      >
-        Writers
-      </button>
-    </li>
-    <li>
-      <button
-        style={{ "--hover-color": "#E8C511" }} // Bards cardColor
-        className={
-      activeSection === "bards" || activeSection === "top" ? "active" : ""
-    }
-        onClick={() =>
-          document.getElementById("bards")?.scrollIntoView({ behavior: "smooth" })
-        }
-      >
-        Bards
-      </button>
-    </li>
-    <li>
-      <button
-        style={{ "--hover-color": "#D7D6D6FF" }} // Externals cardColor
-        className={
-      activeSection === "externals" || activeSection === "top" ? "active" : ""
-    }
-        onClick={() =>
-          document.getElementById("externals")?.scrollIntoView({ behavior: "smooth" })
-        }
-      >
-        Externals
-      </button>
-    </li>
-  </ul>
-</div>
+      <div className="list-guys-content">
+        <ul>
+          <li>
+            <button
+              style={{ "--hover-color": "#3398E0" }} // Artist cardColor
+              className={
+                activeSection === "artist" || activeSection === "top"
+                  ? "active"
+                  : ""
+              }
+              onClick={() =>
+                document
+                  .getElementById("artist")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              Artist
+            </button>
+          </li>
+          <li>
+            <button
+              style={{ "--hover-color": "#33C572" }} // Coders cardColor
+              className={
+                activeSection === "coders" || activeSection === "top"
+                  ? "active"
+                  : ""
+              }
+              onClick={() =>
+                document
+                  .getElementById("coders")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              Coders
+            </button>
+          </li>
+          <li>
+            <button
+              style={{ "--hover-color": "#E41F64" }} // Marketers cardColor
+              className={
+                activeSection === "marketers" || activeSection === "top"
+                  ? "active"
+                  : ""
+              }
+              onClick={() =>
+                document
+                  .getElementById("marketers")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              Marketers
+            </button>
+          </li>
+          <li>
+            <button
+              style={{ "--hover-color": "#E67F23" }} // Writers cardColor
+              className={
+                activeSection === "writers" || activeSection === "top"
+                  ? "active"
+                  : ""
+              }
+              onClick={() =>
+                document
+                  .getElementById("writers")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              Writers
+            </button>
+          </li>
+          <li>
+            <button
+              style={{ "--hover-color": "#E8C511" }} // Bards cardColor
+              className={
+                activeSection === "bards" || activeSection === "top"
+                  ? "active"
+                  : ""
+              }
+              onClick={() =>
+                document
+                  .getElementById("bards")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              Bards
+            </button>
+          </li>
+          <li>
+            <button
+              style={{ "--hover-color": "#D7D6D6FF" }} // Externals cardColor
+              className={
+                activeSection === "externals" || activeSection === "top"
+                  ? "active"
+                  : ""
+              }
+              onClick={() =>
+                document
+                  .getElementById("externals")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              Externals
+            </button>
+          </li>
+        </ul>
+      </div>
 
       <h1 className="header">{t("about.title")}</h1>
       <hr />
       <ImageTextSection
         imageUrl={Logo}
         // subHeading={t("about.subtitle")}
-        bodyText1= {t("about.bodyP1")}
-       
-        bodyText2= {t("about.bodyP2")}
+        bodyText1={t("about.bodyP1")}
+        bodyText2={t("about.bodyP2")}
       />
       <PageSection
         sectionName={"Artists"}

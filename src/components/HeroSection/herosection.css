@@ -1,47 +1,84 @@
-/* Showcase Styling */
-
-.showcase {
-  display: flex;
+/* ===========================
+   HERO SECTION CONTAINER
+   =========================== */
+.florida-hero {
+  position: relative;
   width: 100%;
   height: 100vh;
-  position: relative;
-  /* TODO: Replace background with an image unless we want to keep it this way */
-  /* background: url("../../assets/images/CXC.png") no-repeat center center/cover; */
-}
 
-/* Showcase Overlay */
+  /* Background image */
+  background-image: url("/src/assets/images/fmBeach.png");
+  /* background-size: 120%; */
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 
-.showcase::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  background: rgba(0, 0, 0, 0.70);
-  box-shadow: inset 120px 100px 250px #000000, inset -120px -100px 250px #000000;
-}
-
-.showcase-content {
+  /* Center text perfectly */
   display: flex;
-  align-items: center;
-  margin: auto;
   justify-content: center;
-  z-index: 3;
+  align-items: center;
+
+  z-index: 2; /* Above stars */
+}
+
+/* ===========================
+   DARK OVERLAY
+   =========================== */
+.florida-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* Darken image */
+  backdrop-filter: brightness(0.6);
+  z-index: 1;
+}
+
+/* ===========================
+   TEXT BLOCK
+   =========================== */
+.florida-text {
   position: relative;
-  width: 100%;
-  max-width: none;
+  text-align: center;
+  color: white;
+  z-index: 3;
 }
 
-.showcase-content h1 {
+.florida-text h1 {
+  font-size: 4rem;
   font-weight: 700;
-  font-size: 5.2rem;
-  line-height: 1.1rem;
-  margin: 0 0 2rem;
+  margin: 0;
 }
 
-.showcase-content p {
-  font-weight: 400;
-  color: #fff;
+.florida-text p {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+/* ===========================
+   RESPONSIVE ADJUSTMENTS
+   =========================== */
+@media (max-width: 768px) {
+  .florida-hero {
+    background-size: cover;      /* Fit better on mobile */
+    background-position: center top;
+  }
+
+  .florida-overlay {
+    background: rgba(0, 0, 0, 0.55); /* Slightly darker for readability */
+  }
+
+  .florida-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .florida-text p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Handle very short screens (small phones) */
+@media (max-height: 600px) {
+  .florida-hero {
+    height: 80vh;
+  }
 }

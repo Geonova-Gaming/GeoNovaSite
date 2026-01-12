@@ -19,21 +19,6 @@ const MainPage = () => {
     window.scrollTo(0, 0);
   }, [location.hash]);
 
-  // Crear estrellas una sola vez al montar
-  // useEffect(() => {
-  //   const container = starsRef.current;
-  //   if (!container) return;
-
-  //   for (let i = 0; i < 100; i++) {
-  //     const star = document.createElement("div");
-  //     star.className = "star";
-  //     star.style.left = `${Math.random() * 100}vw`;
-  //     star.style.top = `${Math.random() * 100}vh`;
-  //     star.style.animationDuration = `${5 + Math.random() * 10}s`;
-  //     container.appendChild(star);
-  //   }
-  // }, []);
-
   useEffect(() => {
     const container = starsRef.current;
     if (!container) return;

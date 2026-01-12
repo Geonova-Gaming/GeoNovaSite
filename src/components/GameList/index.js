@@ -6,29 +6,17 @@ import "./gamelist.css";
 
 import gameSectionBG from "../../assets/images/GeoNovaBanner.png";
 import LovebugAppIcon from "../../assets/images/LovebugAppIcon.png";
-import questionMark from "../../assets/images/QuestionMark.png";
+import FloridaManGameTitle from "../../assets/images/fmBeach2.png";
 import ImageWithTransition from "../../components/ImageBackground/ImageBackground";
 
 const GameList = () => {
-  const teaserMessage =
-    "Wait until our title reveal event to get the full scoop of our latest project!";
-  const [glitchText, setGlitchText] = useState(teaserMessage);
-
-   function generateRandomText(length) {
-    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
-    let result = "";
-    for (let i = 0; i < length; i++) {
-      result += characters.charAt(Math.floor(Math.random() * characters.length));
-    }
-    return result;
-  }
 
   const games = [
     {
       id: 2,
-      title: "Upcoming Game (TBA)",
-      imageUrl: questionMark, // Replace with actual image URL
-      description: glitchText,
+      title: "Florida Man: The Game",
+      imageUrl: FloridaManGameTitle, // Replace with actual image URL
+      description: "A man from Florida finds himself in a conflict that most are too Normal to recognize. Finding secrets powers lost to humanity, he is the only one who stop the evil in the shadows.",
     },
     {
       id: 1,
@@ -40,33 +28,12 @@ const GameList = () => {
     // Add more game objects here following the same structure
   ];
 
-
-useEffect(() => {
-  const teaserMessage =
-    "Wait until our title reveal event to get the full scoop of our latest project!";
-
-  const interval = setInterval(() => {
-    // show glitch
-    setGlitchText(generateRandomText(50));
-
-    // after short delay, revert back to teaser
-    setTimeout(() => {
-      setGlitchText(teaserMessage);
-    }, 350); // glitch duration
-  }, 4000); // repeat every 4s
-
-  return () => clearInterval(interval);
-}, []);
-
   return (
 <div className="d-flex flex-column position-relative" style={{ minHeight: "100vh" }}>
       <ImageWithTransition image={gameSectionBG} section={"games"} />
       <Container fluid className="w-100 z-1">
         <div xs={12} className="my-5">
           <h2 className="text-center z-3" style={{ color: "white" }}>
-            {/* TODO: Remove glitch text */}
-            {/* Ou<span className="glitch-text">r</span> Ga
-            <span className="glitch-text">mes</span> */}
             Our Games
           </h2>{" "}
           <hr className="my-hr" />

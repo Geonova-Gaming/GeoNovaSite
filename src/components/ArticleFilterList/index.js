@@ -99,7 +99,7 @@ function ArticleList({ filteredArticles }) {
       ) : (
         <Container fluid className="news-empty-message">
           <h4>
-            News coming soon, keep a look out on our social media for updates!
+            News coming soon, keep a lookout on our social media for updates!
           </h4>
         </Container>
       )}
