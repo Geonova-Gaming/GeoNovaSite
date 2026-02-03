@@ -27,7 +27,7 @@
 .florida-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45); /* Darken image */
+  background: rgba(0, 0, 0, 0.30); /* Darken image */
   backdrop-filter: brightness(0.6);
   z-index: 1;
 }

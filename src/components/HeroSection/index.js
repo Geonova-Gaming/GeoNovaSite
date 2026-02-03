@@ -7,7 +7,7 @@ const HeroSection = () => {
       <div className="florida-overlay" />
       <div className="florida-text">
         <h1>Florida Man</h1>
-        <p>New Info Coming Soon!</p>
+        <p>Info Coming Soon!</p>
       </div>
     </header>
   );

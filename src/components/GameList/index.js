@@ -16,7 +16,7 @@ const GameList = () => {
       id: 2,
       title: "Florida Man: The Game",
       imageUrl: FloridaManGameTitle, // Replace with actual image URL
-      description: "A man from Florida finds himself in a conflict that most are too Normal to recognize. Finding secrets powers lost to humanity, he is the only one who stop the evil in the shadows.",
+      description: "A man from Florida finds himself in a conflict that most are too normal to recognize. Finding secrets powers lost to humanity, he is the only one who can stop the evil in the shadows.",
     },
     {
       id: 1,

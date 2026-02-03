@@ -9,18 +9,18 @@ import FloridaManGameTitle from "../../assets/images/fmTitle2.png";
 import "./controlledCarousel.css";
 
 const slides = [
+   {
+    header: "Florida Man: The Game",
+    subtext: "A man from Florida finds himself in a conflict that most are too normal to recognize. Finding secrets powers lost to humanity, he is the only one who can stop the evil in the shadows.",
+    link: "/page2",
+    image: FloridaManGameTitle,
+  },
   {
     header: "The Lovebug Game",
     subtext: "Help the lovebugs grow their swarm by collecting pollen in this mobile game! Explore vibrant landscapes and overcome adorable obstacles.",
     link: "/games/releases/LoveBugGame",
     image: LovebugAppIcon,
-  },
-  {
-    header: "Florida Man: The Game",
-    subtext: "A man from Florida finds himself in a conflict that most are too Normal to recognize. Finding secrets powers lost to humanity, he is the only one who stop the evil in the shadows.",
-    link: "/page2",
-    image: FloridaManGameTitle,
-  },
+  }
 ];
 
 function CustomCarousel() {
